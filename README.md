@@ -1,4 +1,13 @@
-labs
-====
+![Labs Logo](logo-labs.jpg "Labs")
 
-A simple repository to store the codes from my articles, some experiments and other stuff
+## Summary
+
+* [Python](python/)
+
+## Credits
+
+* Vitor Britto ([@vitorbritto](https://github.com/vitorbritto/labs))
+
+## License
+
+[MIT License](http://brenopolanski.mit-license.org/) © Breno Polanski
