@@ -5,6 +5,26 @@
 	<title>Example Notebook</title>
 </head>
 <body>
+	<form>
+		<fieldset>
+			<legend>Notebook</legend>
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name">
+
+			<br>
+
+			<label for="email">Email:</label>
+			<input type="text" name="email" id="email">
+
+			<br>
+
+			<label for="phone">Phone:</label>
+			<input type="text" name="phone" id="phone">
+		</fieldset>
+
+		<button type="button" name="btn-save" id="btn-save">Save</button>
+	</form>
+
 	<script src="../lib/pouchdb-3.0.1.min.js"></script>
 	<script src="js/app.js"></script>
 	<script>
