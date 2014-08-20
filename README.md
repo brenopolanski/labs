@@ -2,6 +2,7 @@
 
 ## Summary
 
+* [JavaScript](javascript/)
 * [Python](python/)
 
 ## Credits
