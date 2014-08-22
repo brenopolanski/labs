@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Wildcard Selector</title>
+
+	<style>
+		div[class*='txtcolor'] {
+			color: blue;
+		}
+
+		div[class*='txtcolor-'] {
+			color: red;
+		}
+
+		div[class^='titlecolor'] {
+			color: cyan;
+		}
+
+		div[class$='titlecolor'] {
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="txtcolor">Lorem ipsum dolor sit amet...</div>
+
+	<div class="txtcolor-red">Lorem ipsum dolor sit amet...</div>
+
+	<div class="titlecolor-x">Lorem ipsum dolor sit amet...</div>
+
+	<div class="x-titlecolor">Lorem ipsum dolor sit amet...</div>
+</body>
+</html>
