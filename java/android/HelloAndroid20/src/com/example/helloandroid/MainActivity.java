@@ -3,25 +3,41 @@ package com.example.helloandroid;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
+	
+	private EditText nomeEditText;
+	private TextView saudacaoTextView;
+	private String saudacao;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		this.nomeEditText = (EditText) findViewById(R.id.nomeEditText);
+		this.saudacaoTextView = (TextView) findViewById(R.id.saudacaoTextView);
+		this.saudacao = getResources().getString(R.string.saudacao);
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+	}
+	
+	public void msgUsuario(View v) {
+		Editable texto = this.nomeEditText.getText();
+		String msg = this.saudacao + " " + texto.toString();
+		this.saudacaoTextView.setText(msg);
 	}
 
 	@Override

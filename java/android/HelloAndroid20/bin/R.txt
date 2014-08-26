@@ -345,8 +345,8 @@ int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
 int string hello_world 0x7f0a000e
+int string msg_usuario 0x7f0a0012
 int string saudacao 0x7f0a0013
-int string surpreenda_me 0x7f0a0012
 int string title_activity_main 0x7f0a0010
 int string titulo 0x7f0a0011
 int style AppBaseTheme 0x7f0b008b

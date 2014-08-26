@@ -6,6 +6,6 @@
     <string name="action_settings">Settings</string>
 	<string name="title_activity_main">MainActivity</string>
 	<string name="titulo">Informe seu nome</string>
-	<string name="surpreenda_me">Surpreenda-me</string>
+	<string name="msg_usuario">Mostrar Mensagem</string>
 	<string name="saudacao">Olá</string>
 </resources>
