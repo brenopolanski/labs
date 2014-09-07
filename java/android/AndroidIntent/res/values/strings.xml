@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidIntent</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="titulo">Informe seu nome</string>
+    <string name="surpreenda_me">Surpreenda-me</string>
+    <string name="saudacao">Olá</string>
+
+</resources>
