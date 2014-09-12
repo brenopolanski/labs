@@ -1,0 +1,13 @@
+{
+    "name": "Name Local Storage",
+    "description": "Description Local Storage", 
+    "browser_action": {
+        "default_icon": "icon.png", 
+        "default_title": "Local Storage Extension Popup Title", 
+        "default_popup": "localstorage.html"
+    }, 
+    "manifest_version": 2,
+    "update_url": "http://clients2.google.com/service/update2/crx",
+    "content_security_policy": "script-src 'self' https://www.google.com; object-src 'self'",
+    "version": "0.1"
+}

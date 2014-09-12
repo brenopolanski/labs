@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Michael Jackson sprite dance with CSS3</title>
+		<meta name="description" content="Michael Jackson sprite dance with CSS3">
+		<meta name="author" content="Breno Polanski">		
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			@-webkit-keyframes play {
+			   from { background-position: 0 -1970px; }
+			     to { background-position: -763px -1970px; }
+			}
+
+			.mj {
+				width: 98px;
+				height: 70px;
+				background-image: url(mj.png);
+				background-position: 0 -1970px;
+				margin: 300px auto;
+				-webkit-animation: play 1.5s steps(8) infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mj"></div>
+		<audio autoplay loop>
+			<source src="thriller8bits.mp3" type="audio/mp3">
+		</audio>
+	</body>
+</html>
