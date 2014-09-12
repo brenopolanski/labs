@@ -1,0 +1,24 @@
+<Schema name="New Schema1">
+  <Cube name="VENDAS" cache="true" enabled="true">
+    <Table name="fato_pedido" schema="public" alias="">
+    </Table>
+    <Dimension type="StandardDimension" foreignKey="customerid_sk" name="CLIENTE">
+      <Hierarchy hasAll="true" primaryKey="customerid_sk">
+        <Table name="dim_clientes" schema="public" alias="">
+        </Table>
+        <Level name="NOME" column="contactname" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" foreignKey="productid_sk" name="PRODUTOS">
+      <Hierarchy hasAll="true" primaryKey="productid_sk">
+        <Table name="dim_produtos" schema="public" alias="">
+        </Table>
+        <Level name="DESCRICAO" column="productname" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="QUANTIDADE" column="quantity" datatype="Integer" aggregator="count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
