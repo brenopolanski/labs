@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Part 1 - Getting started with jsPlumb</title>
+
+	<style type="text/css">
+		.item {
+			width: 100px;
+			height: 100px;
+			background-color: #ddddff;
+			border: 1px solid #000;
+		}
+
+		#state1 {
+			position: absolute;
+			left: 100px;
+			top: 100px;
+		}
+
+		#state2 {
+			position: absolute;
+			left: 250px;
+			top: 100px;
+		}
+
+		#state3 {
+			position: absolute;
+			left: 100px;
+			top: 250px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Part 1 - Getting started with jsPlumb</h1>
+
+	<div class="item" id="state1"></div>
+	<div class="item" id="state2"></div>
+	<div class="item" id="state3"></div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../jquery.jsPlumb-1.6.4.js"></script>
+	<script type="text/javascript">
+		jsPlumb.ready(function() {
+			jsPlumb.makeSource($('.item'), {
+				connector: 'StateMachine'
+			});
+
+			jsPlumb.makeTarget($('.item'), {
+				anchor: 'Continuous'
+			});
+		});
+	</script>
+</body>
+</html>
