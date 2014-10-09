@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+
+    <link rel="stylesheet" href="jquery.stepy.css">
+</head>
+<body>
+
+    <form id="titleClick-demo">
+        <fieldset title="Login">
+            <legend>Access</legend>
+
+            <input type="hidden" name="id" />
+
+            <p>
+                <label for="username-1">Username:</label>
+                <input id="username-1" type="text" value="wbotelhos" disabled="disabled" />
+            </p>
+
+            <p>
+                <label for="email-1">E-mail:</label>
+                <input id="email-1" type="text" />
+            </p>
+
+            <p>
+                <label for="password-1">Password:</label>
+                <input id="password-1" type="password" />
+            </p>
+        </fieldset>
+
+        <fieldset title="Personal">
+            <legend>About you</legend>
+
+            <p>
+                <label for="name-1">Name:</label>
+                <input id="name-1" type="text" />
+            </p>
+
+            <p>
+                <label for="birthday-1">Birthday:</label>
+
+                <select id="birthday-1" name="day">
+                    <option></option>
+                    <option>1984</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="bio-1">Bio:</label>
+                <textarea id="bio-1"></textarea>
+            </p>
+        </fieldset>
+
+        <fieldset title="Professional">
+            <legend>Your professional informations</legend>
+
+            <p class="skills">
+                <input id="ruby-1" type="checkbox" name="ruby-1" />
+                <label for="ruby-1">Ruby</label>
+
+                <input id="python-1" type="checkbox" name="python" />
+                <label for="python-1">Python</label>
+
+                <input id="java-1" type="checkbox" name="java" />
+                <label for="java-1">Java</label>
+
+                <input id="javascript-1" type="checkbox" name="javascript" />
+                <label for="javascript-1">Javascript</label>
+            </p>
+
+            <p>
+                <label for="linkedin-1">Linkedin:</label>
+                <input id="linkedin-1" type="text" name="Linkedin" />
+            </p>
+        </fieldset>
+
+        <input type="submit" value="Finish!" />
+    </form>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="jquery.stepy.js"></script>
+    <script>
+        $(function() {
+            $('#titleClick-demo').stepy({ titleClick: true });
+        });
+    </script>
+</body>
+</html>

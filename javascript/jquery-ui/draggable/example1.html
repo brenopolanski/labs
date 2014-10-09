@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 1</title>
+	<link rel="stylesheet" href="../jquery-ui.css">
+	<style>
+		html, 
+		body {
+			height: 100%;
+		}
+
+		.container {
+			width: 500px;
+			height: 100%;
+			border: 2px solid black;
+		}
+
+		.drag {
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="drag"></div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="../jquery-ui.min.js"></script>
+	<script>
+		$('.drag').draggable({
+			containment: '.container',
+			drag: function(event, ui) {
+				// console.log(event);
+				// console.log(ui);
+
+				var $containerH = $('.container').height(),
+					pageY = (event.pageY + 50);
+
+				if (pageY > $containerH) {
+					$('.container').height($containerH + 10);
+				}
+			}
+		});
+
+		console.log($('.container').height());
+	</script>
+</body>
+</html>
