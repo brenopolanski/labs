@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>medium editor | demo</title>
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/medium-editor.css">
+	<link rel="stylesheet" href="dist/css/themes/default.css">
+</head>
+<body>
+	<h1>Example 1</h1>
+
+	<div id="medium-editor-toolbar-1" class="medium-editor-toolbar medium-toolbar-arrow-under medium-editor-toolbar-active" style="top: 100px; left: 100px;">
+		<ul id="medium-editor-toolbar-actions" class="medium-editor-toolbar-actions clearfix" style="display: block;">
+			<li><button class="medium-editor-action medium-editor-action-bold medium-editor-button-first" data-action="bold" data-element="b"><i class="fa fa-bold"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-italic" data-action="italic" data-element="i"><i class="fa fa-italic"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-underline" data-action="underline" data-element="u"><i class="fa fa-underline"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-quote" data-action="append-blockquote" data-element="blockquote"><i class="fa fa-quote-right"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-anchor" data-action="anchor" data-element="a"><i class="fa fa-link"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-superscript" data-action="superscript" data-element="sup"><i class="fa fa-superscript"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-subscript" data-action="subscript" data-element="sub"><i class="fa fa-subscript"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-orderedlist" data-action="insertorderedlist" data-element="ol"><i class="fa fa-list-ol"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-unorderedlist" data-action="insertunorderedlist" data-element="ul"><i class="fa fa-list-ul"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-pre" data-action="append-pre" data-element="pre"><i class="fa fa-code fa-lg"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-outdent" data-action="outdent" data-element="ul"><i class="fa fa-outdent"></i></button></li>
+			<li><button class="medium-editor-action medium-editor-action-indent medium-editor-button-last" data-action="indent" data-element="ul"><i class="fa fa-indent"></i></button></li>
+		</ul>
+		<div class="medium-editor-toolbar-form-anchor" id="medium-editor-toolbar-form-anchor" style="display: none;">
+			<input type="text" class="medium-editor-toolbar-anchor-input" placeholder="Paste or type a link">
+			<a href="#" class="medium-editor-toobar-anchor-save">✓</a>
+			<a href="#" class="medium-editor-toobar-anchor-close">×</a>
+			<label><input type="checkbox" class="medium-editor-toolbar-anchor-target">Open in New Window?</label>
+		</div>
+	</div>
+
+	<h1 style="margin-top: 200px">Example 2</h1>
+
+	<div id="medium-editor-toolbar-3" class="medium-editor-toolbar medium-toolbar-arrow-under medium-editor-toolbar-active" style="top: 400px; left: 100px;">
+    <ul id="medium-editor-toolbar-actions" class="medium-editor-toolbar-actions clearfix" style="display: block;">
+        <li><button class="medium-editor-action medium-editor-action-bold medium-editor-button-first" data-action="bold" data-element="b">bold</button></li>
+        <li><button class="medium-editor-action medium-editor-action-italic" data-action="italic" data-element="i"><i>italic</i></button></li>
+        <li><button class="medium-editor-action medium-editor-action-underline" data-action="underline" data-element="u"><u>underline</u></button></li>
+        <li><button class="medium-editor-action medium-editor-action-anchor medium-editor-button-last" data-action="anchor" data-element="a">link</button></li>
+    </ul>
+    <div class="medium-editor-toolbar-form-anchor" id="medium-editor-toolbar-form-anchor" style="display: none;">
+    	<input type="text" class="medium-editor-toolbar-anchor-input" placeholder="Paste or type a link">
+    	<a href="#" class="medium-editor-toobar-anchor-save">✓</a>
+    	<a href="#" class="medium-editor-toobar-anchor-close">×</a>
+    </div>
+</div>
+	
+</body>
+</html>
