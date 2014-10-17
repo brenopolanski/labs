@@ -6,6 +6,7 @@
 	width: 340px;
 	height: 40px;
 	border-radius: 3px;
+	box-shadow: 2px 2px 2px #ccc;
 }
 
 .notify span {
