@@ -1,0 +1,71 @@
+@import 'http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css';
+
+.notify {
+/*	position: absolute;
+	top: 100px;*/
+	width: 340px;
+	height: 40px;
+	border-radius: 3px;
+}
+
+.notify span {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: #fff;
+}
+
+.notify-danger {
+	background-color: #f35839;
+}
+
+.notify-info {
+	background-color: #3babc8;
+}
+
+.notify-warning {
+	background-color: #ff902b;
+}
+
+.notify-success {
+	background-color: #7bbf62;
+}
+
+.notify-hide {
+	display: none;
+}
+
+.notify-show {
+	display: block;
+}
+
+.notify-1 {
+	position: absolute;
+	top: 100px;
+}
+
+.notify-2 {
+	position: absolute;
+	top: 150px;
+}
+
+.notify-3 {
+	position: absolute;
+	top: 200px;
+}
+
+.notify-4 {
+	position: absolute;
+	top: 250px;
+}
+
+a {
+	padding: 10px;
+	color: #666;
+	text-decoration: none;
+	border: 1px solid #ccc;
+}
+
+a:hover {
+	background-color: #f0f0f0;
+}

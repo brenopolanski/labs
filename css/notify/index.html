@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example #1</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="animate.css">
+</head>
+<body>
+
+	<div class="notify notify-danger notify-hide notify-1">
+		<span><i class="fa fa-check"></i> Message Danger...</span>
+	</div>
+
+	<div class="notify notify-info notify-hide notify-2">
+		<span><i class="fa fa-check"></i> Message Info...</span>
+	</div>
+
+	<div class="notify notify-warning notify-hide notify-3">
+		<span><i class="fa fa-check"></i> Message Warning...</span>
+	</div>
+
+	<div class="notify notify-success notify-hide notify-4">
+		<span><i class="fa fa-check"></i> Message Success...</span>
+	</div>
+
+	<div style="margin-top: 300px; text-align: center;">
+		<a href="#">Animate it</a>
+	</div>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+		$(function() {
+			$('a').click(function(e) {
+				e.preventDefault();
+
+				$('.notify').removeClass('notify-hide');
+				$('.notify').addClass('animated fadeInDown notify-show');
+
+				setTimeout(function() {
+					$('.notify').removeClass('fadeInDown');
+					$('.notify').addClass('animated fadeOutUp');
+				}, 5000);
+			});
+		});
+	</script>
+</body>
+</html>

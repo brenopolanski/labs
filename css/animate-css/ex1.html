@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example #1</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		*  {
+			text-align: center;
+		}
+
+		h1 {
+			margin-top: 200px;
+			margin-bottom: 100px;
+		}
+
+		a {			
+			padding: 10px;
+			color: #666;
+			text-decoration: none;
+			border: 1px solid #ccc;
+		}
+
+		a:hover {
+			background-color: #f0f0f0;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Animate.css</h1>
+	<a href="#">Animate it</a>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+		$(function() {
+			$('a').click(function(e) {
+				e.preventDefault();
+				$('h1').addClass('animated fadeInDown');
+			});
+		});
+	</script>
+</body>
+</html>
