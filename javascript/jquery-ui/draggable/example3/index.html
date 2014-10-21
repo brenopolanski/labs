@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 3</title>
+	<link rel="stylesheet" href="../../jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Example 3</h1>
+
+	<div id="left-panel">
+		<div>
+			<div class="allstacks">
+				<div class="stack">
+					<ul class="stack_items">
+						<li class="item">
+							<p class="title">Title A</p>
+						</li>
+						<li class="item">
+							<p class="title">Title B</p>
+						</li>
+						<li class="item">
+							<p class="title">Title C</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="stack">
+					<ul class="stack_items">
+						<li class="item">
+							<p class="title">Title X</p>
+						</li>
+						<li class="item">
+							<p class="title">Title Y</p>
+						</li>
+						<li class="item">
+							<p class="title">Title Z</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="stack">
+					<ul class="stack_items">
+						<li class="item">
+							<p class="title">Title 1</p>
+						</li>
+						<li class="item">
+							<p class="title">Title 2</p>
+						</li>
+						<li class="item">
+							<p class="title">Title 3</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="../../jquery-ui.min.js"></script>
+	<script>
+		$(function() {
+			var zindex = 10; 
+			$('.item').draggable({
+				containment: 'body',
+				scroll: true,
+				revert: function(event, ui) {
+					$(this).css('border', 'none');
+					return !event;
+				},
+				start: function(event, ui) {
+					$(this).css('z-index', zindex++);
+					$(this).css('border', '2px solid #333');
+				}
+			});
+
+			$('.stack_items').droppable({
+				hoverClass: 'over',
+				drop: function(event, ui) {
+					$('<li class="item"></li>').html(ui.draggable.html()).appendTo(this);
+					$(ui.draggable).remove();
+				}
+			});
+		});
+	</script>
+</body>
+</html>
