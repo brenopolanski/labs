@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 2</title>
+	<style>
+		/* OnlyCss Checkbox */
+		.ocCheckbox{ 
+		  display: block;
+		  height: 25px;
+		  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		  font-size: 14px;  
+		  line-height: 25px;
+		  position: relative;
+		}
+		  .ocCheckbox input{
+		  float: left;
+		  opacity: 0;
+		  }
+		  .ocCheckbox span{ 
+		    background: #f1f1f1;
+		    border: 1px solid #ccc;
+		    position: absolute;
+		    width: 14px;
+		    height: 14px;
+		    margin-top: 5px; 
+		    left: 0;
+		  }
+		    .ocCheckbox span:before{
+		      content: '';
+		      opacity: 0;
+		      display: block;
+		
+		      -webkit-transition: all .3s ease-out;
+		      transition: all .3s ease-out;
+		    }
+		  .ocCheckbox p{
+		    margin: 0;
+		  }
+		  .ocCheckbox input:checked + span:before{ 
+		    background: #282828;
+		    height: 10px;
+		    left: 2px;
+		    opacity: 1;
+		    position: absolute;
+		    top: 2px;
+		    width: 10px;
+		  }
+	</style>
+</head>
+<body>
+	<!-- OnlyCss Checkbox -->
+	<label class="ocCheckbox">
+		<input type="checkbox" />
+		<span></span>
+		<p>text</p>
+	</label>
+</body>
+</html>

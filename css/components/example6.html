@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 6</title>
+	<style>
+		/* OnlyCss Select */
+		.ocSelect {
+		  position: relative; 
+		  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		  font-size: 14px; 
+		  }
+		    .ocSelect select {
+		      background: transparent;
+		      border: 0;
+		      border-radius: 0;
+		      font-family: inherit;
+		      font-size: inherit;
+		      height: 34px;
+		      line-height: 1;
+		      padding: 5px;
+		      width: 100%;
+		      -webkit-appearance: none; 
+		    }
+		    .ocSelect span {
+		      background: #f1f1f1;
+		      border: 1px solid #ccc;
+		      border-radius: 5px;
+		      height: 100%;
+		      left: 0;
+		      position: absolute;
+		      top: 0;
+		      width: 100%;
+		      z-index: -1; 
+		    }
+		      .ocSelect span:after {
+		        content: '';
+		        border: 7px solid transparent;
+		        border-top: 10px solid #282828;
+		        position: absolute;
+		        top: 12px;
+		        right: 10px; 
+		      }
+	</style>
+</head>
+<body>
+	<!-- OnlyCss Select -->
+	<div class="ocSelect">
+		<select name="" id="">
+			<option value="1">option 1</option>
+			<option value="2">option 2</option>
+			<option value="3">option 3</option>
+		</select>
+		<span></span>
+	</div>
+</body>
+</html>

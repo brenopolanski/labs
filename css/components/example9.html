@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 9</title>
+	<style>
+		/* OnlyCss Tabs */
+		.ocTabs {
+		  position: relative;
+		  width: 100%;
+		  min-height: 65px;
+		}
+		  .ocTabs .ocTabs-wrap {
+		      float: left;
+		      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		      font-size: 14px; 
+		  }
+		    .ocTabs-wrap input{
+		      height: 0;
+		      margin: 0;
+		      width: 0;
+		    }
+		    .ocTabs-wrap input:checked + label{
+		      background: #fff;
+		      border: 1px solid #ccc;
+		      border-bottom: 0;
+		      border-radius: 5px 5px 0 0;
+		      padding: 4px 9px 7px 9px;
+		      position: relative;
+		      z-index: 2;
+		    }
+		    .ocTabs-wrap input:checked ~ .ocTabs-content{
+		      opacity: 1
+		    }
+		    .ocTabs-wrap:first-child input:checked ~ .ocTabs-content{
+		      border-radius: 0 5px 5px 5px;
+		    }
+		    .ocTabs-wrap label{ 
+		      cursor: pointer;
+		      float: left;
+		      padding: 5px 10px;
+		    }
+		    .ocTabs-wrap div{
+		      background: #fff;
+		      border: 1px solid #ccc;
+		      border-radius: 5px;
+		      box-sizing: border-box;
+		      font-size: 12px;
+		      left: 0;
+		      opacity: 0;
+		      padding: 10px 20px;
+		      position: absolute;
+		      top: 27px;
+		      width: 100%;
+		      z-index: 1
+		    }
+	</style>
+</head>
+<body>
+	<!-- OnlyCss Tabs -->
+	<div class="ocTabs">
+		<div class="ocTabs-wrap">
+			<input type="radio" name="ocTabs-radio" id="ocTabs-radio-1" checked="checked">
+			<label for="ocTabs-radio-1">title</label>
+			<div class="ocTabs-content">content</div>
+		</div>
+		<div class="ocTabs-wrap">
+			<input type="radio" name="ocTabs-radio" id="ocTabs-radio-2">
+			<label for="ocTabs-radio-2">title</label>
+			<div class="ocTabs-content">content</div>
+		</div>
+		<div class="ocTabs-wrap">
+			<input type="radio" name="ocTabs-radio" id="ocTabs-radio-3">
+			<label for="ocTabs-radio-3">title</label>
+			<div class="ocTabs-content">content</div>
+		</div>
+	</div>
+</body>
+</html>
