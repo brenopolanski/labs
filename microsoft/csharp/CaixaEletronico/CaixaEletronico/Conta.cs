@@ -8,22 +8,24 @@ namespace CaixaEletronico
 {
     class Conta
     {
-        public int numero;
+        public int Numero { get; set; }
 
-        public string titular;
+        private string titular;
 
-        public double saldo;
+        // A propriedade saldo é aberta para leitura,
+        // mas fechada para escrita.
+        public double Saldo { get; private set; };
 
-        public Cliente cliente;
+        private Cliente Titular { get; set; }
 
         public void Saca(double valor)
         {
-            this.saldo -= valor;
+            this.Saldo -= valor + 0.1;
         }
 
         public void Deposita(double valor)
         {
-            this.saldo += valor;
+            this.Saldo += valor;
         }
 
         public void Transfere(double valor, Conta destino)
