@@ -19,14 +19,15 @@ namespace CaixaEletronico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int numeroDaConta;
-            numeroDaConta = 1;
+            Conta guilherme = new Conta();
+            Conta mauricio = new Conta();
 
-            double saldo = 100.0;
-            double valor = 10.0;
-            double saldoAposSaque = saldo - valor;
+            guilherme.saldo = 1500.0;
+            mauricio.saldo = 2000.0;
 
-            MessageBox.Show("O saldo atual é: " + saldoAposSaque);
+            guilherme.Transfere(200, mauricio);
+            MessageBox.Show("Guilherme: " + guilherme.saldo);
+            MessageBox.Show("Mauricio: " + mauricio.saldo);
         }
     }
 }

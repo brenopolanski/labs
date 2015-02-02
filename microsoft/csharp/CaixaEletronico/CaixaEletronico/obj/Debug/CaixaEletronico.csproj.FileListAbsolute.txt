@@ -6,3 +6,4 @@ C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletro
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.csproj.GenerateResource.Cache
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.exe
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
+C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.csprojResolveAssemblyReference.cache
