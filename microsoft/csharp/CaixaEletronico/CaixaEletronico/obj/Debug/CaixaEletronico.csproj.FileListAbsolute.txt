@@ -7,3 +7,12 @@ C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletro
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.exe
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
 C:\Users\Breno\Documents\Visual Studio 2013\Projects\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.csprojResolveAssemblyReference.cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\bin\Debug\CaixaEletronico.exe.config
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.csprojResolveAssemblyReference.cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.Form1.resources
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.Properties.Resources.resources
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\obj\Debug\CaixaEletronico.csproj.GenerateResource.Cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\bin\Debug\CaixaEletronico.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\CaixaEletronico\CaixaEletronico\bin\Debug\CaixaEletronico.pdb

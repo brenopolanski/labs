@@ -19,15 +19,23 @@ namespace CaixaEletronico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Conta guilherme = new Conta();
-            Conta mauricio = new Conta();
+            //Conta guilherme = new Conta();
+            //Conta mauricio = new Conta();
 
-            guilherme.saldo = 1500.0;
-            mauricio.saldo = 2000.0;
+            //guilherme.saldo = 1500.0;
+            //mauricio.saldo = 2000.0;
 
-            guilherme.Transfere(200, mauricio);
-            MessageBox.Show("Guilherme: " + guilherme.saldo);
-            MessageBox.Show("Mauricio: " + mauricio.saldo);
+            //guilherme.Transfere(200, mauricio);
+            //MessageBox.Show("Guilherme: " + guilherme.saldo);
+            //MessageBox.Show("Mauricio: " + mauricio.saldo);
+
+            Conta c1 = new Conta();
+            c1.Deposita(10);
+
+            TotalizadorDeContas t = new TotalizadorDeContas();
+            t.Adiciona(c1);
+
+            MessageBox.Show("O total é: " + t.Total);
         }
     }
 }

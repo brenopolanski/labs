@@ -14,7 +14,7 @@ namespace CaixaEletronico
 
         // A propriedade saldo é aberta para leitura,
         // mas fechada para escrita.
-        public double Saldo { get; private set; };
+        public double Saldo { get; private set; }
 
         private Cliente Titular { get; set; }
 
