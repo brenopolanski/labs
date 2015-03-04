@@ -1,0 +1,6 @@
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\bin\Debug\HexaECG.exe.config
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\bin\Debug\HexaECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\bin\Debug\HexaECG.pdb
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\obj\Debug\HexaECG.csprojResolveAssemblyReference.cache
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\obj\Debug\HexaECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexaECG\HexaECG\obj\Debug\HexaECG.pdb
