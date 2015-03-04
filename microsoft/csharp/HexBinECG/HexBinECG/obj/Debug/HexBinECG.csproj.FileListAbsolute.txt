@@ -1,0 +1,6 @@
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\bin\Debug\HexBinECG.exe.config
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\bin\Debug\HexBinECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\bin\Debug\HexBinECG.pdb
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\obj\Debug\HexBinECG.csprojResolveAssemblyReference.cache
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\obj\Debug\HexBinECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinECG\HexBinECG\obj\Debug\HexBinECG.pdb
