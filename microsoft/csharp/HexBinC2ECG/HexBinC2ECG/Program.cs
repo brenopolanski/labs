@@ -8,9 +8,28 @@ namespace HexBinC2ECG
 {
     class Program
     {
-        static string twoComplement() 
+        static string twoComplement(string value) 
         {
-            return "test";
+            int outputValue1 = 0;
+            int outputValue2 = 0;
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (value[i].Equals('1'))
+                {
+                    outputValue1 += 1 * (int)Math.Pow(2, value.Length - i - 1);
+                }
+                else 
+                {
+                    outputValue1 += 0 * (int)Math.Pow(2, value.Length - i - 1);
+                }
+
+                outputValue2 += 1 * (int)Math.Pow(2, value.Length - i - 1);
+            }
+
+            int c2 = (outputValue2 - outputValue1) + 1;
+
+            return Convert.ToString(c2,2);
         }
 
         static void Main(string[] args)
@@ -22,7 +41,7 @@ namespace HexBinC2ECG
             int len = hexa.Length;
             string strHexa;
             string strBin;
-            string test = twoComplement();
+            //string test = twoComplement();
 
             if (hexa.IndexOf(escapeBegin) > -1)
             {
@@ -35,7 +54,8 @@ namespace HexBinC2ECG
                     if (!strHexa.Equals(escapeBegin) || !strHexa.Equals(escapeEnd))
                     {
                         strBin = Convert.ToString(Convert.ToInt32(strHexa, 16), 2);
-                        Console.WriteLine(strBin);
+                        Console.WriteLine(twoComplement(strBin));
+                        //Console.WriteLine(strBin);
                         hexa = hexa.Substring(tamDelimiter);
                         len = hexa.Length;
                     }
