@@ -1,0 +1,5 @@
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinC2ECG\HexBinC2ECG\bin\Debug\HexBinC2ECG.exe.config
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinC2ECG\HexBinC2ECG\bin\Debug\HexBinC2ECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinC2ECG\HexBinC2ECG\bin\Debug\HexBinC2ECG.pdb
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinC2ECG\HexBinC2ECG\obj\Debug\HexBinC2ECG.exe
+c:\users\breno polanski\documents\visual studio 2012\Projects\HexBinC2ECG\HexBinC2ECG\obj\Debug\HexBinC2ECG.pdb
