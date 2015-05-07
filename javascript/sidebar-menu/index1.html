@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 1 Sidebar Menu with jQuery</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.debug {
+			border: 1px solid #000;
+		}
+
+		.sidebar-menu {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			/*height: 100%;*/
+			display: none;
+			width: 300px;
+			background: #ccc;
+		}
+
+		#btn {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar-menu debug">
+		<span>Sidebar menu</span>
+	</div>
+
+	<button id="btn">Hide / Show</button>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script>
+		$(function() {			
+			$('#btn').click(function() {
+				$('.sidebar-menu').toggle('slide');
+				// $('.sidebar-menu').show("slide", { direction: "left" }, 1000);
+			});
+		});
+	</script>
+</body>
+</html>
