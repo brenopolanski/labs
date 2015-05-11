@@ -1,0 +1,33 @@
+{
+  "name": "calculatr",
+  "version": "0.0.1",
+  "description": "CLI Calculator",
+  "main": "calculatr.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- -R spec",
+    "watch": "istanbul cover _mocha -- -R spec --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brenopolanski/labs"
+  },
+  "keywords": [
+    "cli",
+    "calculator"
+  ],
+  "author": "Breno Polanski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brenopolanski/labs/issues"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "calculatr": "calculatr.js"
+  },
+  "devDependencies": {
+    "should": "~5.2.0"
+  },
+  "dependencies": {
+    "commander": "~2.7.1"
+  }
+}

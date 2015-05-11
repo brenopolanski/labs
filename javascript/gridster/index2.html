@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 2</title>
+	<link rel="stylesheet" href="jquery.gridster.css">
+
+	<style>
+		*  {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul, ol {
+		    list-style: none;
+		}
+
+		.gridster {
+		    width: 960px;
+		    margin: 0 auto;
+		}
+
+		.gridster ul {
+			background-color: #fff;
+		}
+
+		.gridster .gs-w {
+		    background: #fff;
+		    border: 2px solid #ccc;
+		    cursor: pointer;
+		}
+
+		.gridster .player {
+		    border: 2px dotted #ccc;
+		    cursor: move;
+		}
+
+		.gridster .preview-holder {
+		    border: none !important;
+		    border-radius: 0 !important;
+		    background-color: #ccc !important;
+		}
+
+		.gridster .widget-name {
+			padding: 3px;
+			background-color: #f0f0f0;
+			border-bottom: 2px solid #ccc;
+		}
+
+		.gridster .widget-drop {
+			background-color: #f0f0f0;
+			height: 80%;
+		}
+	</style>
+</head>
+<body>
+	<section class="demo">
+		<div class="gridster">
+		    <ul>
+		        <li data-row="1" data-col="1" data-sizex="3" data-sizey="2">
+		        	<div class="widget-name">Widget</div>
+		        	<div class="widget-drop"></div>
+		        </li>
+
+		        <li data-row="1" data-col="4" data-sizex="3" data-sizey="2">2</li>
+		        <li data-row="3" data-col="1" data-sizex="3" data-sizey="2">3</li>
+		        <li data-row="3" data-col="4" data-sizex="3" data-sizey="2">4</li>
+		        <li data-row="5" data-col="1" data-sizex="3" data-sizey="2">5</li>
+		        <li data-row="5" data-col="4" data-sizex="3" data-sizey="2">6</li>
+		    </ul>
+		</div>
+	</section>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="jquery.gridster.js"></script>
+	<script>
+		$(function(){ //DOM Ready
+		    $('.gridster ul').gridster({
+		        widget_margins: [10, 10],
+		        widget_base_dimensions: [140, 140],
+		        min_cols: 6,
+		        resize: {
+		            enabled: true
+		        }
+		    });
+		});
+	</script>
+</body>
+</html>

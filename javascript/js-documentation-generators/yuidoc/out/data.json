@@ -1,0 +1,242 @@
+{
+    "project": {},
+    "files": {
+        "source-yuidoc.js": {
+            "name": "source-yuidoc.js",
+            "modules": {},
+            "classes": {
+                "Graph": 1,
+                "Graph.Vertex": 1,
+                "Graph.Edge": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Graph": 1
+            }
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Graph": {
+            "name": "Graph",
+            "shortname": "Graph",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Graph",
+            "file": "source-yuidoc.js",
+            "line": 9,
+            "description": "A Graph object with the basic properties",
+            "is_constructor": 1
+        },
+        "Graph.Vertex": {
+            "name": "Graph.Vertex",
+            "shortname": "Graph.Vertex",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Graph",
+            "file": "source-yuidoc.js",
+            "line": 40,
+            "description": "Constructor for a vertex of Graph",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of the vertex",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "Value of the vertex",
+                    "type": "Number"
+                }
+            ],
+            "itemtype": "property",
+            "type": "String"
+        },
+        "Graph.Edge": {
+            "name": "Graph.Edge",
+            "shortname": "Graph.Edge",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Graph",
+            "file": "source-yuidoc.js",
+            "line": 75,
+            "description": "Constructor for edge of a {{#crossLink \"Graph\"}}{{/crossLink}}",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "tail",
+                    "description": "The tail vertex",
+                    "type": "Graph.Vertex"
+                },
+                {
+                    "name": "head",
+                    "description": "The head vertex",
+                    "type": "Graph.Vertex"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "Provides data structure for directed graphs",
+            "line": 1,
+            "name": "Directed Graph",
+            "author": "Mr. Bean <mr@bean.com>",
+            "license": "MIT",
+            "copyright": "2013 Mr. Bean",
+            "class": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 17,
+            "description": "Object for holding vertices of the Graph",
+            "itemtype": "property",
+            "name": "vertices",
+            "type": "object",
+            "class": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 25,
+            "description": "Array of edges of the Graph",
+            "itemtype": "property",
+            "name": "edges",
+            "type": "array",
+            "class": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 32,
+            "description": "Length of the Graph, initially set to 0",
+            "itemtype": "property",
+            "name": "length",
+            "type": "number",
+            "class": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 55,
+            "class": "Graph.Vertex",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 58,
+            "class": "Graph.Vertex",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 61,
+            "class": "Graph.Vertex",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 65,
+            "description": "Prototype function which returns the number of edges of a {{#crossLink \"Graph.Vertex\"}}{{/crossLink}}",
+            "itemtype": "method",
+            "name": "degree",
+            "return": {
+                "description": "The length of the edges",
+                "type": "Number"
+            },
+            "class": "Graph.Vertex",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 91,
+            "description": "Add a new {{#crossLink \"Graph.Vertex\"}}{{/crossLink}} or updates the value of an existing one",
+            "itemtype": "method",
+            "name": "addVertex",
+            "example": [
+                "\nvar newVertex = Graph.addVertex(\"vertex1\", 20);"
+            ],
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of the new vertex",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "Value of the new vertex",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "New or updated {{#crossLink \"Graph.Vertex\"}}{{/crossLink}}",
+                "type": "Graph.Vertex"
+            },
+            "class": "Graph.Edge",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 115,
+            "description": "Method for adding new {{#crossLink \"Graph.Edge\"}}{{/crossLink}}",
+            "itemtype": "method",
+            "name": "addEdge",
+            "return": {
+                "description": "An instance of a {{#crossLink \"Graph.Edge\"}}{{/crossLink}}",
+                "type": "Graph.Edge"
+            },
+            "class": "Graph.Edge",
+            "namespace": "Graph"
+        },
+        {
+            "file": "source-yuidoc.js",
+            "line": 125,
+            "description": "Exports the {{#crossLink \"Graph\"}}{{/crossLink}}",
+            "itemtype": "method",
+            "name": "exports",
+            "class": "Graph.Edge",
+            "namespace": "Graph"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: name",
+            "line": "  Provides data structure for directed graphs:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": "  Provides data structure for directed graphs:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": "  Provides data structure for directed graphs:1"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " source-yuidoc.js:125"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Provides data structure for directed graphs:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " source-yuidoc.js:55"
+        },
+        {
+            "message": "Missing item type",
+            "line": " source-yuidoc.js:58"
+        },
+        {
+            "message": "Missing item type",
+            "line": " source-yuidoc.js:61"
+        }
+    ]
+}
