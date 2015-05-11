@@ -34,7 +34,7 @@ namespace ShowHideComponent
 
         private void exportarImagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Oi");
+            Console.WriteLine("Test");
         }
 
         private void consoleToolStripMenuItem_Click(object sender, EventArgs e)
