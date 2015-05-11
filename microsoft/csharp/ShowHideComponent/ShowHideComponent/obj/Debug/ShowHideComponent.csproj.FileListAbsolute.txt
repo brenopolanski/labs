@@ -1,0 +1,9 @@
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\bin\Debug\ShowHideComponent.exe.config
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\bin\Debug\ShowHideComponent.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\bin\Debug\ShowHideComponent.pdb
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.csprojResolveAssemblyReference.cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.Form1.resources
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.Properties.Resources.resources
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.csproj.GenerateResource.Cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\nutes-ecg\smadecg-ecg\ShowHideComponent\ShowHideComponent\obj\Debug\ShowHideComponent.pdb
