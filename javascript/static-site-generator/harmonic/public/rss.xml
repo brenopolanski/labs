@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>My awesome static website</title>
+        <link>http://awesome.com</link>
+        <description>This is the description</description>
+        <managingEditor>Breno Polanski</managingEditor>
+        <webMaster>Breno Polanski</webMaster>
+        <pubDate>Sun, 28 Jun 2015 19:48:25 GMT</pubDate>
+        <language>en</language>
+        <atom:link href="http://awesome.com/rss.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Hello World</title>
+            <link>http://awesome.com/2015/06/hello-world</link>
+            <description><![CDATA[<h1 id="hello-world">Hello World</h1>
+]]></description>
+            <pubDate>Sun, 28 Jun 2015 19:32:59 GMT</pubDate>
+            <guid>http://awesome.com/2015/06/hello-world</guid>
+        </item>
+        
+    </channel>
+</rss>

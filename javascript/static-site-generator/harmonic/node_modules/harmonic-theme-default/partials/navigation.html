@@ -1,0 +1,9 @@
+<nav class="social">
+    {% for flag in config.i18n.languages %}
+        <span>
+            <a href="{% if flag ==  config.i18n.default %}/ {% else %}/{{ flag }}{% endif %}">
+                {{ flag }}
+            </a>
+        </span>
+    {% endfor %}
+</nav>

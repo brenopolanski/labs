@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ config.title }}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+{% include "partials/navigation.html" %}
+<header>
+    <section>
+        <h1>
+            {{ config.title }}
+        </h1>
+    </section>
+</header>
+
+<main>
+    <section id="posts">
+        <ul>
+            {% for post in posts %}
+            <li>
+                <span>
+                    {{ post.date }}
+                </span>
+                <article>
+                    <a href="/{{ post.link }}">
+                        {{ post.title }}
+                    </a>
+                    <section>
+                        {{ post.content }}
+                    </section>
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+
+{% include "partials/footer.html" %}
+
+</body>
+</html>
