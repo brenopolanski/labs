@@ -6,6 +6,7 @@
 * [C and C++](c_cplusplus/)
 * [Chrome Apps](chrome-apps/)
 * [CSS](css/)
+* [HTML5](html5/)
 * [Java](java/)
 * [JavaScript](javascript/)
 * [Microsoft](microsoft/)
