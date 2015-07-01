@@ -1,0 +1,9 @@
+{
+  "name": "calendar-view",
+  "version": "1.0.0",
+  "description": "Calendar View",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.10.1"
+  }
+}
