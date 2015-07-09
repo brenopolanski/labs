@@ -1,0 +1,8 @@
+{
+  "name": "serialportjs",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "serialport": "^1.7.4"
+  }
+}

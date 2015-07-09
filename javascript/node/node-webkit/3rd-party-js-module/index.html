@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script>
+		// var async = require('async');
+		var serialport = require('serialport');
+		var SerialPort = serialport.SerialPort;
+		// list serial ports:
+		serialport.list(function (err, ports) {
+		  // ports.forEach(function(port) {
+		  //   console.log(port.comName);
+		  // });
+		  
+		  console.log(err);
+		  console.log(ports);
+		});
+	</script>
+</head>
+<body>
+	test should be here.
+</body>
+</html>
