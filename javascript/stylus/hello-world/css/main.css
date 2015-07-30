@@ -1,0 +1,42 @@
+body,
+main,
+div {
+  color: #fff;
+}
+body,
+main,
+div {
+  color: #fff;
+}
+a {
+  color: #000;
+}
+a:hover {
+  color: #f00;
+}
+.foo[title*='&'] {
+  font-size: 3em;
+}
+a {
+  color: #000;
+}
+a:hover,
+input:focus {
+  color: #f00;
+}
+body {
+  color: #000;
+  font-size: 14px;
+}
+div {
+  width: 150px;
+  height: 120px;
+  margin-left: -75px;
+  margin-top: -60px;
+}
+div {
+  width: 150px;
+  height: 120px;
+  margin-left: -75px;
+  margin-top: -60px;
+}
