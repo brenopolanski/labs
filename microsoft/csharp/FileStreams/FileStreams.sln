@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStreams", "FileStreams\FileStreams.csproj", "{2FC9976A-9DD0-4765-A56B-BCEFC1B417DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FC9976A-9DD0-4765-A56B-BCEFC1B417DD}.Debug|x86.ActiveCfg = Debug|x86
+		{2FC9976A-9DD0-4765-A56B-BCEFC1B417DD}.Debug|x86.Build.0 = Debug|x86
+		{2FC9976A-9DD0-4765-A56B-BCEFC1B417DD}.Release|x86.ActiveCfg = Release|x86
+		{2FC9976A-9DD0-4765-A56B-BCEFC1B417DD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FileStreams\FileStreams.csproj
+	EndGlobalSection
+EndGlobal
