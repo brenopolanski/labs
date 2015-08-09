@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo Simples de Mapa com Leaflet</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+</head>
+<body>
+	<div id="map" style="width: 600px; height: 400px"></div>
+
+	<script>
+		var App = function() {
+			return {
+				// Função para pegar inicializar um objeto leaflet.js e guardar sua instancia
+				mapStart: function() {
+					var map = L.map('map').setView([-8.0968439, -34.970715], 13);
+
+					L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+						attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+					}).addTo(map);
+
+					return map;
+				},
+
+				// Função para pegar uma instância do mapa e uma determinada latitude
+                // e longitude e um texto para inserir um marker com texto
+				mapMarker: function(map, lat, lon, texto) {
+					L.marker([lat, lon]).addTo(map)
+					.bindPopup(texto)
+					.openPopup();
+				},
+
+				// Função para retornar um endereço e adicionar um marker no exato local onde o click foi dado
+				returnAdress: function(map) {
+					var latClick = null;
+					var lonClick = null;
+
+					map.on('click', function(e) {
+						var latClick = e.latlng.lat;
+						var lonClick = e.latlng.lng;
+
+						$.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat='+ latClick + '&lon=' + lonClick + '&addressdetails=1',
+						
+						function(data) {
+							var id_data = data.place_id;
+							var display_name = data.address.road;
+
+							item = '<li id="' + id_data + '">' + display_name + '</li>';
+
+							$('<ul/>', { class : 'my-new-list',
+								html : item
+							}).appendTo('body');
+
+							//adiciona o marker
+							L.marker([latClick, lonClick]).addTo(map);
+						});
+					});
+				}
+			}
+		}();
+
+		$(function() {
+			var mapInstance = App.mapStart();
+			App.mapMarker(mapInstance, -8.0968439, -34.970715, "OSM Rocks!!");
+			App.returnAdress(mapInstance);
+		});
+	</script>
+</body>
+</html>
