@@ -1,0 +1,20 @@
+img {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+div {
+  -webkit-border-radius: 10px/12px 10px;
+  -moz-border-radius: 10px/12px 10px;
+  -webkit-border-radius: 10px/12px 10px;
+  -moz-border-radius: 10px/12px 10px;
+  border-radius: 10px/12px 10px;
+}
+.button-send {
+  background: #fc0;
+  color: #fff;
+}
+.button-send:hover {
+  color: #f00;
+  background: #e2e2e2;
+}

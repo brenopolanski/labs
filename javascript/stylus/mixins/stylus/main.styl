@@ -1,0 +1,26 @@
+border-radius(n)
+	-webkit-border-radius n
+	-moz-border-radius n
+	border-radius n
+
+border-radius2()
+	-webkit-border-radius arguments
+	-moz-border-radius arguments
+	border-radius arguments
+
+img
+	border-radius(10px)
+
+div
+	border-radius2 10px/12px 10px
+
+primary-button()
+	background #fc0
+	color #fff
+
+	&:hover
+		color #f00
+		background #e2e2e2
+
+.button-send
+	primary-button()
