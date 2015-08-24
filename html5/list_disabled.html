@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List Disabled</title>
+	<style>
+		li[disabled="disabled"] {
+			color: gray;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+	</ul>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script>
+		$(function() {
+			// $('ul > li').prop('disabled', true);
+			$('ul > li').attr('disabled', 'disabled');
+		});
+	</script>
+</body>
+</html>
