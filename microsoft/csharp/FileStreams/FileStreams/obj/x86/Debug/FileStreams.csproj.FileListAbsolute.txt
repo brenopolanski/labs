@@ -1,0 +1,5 @@
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\FileStreams\FileStreams\bin\Debug\FileStreams.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\FileStreams\FileStreams\bin\Debug\FileStreams.pdb
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\FileStreams\FileStreams\obj\x86\Debug\FileStreams.csprojResolveAssemblyReference.cache
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\FileStreams\FileStreams\obj\x86\Debug\FileStreams.exe
+C:\Users\Breno Polanski\Desktop\GitHub\my\labs\microsoft\csharp\FileStreams\FileStreams\obj\x86\Debug\FileStreams.pdb

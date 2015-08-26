@@ -1,0 +1,45 @@
+// Variaveis que utilizei para se conectar ao MySQL
+MySqlConnection CONEXAO = new MySqlConnection();
+MySqlCommand COMANDO = new MySqlCommand();
+MySqlDataReader DR;
+
+// Conexão com o BD MySQL
+CONEXAO.ConnectionString = ("Server=127.0.0.1;Database=db_teste;User=root;Password=root;");
+COMANDO.Connection = CONEXAO;
+CONEXAO.Open();
+
+//-------------------------------------------------------------------------------------
+// Gravar imagem no BD
+//-------------------------------------------------------------------------------------
+pictureBox1.Image = Image.FromFile("C:\\tema.jpg");
+Application.DoEvents();
+
+System.IO.MemoryStream MS = new System.IO.MemoryStream();
+pictureBox1.Image.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg);
+byte[] file = new byte[MS.Length];
+file = MS.ToArray();
+pictureBox1.Image = null;
+            
+COMANDO.Commandtext = ("UPDATE tbl_teste SET imagem=?imagem WHERE id=1", CONEXAO);
+COMANDO.Parameters.Add(new MySqlParameter("?imagem", MySqlDbType.LongBlob, file.Length)).Value = file;
+COMANDO.ExecuteNonQuery();
+
+// Liguem não pela msg tava muito p da vida. rsrs
+MessageBox.Show("Finalmente essa merda dessa imagem foi salva (aparentemente) e chegou até aqui !!");
+
+
+//-------------------------------------------------------------------------------------
+// Recupera a imagem no BD
+//-------------------------------------------------------------------------------------
+COMANDO.CommandText = ("SELECT * FROM tbl_teste WHERE id=1");
+DR = COMANDO.ExecuteReader();
+DR.Read();
+Byte[] teste = new Byte[DR.GetBytes(2,0,null,0,int.MaxValue)];
+DR.GetBytes(2, 0, teste, 0, teste.Length);
+DR.Close();
+
+System.IO.MemoryStream MS = new System.IO.MemoryStream(teste, 0, teste.Length);
+pictureBox1.Image = Image.FromStream(MS);
+
+// Liguem não pela msg ... Aqui ainda tava muito p da vida tbm. rsrs
+MessageBox.Show("NOSSAA! Vai chover PEN-DRIVE se vc conseguir ver essa msg e a imagem no pictureBox");
