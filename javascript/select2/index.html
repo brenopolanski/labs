@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example Select2</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+	<style>
+		select {
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<select name="select-country" id="select-country-1">
+		<option></option>
+		<option value="brazil">Brazil</option>
+		<option value="japan">Japan</option>
+		<option value="italy">Italy</option>
+		<option value="usa">USA</option>
+		<option value="spain">Spain</option>
+	</select>
+
+	<br>
+	<br>
+	<br>
+
+	<select name="select-country" id="select-country-2" multiple>
+		<option value="brazil">Brazil</option>
+		<option value="japan">Japan</option>
+		<option value="italy">Italy</option>
+		<option value="usa">USA</option>
+		<option value="spain">Spain</option>
+	</select>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<script>
+		$(function() {
+			$('#select-country-1').select2({
+				placeholder: 'Select a country',
+				allowClear: true
+			});
+			
+			$('#select-country-2').select2();
+
+			$('#select-country-1').change(function() {
+				console.log($('#select-country-1').val());
+			});
+
+			$('#select-country-2').change(function() {
+				console.log($('#select-country-2').val());
+			});
+		});
+	</script>
+</body>
+</html>
