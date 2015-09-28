@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo 1 - Básico sem JSX</title>
+</head>
+<body>
+	<p id="container"></p>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+	<script>
+		var ExampleApplication = React.createClass({
+			render: function() {
+				var elapsed = Math.round(this.props.elapsed / 100);
+				var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0');
+				var message = 'O React está rodando com sucesso há ' + seconds + ' seconds.';
+				return React.DOM.p(null, message);
+			}
+		});
+
+		var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+		var start = new Date().getTime();
+
+		setInterval(function() {
+			React.render(
+				ExampleApplicationFactory({ elapsed: new Date().getTime() - start }),
+				document.getElementById('container')
+			);
+		}, 50);
+	</script>
+</body>
+</html>
