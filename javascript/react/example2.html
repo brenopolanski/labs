@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo 2 - Utilizando JSX</title>
+</head>
+<body>
+	<div id="container"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var ExampleApplication = React.createClass({
+			render: function() {
+				var elapsed = Math.round(this.props.elapsed / 100);
+				var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0');
+				var message = 'O React está rodando com sucesso há ' + seconds + ' seconds.';
+				return <p>{message}</p>;
+			}
+		});
+
+		var start = new Date().getTime();
+
+		setInterval(function() {
+			React.render(
+				<ExampleApplication elapsed={ new Date().getTime() - start } />,
+				document.getElementById('container')
+			);
+		}, 50);
+	</script>
+</body>
+</html>

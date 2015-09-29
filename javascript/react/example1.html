@@ -14,15 +14,20 @@
 				var elapsed = Math.round(this.props.elapsed / 100);
 				var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0');
 				var message = 'O React está rodando com sucesso há ' + seconds + ' seconds.';
+				// Estamos utilizando um factory built-in do React para selecionar 
+				// a tag p no DOM e inserir o valor de message.
 				return React.DOM.p(null, message);
 			}
 		});
 
+		// Estamos criando um elemento de React com o método createFactory, 
+		// que nos permitirá extendê-lo e utilizá-lo sempre que quisermos.
 		var ExampleApplicationFactory = React.createFactory(ExampleApplication);
 		var start = new Date().getTime();
 
 		setInterval(function() {
 			React.render(
+				// Estamos chamando o elemento criado, passando a propriedade elapsed e seu valor
 				ExampleApplicationFactory({ elapsed: new Date().getTime() - start }),
 				document.getElementById('container')
 			);
