@@ -50,6 +50,7 @@ var app = app || {};
 
 	var TodoApp = React.createClass({
 		mixins: [BackboneMixin],
+
 		getBackboneCollections: function () {
 			return [this.props.todos];
 		},
@@ -58,6 +59,7 @@ var app = app || {};
 			return {editing: null};
 		},
 
+		// componentDidMount: Será chamado assim que o elemento for renderizado na página
 		componentDidMount: function () {
 			var Router = Backbone.Router.extend({
 				routes: {
@@ -76,6 +78,9 @@ var app = app || {};
 			this.props.todos.fetch();
 		},
 
+		// Chamado imediatamente após as atualizações do componente são liberadas para o DOM. 
+		// Este método não é chamado para o inicial render.
+		// Use isso como uma oportunidade de operar no DOM quando o componente foi atualizado.
 		componentDidUpdate: function () {
 			// If saving were expensive we'd listen for mutation events on Backbone and
 			// do this manually. however, since saving isn't expensive this is an
@@ -85,6 +90,7 @@ var app = app || {};
 			});
 		},
 
+		// Quando clico no botão "Enter", criar uma nova task
 		handleNewTodoKeyDown: function (event) {
 			if (event.which !== ENTER_KEY) {
 				return;
@@ -103,6 +109,7 @@ var app = app || {};
 			event.preventDefault();
 		},
 
+		// If clicar no checkbox
 		toggleAll: function (event) {
 			var checked = event.target.checked;
 			this.props.todos.forEach(function (todo) {

@@ -1,10 +1,11 @@
+/* global React */
 var app = app || {};
 
-(function() {
+(function () {
 	'use strict';
 
 	app.TodoFooter = React.createClass({
-		render: function() {
+		render: function () {
 			var activeTodoWord = this.props.count === 1 ? 'item' : 'items';
 			var clearButton = null;
 

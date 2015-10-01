@@ -1,30 +1,34 @@
+/* global React */
 var app = app || {};
 
-(function() {
+(function () {
 	'use strict';
 
 	var ESCAPE_KEY = 27;
 	var ENTER_KEY = 13;
 
 	app.TodoItem = React.createClass({
-		getInitialState: function() {
+		getInitialState: function () {
 			return {editText: this.props.todo.get('title')};
 		},
 
-		handleSubmit: function() {
+		handleSubmit: function () {
 			var val = this.state.editText.trim();
 			if (val) {
 				this.props.onSave(val);
 				this.setState({editText: val});
-			}
-			else {
+			} else {
 				this.props.onDestroy();
 			}
 			return false;
 		},
 
-		handleEdit: function() {
-			this.props.onEdit(function() {
+		handleEdit: function () {
+			// react optimizes renders by batching them. This means you can't call
+			// parent's `onEdit` (which in this case triggeres a re-render), and
+			// immediately manipulate the DOM as if the rendering's over. Put it as a
+			// callback. Refer to app.jsx' `edit` method
+			this.props.onEdit(function () {
 				var node = React.findDOMNode(this.refs.editField);
 				node.focus();
 				node.setSelectionRange(node.value.length, node.value.length);
@@ -32,21 +36,20 @@ var app = app || {};
 			this.setState({editText: this.props.todo.get('title')});
 		},
 
-		handleKeyDown: function(event) {
+		handleKeyDown: function (event) {
 			if (event.which === ESCAPE_KEY) {
 				this.setState({editText: this.props.todo.get('title')});
 				this.props.onCancel();
-			}
-			else if (event.which === ENTER_KEY) {
+			} else if (event.which === ENTER_KEY) {
 				this.handleSubmit();
 			}
 		},
 
-		handleChange: function(event) {
+		handleChange: function (event) {
 			this.setState({editText: event.target.value});
 		},
 
-		render: function() {
+		render: function () {
 			return (
 				<li className={classNames({
 					completed: this.props.todo.get('completed'),
@@ -64,11 +67,11 @@ var app = app || {};
 						</label>
 						<button className="destroy" onClick={this.props.onDestroy} />
 					</div>
-					<input 
+					<input
 						ref="editField"
 						className="edit"
 						value={this.state.editText}
-						onBlur={this.handleChange}
+						onBlur={this.handleSubmit}
 						onChange={this.handleChange}
 						onKeyDown={this.handleKeyDown}
 					/>
