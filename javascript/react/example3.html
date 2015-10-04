@@ -72,17 +72,17 @@
 		        return (
 		            <form>
 		                <input
+		                    ref="filterTextInput"
 		                    type="text"
 		                    placeholder="Search..."
 		                    value={this.props.filterText}
-		                    ref="filterTextInput"
 		                    onChange={this.handleChange}
 		                />
 		                <p>
 		                    <input
+		                        ref="inStockOnlyInput"
 		                        type="checkbox"
 		                        checked={this.props.inStockOnly}
-		                        ref="inStockOnlyInput"
 		                        onChange={this.handleChange}
 		                    />
 		                    {' '}
