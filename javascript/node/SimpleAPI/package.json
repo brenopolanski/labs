@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-api-sample",
+  "version": "1.0.0",
+  "description": "An example of making a Node.js API server",
+  "author": "Breno Polanski",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3"
+  }
+}
