@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo 4 - Load Initial Data via AJAX</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var UserGist = React.createClass({
+			getInitialState: function() {
+				return {
+					username: '',
+					lastGistUrl: ''
+				};
+			},
+
+			componentDidMount: function() {
+				$.get(this.props.source, function(result) {
+					var lastGist = result[0];
+					if (this.isMounted()) {
+						this.setState({
+							username: lastGist.owner.login,
+							lastGistUrl: lastGist.html_url
+						});
+					}
+				}.bind(this));
+			},
+
+			render: function() {
+				return (
+					<div>
+						{this.state.username} last gist is
+						<a href={this.state.lastGistUrl}>here</a>.
+					</div>
+				);
+			}
+		});
+
+		React.render(
+			<UserGist source="https://api.github.com/users/octocat/gists" />,
+			document.body
+		);		
+	</script>
+</body>
+</html>
