@@ -5,7 +5,10 @@ var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var methodOverride = require('method-override');
 var error = require('./middlewares/error');
+var mongoose = require('mongoose');
 var app = express();
+
+global.db = mongoose.connect('mongodb://localhost/ntalk');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');

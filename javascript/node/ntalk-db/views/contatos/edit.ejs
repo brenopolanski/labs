@@ -3,9 +3,9 @@
 		<h2>Ntalk - Editar contatos</h2>
 	</header>
 	<section>
-		<form action="/contato/<%- id %>?_method=put" method="post">
+		<form action="/contato/<%- contato._id %>?_method=put" method="post">
 			<label>Nome:</label>
-			<input type="text" name="contato[name]" value="<%- contato.name %>">
+			<input type="text" name="contato[nome]" value="<%- contato.nome %>">
 			<label>Email:</label>
 			<input type="text" name="contato[email]" value="<%- contato.email %>">
 			<button type="submit">Atualizar</button>

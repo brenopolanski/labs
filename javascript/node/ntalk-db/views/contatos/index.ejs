@@ -4,7 +4,7 @@
 	</header>
 	<section>
 		<form action="/contato" method="post">
-			<input type="text" name="contato[name]" placeholder="Nome">
+			<input type="text" name="contato[nome]" placeholder="Nome">
 			<input type="text" name="contato[email]" placeholder="E-mail">
 			<button type="submit">Cadastrar</button>
 		</form>
@@ -17,12 +17,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% contatos.forEach(function(contato, index) { %>
+				<% contatos.forEach(function(contato) { %>
 					<tr>
-						<td><%- contato.name %></td>
+						<td><%- contato.nome %></td>
 						<td><%- contato.email %></td>
 						<td>
-							<a href="/contato/<%- index %>">Detalhes</a>
+							<a href="/contato/<%- contato._id %>">Detalhes</a>
 						</td>
 					</tr>
 				<% }); %>
