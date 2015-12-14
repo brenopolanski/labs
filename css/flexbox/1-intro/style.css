@@ -29,59 +29,8 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 
 /* We start writing out flexbox here. The above is just page setup */
-/*.container {
+.container {
   display:flex;
   border:10px solid goldenrod;
   height:100vh;
-}*/
-
-/* flex-direction => row, column, row-reverse, column-reverse */
-/*.container {
-  display:flex;
-  border:10px solid goldenrod;
-  min-height:100vh;
-  flex-direction: row;
-}*/
-
-/*flex-wrap => nowrap, wrap, wrap-reverse */
-/*.container {
-  display:flex;
-  border:10px solid goldenrod;
-  min-height:100vh;
-  flex-wrap: wrap;
-}*/
-
-/*.box {*/
-	/*width: 33.3333333%;*/
-	/*margin: 10px;*/
-/*}*/
-
-/*============================*/
-/*Flexbox Ordering*/
-/*============================*/
-/*.container {
-  display: flex;
-}
-
-.box {*/
-  /*flex: 1 1 auto;*/
-/*  flex: 1;
-}
-
-.box3 {
-  order: 3;
-}
-
-.box7 {
-  order: 4;
-}*/
-
-/*============================*/
-/*Flexbox Alignment + Centering with justify-content */
-/*============================*/
-
-/* flex-start, flex-end, center, space-between, space-around */
-.container {
-  display: flex;
-  justify-content: space-around;
 }
