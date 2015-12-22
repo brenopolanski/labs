@@ -10,6 +10,7 @@
 * [Java](java/)
 * [JavaScript](javascript/)
 * [Microsoft](microsoft/)
+* [PHP](php/)
 * [Python](python/)
 * [Shell](shell/)
 
