@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Neon Text</title>
+	<style>
+		body {
+			background-color: #424242;
+		}
+
+		.neon {
+			text-align: center;
+			font-size: 40px;
+			margin: 20px 0 20px 0;
+			color: #fff;
+			text-shadow: 0 0 10px #fff,
+						 0 0 20px #fff,
+						 0 0 30px #fff,
+						 0 0 40px #228dff,
+						 0 0 70px #228dff,
+						 0 0 80px #228dff,
+						 0 0 100px #228dff,
+						 0 0 150px #228dff;
+			-webkit-animation: neonAnimation 1.5s ease-in-out infinite alternate;
+			-moz-animation: neonAnimation 1.5s ease-in-out infinite alternate;
+			animation: neonAnimation 1.5s ease-in-out infinite alternate;
+		}
+
+		/* Webkit prefix */
+		@-webkit-keyframes neonAnimation {
+			from {
+				text-shadow: 0 0 10px #ffffff,
+				             0 0 20px  #ffffff,
+				             0 0 30px  #ffffff,
+				             0 0 40px  #228dff,
+				             0 0 70px  #228dff,
+				             0 0 80px  #228dff,
+				             0 0 100px #228dff,
+				             0 0 150px #228dff;
+			}
+			to {
+				text-shadow: 0 0 5px #ffffff,
+				             0 0 10px #ffffff,
+				             0 0 15px #ffffff,
+				             0 0 20px #228dff,
+				             0 0 35px #228dff,
+				             0 0 40px #228dff,
+				             0 0 50px #228dff,
+				             0 0 75px #228dff;
+			}
+		}
+
+		/* Moz prefix */
+		@-moz-keyframes neonAnimation {
+			from {
+				text-shadow: 0 0 10px #ffffff,
+				             0 0 20px  #ffffff,
+				             0 0 30px  #ffffff,
+				             0 0 40px  #228dff,
+				             0 0 70px  #228dff,
+				             0 0 80px  #228dff,
+				             0 0 100px #228dff,
+				             0 0 150px #228dff;
+			}
+			to {
+				text-shadow: 0 0 5px #ffffff,
+				             0 0 10px #ffffff,
+				             0 0 15px #ffffff,
+				             0 0 20px #228dff,
+				             0 0 35px #228dff,
+				             0 0 40px #228dff,
+				             0 0 50px #228dff,
+				             0 0 75px #228dff;
+			}
+		}
+
+		/* No prefix */
+		@keyframes neonAnimation {
+			from {
+				text-shadow: 0 0 10px #ffffff,
+				             0 0 20px  #ffffff,
+				             0 0 30px  #ffffff,
+				             0 0 40px  #228dff,
+				             0 0 70px  #228dff,
+				             0 0 80px  #228dff,
+				             0 0 100px #228dff,
+			             	 0 0 150px #228dff;
+			}
+			to {
+				text-shadow: 0 0 5px #ffffff,
+				             0 0 10px #ffffff,
+				             0 0 15px #ffffff,
+				             0 0 20px #228dff,
+				             0 0 35px #228dff,
+				             0 0 40px #228dff,
+				             0 0 50px #228dff,
+				             0 0 75px #228dff;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="neon">Breno Polanski</h1>
+	</div>
+</body>
+</html>
