@@ -1,0 +1,278 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'i', '--save-dev', 're-base' ]
+2 info using npm@2.11.0
+3 info using node@v0.10.25
+4 verbose node symlink /usr/bin/node
+5 verbose install initial load of /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/package.json
+6 warn package.json catch-of-the-day@1.0.0 No description
+7 warn package.json catch-of-the-day@1.0.0 No repository field.
+8 warn package.json catch-of-the-day@1.0.0 No README data
+9 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/autobind-decorator/package.json
+10 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/babel/package.json
+11 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/babelify/package.json
+12 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/browser-sync/package.json
+13 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/browserify/package.json
+14 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/connect-history-api-fallback/package.json
+15 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/firebase/package.json
+16 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp/package.json
+17 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-autoprefixer/package.json
+18 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-notify/package.json
+19 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-rename/package.json
+20 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-stylus/package.json
+21 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-uglify/package.json
+22 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/gulp-util/package.json
+23 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/history/package.json
+24 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/install/package.json
+25 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base/package.json
+26 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react/package.json
+27 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react-addons-css-transition-group/package.json
+28 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react-catalyst/package.json
+29 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react-dom/package.json
+30 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react-mixin/package.json
+31 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/react-router/package.json
+32 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/vinyl-buffer/package.json
+33 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/vinyl-source-stream/package.json
+34 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/watchify/package.json
+35 info package.json autobind-decorator@1.3.2 No repository field.
+36 info package.json gulp-rename@1.2.2 No license field.
+37 info package.json install@0.1.8 No license field.
+38 info package.json re-base@1.2.1 No license field.
+39 info package.json react-catalyst@0.3.0 No license field.
+40 info package.json gulp-notify@2.2.0 No license field.
+41 info package.json firebase@2.3.1 No license field.
+42 info package.json react-addons-css-transition-group@0.14.0 No repository field.
+43 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/package.json
+44 verbose install re-base is installed as 1.2.1
+45 silly cache add args [ 're-base', null ]
+46 verbose cache add spec re-base
+47 silly cache add parsed spec { raw: 're-base',
+47 silly cache add   scope: null,
+47 silly cache add   name: 're-base',
+47 silly cache add   rawSpec: '',
+47 silly cache add   spec: '*',
+47 silly cache add   type: 'range' }
+48 silly addNamed re-base@*
+49 verbose addNamed "*" is a valid semver range for re-base
+50 silly addNameRange { name: 're-base', range: '*', hasData: false }
+51 silly mapToRegistry name re-base
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/re-base
+55 verbose addNameRange registry:https://registry.npmjs.org/re-base not in flight; fetching
+56 verbose request uri https://registry.npmjs.org/re-base
+57 verbose request no auth needed
+58 info attempt registry request try #1 at 19:56:08
+59 verbose request using bearer token for auth
+60 verbose request id f38836f935105857
+61 verbose etag "7C3OEEYHYOMYPN42V3YID3X0E"
+62 http request GET https://registry.npmjs.org/re-base
+63 http 304 https://registry.npmjs.org/re-base
+64 silly get cb [ 304,
+64 silly get   { 'cache-control': 'max-age=300',
+64 silly get     'accept-ranges': 'bytes',
+64 silly get     date: 'Tue, 29 Dec 2015 22:56:10 GMT',
+64 silly get     via: '1.1 varnish',
+64 silly get     connection: 'keep-alive',
+64 silly get     'x-served-by': 'cache-atl6227-ATL',
+64 silly get     'x-cache': 'MISS',
+64 silly get     'x-cache-hits': '0',
+64 silly get     'x-timer': 'S1451429769.940863,VS0,VE106' } ]
+65 verbose etag https://registry.npmjs.org/re-base from cache
+66 verbose get saving re-base to /root/.npm/registry.npmjs.org/re-base/.cache.json
+67 silly addNameRange number 2 { name: 're-base', range: '*', hasData: true }
+68 silly addNameRange versions [ 're-base',
+68 silly addNameRange   [ '0.0.1',
+68 silly addNameRange     '0.0.2',
+68 silly addNameRange     '0.0.3',
+68 silly addNameRange     '0.0.4',
+68 silly addNameRange     '0.0.5',
+68 silly addNameRange     '0.0.6',
+68 silly addNameRange     '0.0.7',
+68 silly addNameRange     '0.0.8',
+68 silly addNameRange     '0.0.9',
+68 silly addNameRange     '0.0.10',
+68 silly addNameRange     '0.0.11',
+68 silly addNameRange     '0.1.0',
+68 silly addNameRange     '0.1.1',
+68 silly addNameRange     '1.0.0',
+68 silly addNameRange     '1.0.1',
+68 silly addNameRange     '1.0.2',
+68 silly addNameRange     '1.0.3',
+68 silly addNameRange     '1.1.0',
+68 silly addNameRange     '1.1.1',
+68 silly addNameRange     '1.1.2',
+68 silly addNameRange     '1.2.0',
+68 silly addNameRange     '1.2.1',
+68 silly addNameRange     '1.2.2',
+68 silly addNameRange     '1.3.0',
+68 silly addNameRange     '1.3.1',
+68 silly addNameRange     '1.4.0' ] ]
+69 silly addNamed re-base@1.4.0
+70 verbose addNamed "1.4.0" is a plain semver version for re-base
+71 silly mapToRegistry name re-base
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry uri https://registry.npmjs.org/re-base
+75 verbose addRemoteTarball https://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz not in flight; adding
+76 verbose addRemoteTarball [ 'https://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz',
+76 verbose addRemoteTarball   'be92e9215e1f6b2e8542187502723ed8cbc46d8e' ]
+77 info retry fetch attempt 1 at 19:56:09
+78 info attempt registry request try #1 at 19:56:09
+79 http fetch GET https://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz
+80 verbose request using bearer token for auth
+81 http fetch 200 https://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz
+82 silly fetchAndShaCheck shasum be92e9215e1f6b2e8542187502723ed8cbc46d8e
+83 verbose addTmpTarball /tmp/npm-19528-5c900c43/registry.npmjs.org/re-base/-/re-base-1.4.0.tgz not in flight; adding
+84 verbose addTmpTarball already have metadata; skipping unpack for re-base@1.4.0
+85 silly cache afterAdd re-base@1.4.0
+86 verbose afterAdd /root/.npm/re-base/1.4.0/package/package.json not in flight; writing
+87 verbose afterAdd /root/.npm/re-base/1.4.0/package/package.json written
+88 silly install resolved [ { name: 're-base',
+88 silly install resolved     version: '1.4.0',
+88 silly install resolved     description: 'A Relay inspired library for building React.js + Firebase applications.',
+88 silly install resolved     main: 'index.js',
+88 silly install resolved     repository:
+88 silly install resolved      { type: 'git',
+88 silly install resolved        url: 'git+https://github.com/tylermcginnis/re-base.git' },
+88 silly install resolved     author: { name: 'Tyler McGinnis and Jacob Turner' },
+88 silly install resolved     dependencies: { firebase: '^2.2.7' },
+88 silly install resolved     devDependencies:
+88 silly install resolved      { babel: '^5.4.7',
+88 silly install resolved        'babel-core': '^5.4.7',
+88 silly install resolved        'babel-loader': '^5.1.3',
+88 silly install resolved        coveralls: '^2.11.2',
+88 silly install resolved        'jasmine-core': '^2.3.4',
+88 silly install resolved        karma: '^0.13.9',
+88 silly install resolved        'karma-chrome-launcher': '^0.1.12',
+88 silly install resolved        'karma-coverage': '^0.3.1',
+88 silly install resolved        'karma-failed-reporter': '0.0.3',
+88 silly install resolved        'karma-firefox-launcher': '^0.1.6',
+88 silly install resolved        'karma-jasmine': '^0.3.5',
+88 silly install resolved        'karma-spec-reporter': '0.0.19',
+88 silly install resolved        'karma-webpack': '^1.7.0',
+88 silly install resolved        'node-libs-browser': '^0.5.2',
+88 silly install resolved        react: '^0.13.3',
+88 silly install resolved        webpack: '^1.9.10' },
+88 silly install resolved     scripts:
+88 silly install resolved      { build: 'webpack',
+88 silly install resolved        test: './node_modules/karma/bin/karma start tests/karma.conf.js',
+88 silly install resolved        travis: './node_modules/karma/bin/karma start tests/karma.conf.js' },
+88 silly install resolved     gitHead: 'bbe54aabdad42994c3871560065331aa939889c1',
+88 silly install resolved     bugs: { url: 'https://github.com/tylermcginnis/re-base/issues' },
+88 silly install resolved     homepage: 'https://github.com/tylermcginnis/re-base#readme',
+88 silly install resolved     _id: 're-base@1.4.0',
+88 silly install resolved     _shasum: 'be92e9215e1f6b2e8542187502723ed8cbc46d8e',
+88 silly install resolved     _from: 're-base@*',
+88 silly install resolved     _npmVersion: '3.4.1',
+88 silly install resolved     _nodeVersion: '5.1.0',
+88 silly install resolved     _npmUser: { name: 'tylermcginnis', email: 'tylermcginnis33@gmail.com' },
+88 silly install resolved     dist:
+88 silly install resolved      { shasum: 'be92e9215e1f6b2e8542187502723ed8cbc46d8e',
+88 silly install resolved        tarball: 'http://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz' },
+88 silly install resolved     maintainers: [ [Object], [Object] ],
+88 silly install resolved     directories: {},
+88 silly install resolved     _resolved: 'https://registry.npmjs.org/re-base/-/re-base-1.4.0.tgz' } ]
+89 info install re-base@1.4.0 into /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15
+90 info installOne re-base@1.4.0
+91 verbose installOne of re-base to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15 not in flight; installing
+92 verbose lock using /root/.npm/_locks/re-base-7bcca6b690124e1a.lock for /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+93 silly install write writing re-base 1.4.0 to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+94 verbose unbuild node_modules/re-base
+95 info preuninstall re-base@1.2.1
+96 info uninstall re-base@1.2.1
+97 verbose unbuild rmStuff re-base@1.2.1 from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules
+98 info postuninstall re-base@1.2.1
+99 silly gentlyRm /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base is being purged from base /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15
+100 verbose gentlyRm don't care about contents; nuking /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+101 silly vacuum-fs purging /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+102 silly vacuum-fs quitting because other entries in /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules
+103 verbose tar unpack /root/.npm/re-base/1.4.0/package.tgz
+104 verbose tar unpacking to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+105 silly gentlyRm /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base is being purged
+106 verbose gentlyRm don't care about contents; nuking /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+107 silly gunzTarPerm modes [ '755', '644' ]
+108 silly gunzTarPerm extractEntry package.json
+109 silly gunzTarPerm extractEntry .npmignore
+110 silly gunzTarPerm extractEntry README.md
+111 silly gunzTarPerm extractEntry index.js
+112 silly gunzTarPerm extractEntry webpack.config.js
+113 silly gunzTarPerm extractEntry .travis.yml
+114 silly gunzTarPerm extractEntry dist/bundle.js
+115 silly gunzTarPerm extractEntry examples/chatapp/package.json
+116 silly gunzTarPerm extractEntry examples/chatapp/README.md
+117 silly gunzTarPerm extractEntry examples/chatapp/webpack.config.js
+118 silly gunzTarPerm extractEntry examples/chatapp/dist/index.html
+119 silly gunzTarPerm extractEntry examples/chatapp/src/App.js
+120 silly gunzTarPerm extractEntry examples/chatapp/src/components/Container.js
+121 silly gunzTarPerm extractEntry examples/chatapp/src/components/Message.js
+122 silly gunzTarPerm extractEntry examples/chatapp/src/components/NewChat.js
+123 silly gunzTarPerm extractEntry examples/github-notetaker/package.json
+124 silly gunzTarPerm extractEntry examples/github-notetaker/README.md
+125 silly gunzTarPerm extractEntry examples/github-notetaker/webpack.config.js
+126 silly gunzTarPerm extractEntry examples/github-notetaker/app/App.js
+127 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Home.js
+128 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Main.js
+129 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Profile.js
+130 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/SearchGithub.js
+131 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Github/Repos.js
+132 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Github/UserProfile.js
+133 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Notes/AddNote.js
+134 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Notes/Notes.js
+135 silly gunzTarPerm extractEntry examples/github-notetaker/app/components/Notes/NotesList.js
+136 silly gunzTarPerm extractEntry examples/github-notetaker/app/config/routes.js
+137 silly gunzTarPerm extractEntry examples/github-notetaker/app/utils/helpers.js
+138 silly gunzTarPerm extractEntry examples/github-notetaker/public/index.html
+139 silly gunzTarPerm extractEntry examples/todolist - syncState/package.json
+140 silly gunzTarPerm extractEntry examples/todolist - syncState/README.md
+141 silly gunzTarPerm extractEntry examples/todolist - syncState/webpack.config.js
+142 silly gunzTarPerm extractEntry examples/todolist - syncState/app/AddItem.js
+143 silly gunzTarPerm extractEntry examples/todolist - syncState/app/App.js
+144 silly gunzTarPerm extractEntry examples/todolist - syncState/app/List.js
+145 silly gunzTarPerm extractEntry examples/todolist - syncState/public/index.html
+146 silly gunzTarPerm extractEntry src/rebase.js
+147 silly gunzTarPerm extractEntry tests/karma.conf.js
+148 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/prettify.js
+149 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/sorter.js
+150 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/base.css
+151 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/index.html
+152 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/prettify.css
+153 silly gunzTarPerm extractEntry tests/coverage/Chrome 43.0.2357 (Mac OS X 10.10.3)/sort-arrow-sprite.png
+154 silly gunzTarPerm extractEntry tests/coverage/lcov.info
+155 silly gunzTarPerm extractEntry tests/index.html
+156 silly gunzTarPerm extractEntry tests/specs/re-base.spec.js
+157 verbose write writing to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base/package.json
+158 info preinstall re-base@1.4.0
+159 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base/package.json
+160 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base/package.json
+161 silly install resolved []
+162 verbose about to build /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+163 info build /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+164 info linkStuff re-base@1.4.0
+165 silly linkStuff re-base@1.4.0 has /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules as its parent node_modules
+166 verbose linkBins re-base@1.4.0
+167 verbose linkMans re-base@1.4.0
+168 verbose rebuildBundles re-base@1.4.0
+169 info install re-base@1.4.0
+170 info postinstall re-base@1.4.0
+171 verbose unlock done using /root/.npm/_locks/re-base-7bcca6b690124e1a.lock for /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/node_modules/re-base
+172 verbose validateInstall loading /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15/package.json for validation
+173 verbose stack Error: The package history does not satisfy its siblings' peerDependencies requirements!
+173 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+173 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:267:7
+173 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+173 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+173 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+173 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+173 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+173 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+173 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+173 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+174 verbose cwd /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/15
+175 error Linux 3.13.0-58-generic
+176 error argv "node" "/usr/local/bin/npm" "i" "--save-dev" "re-base"
+177 error node v0.10.25
+178 error npm  v2.11.0
+179 error code EPEERINVALID
+180 error peerinvalid The package history does not satisfy its siblings' peerDependencies requirements!
+180 error peerinvalid Peer react-router@1.0.3 wants history@^1.17.0
+181 verbose exit [ 1, true ]
