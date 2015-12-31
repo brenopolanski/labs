@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   '--save-dev',
+1 verbose cli   'autobind-decorator' ]
+2 info using npm@2.11.0
+3 info using node@v0.10.25
+4 verbose node symlink /usr/bin/node
+5 verbose install initial load of /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/package.json
+6 warn package.json catch-of-the-day@1.0.0 No description
+7 warn package.json catch-of-the-day@1.0.0 No repository field.
+8 warn package.json catch-of-the-day@1.0.0 No README data
+9 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator/package.json
+10 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/babel/package.json
+11 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/babelify/package.json
+12 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/browser-sync/package.json
+13 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/browserify/package.json
+14 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/connect-history-api-fallback/package.json
+15 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/firebase/package.json
+16 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp/package.json
+17 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-autoprefixer/package.json
+18 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-notify/package.json
+19 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-rename/package.json
+20 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-stylus/package.json
+21 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-uglify/package.json
+22 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/gulp-util/package.json
+23 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/history/package.json
+24 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/install/package.json
+25 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/re-base/package.json
+26 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react/package.json
+27 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react-addons-css-transition-group/package.json
+28 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react-catalyst/package.json
+29 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react-dom/package.json
+30 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react-mixin/package.json
+31 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/react-router/package.json
+32 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/vinyl-buffer/package.json
+33 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/vinyl-source-stream/package.json
+34 verbose installManyTop reading scoped package data from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/watchify/package.json
+35 info package.json firebase@2.3.1 No license field.
+36 info package.json autobind-decorator@1.3.2 No repository field.
+37 info package.json gulp-notify@2.2.0 No license field.
+38 info package.json gulp-rename@1.2.2 No license field.
+39 info package.json re-base@1.2.1 No license field.
+40 info package.json react-addons-css-transition-group@0.14.0 No repository field.
+41 info package.json react-catalyst@0.3.0 No license field.
+42 info package.json install@0.1.8 No license field.
+43 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/package.json
+44 verbose install autobind-decorator is installed as 1.3.2
+45 silly cache add args [ 'autobind-decorator', null ]
+46 verbose cache add spec autobind-decorator
+47 silly cache add parsed spec { raw: 'autobind-decorator',
+47 silly cache add   scope: null,
+47 silly cache add   name: 'autobind-decorator',
+47 silly cache add   rawSpec: '',
+47 silly cache add   spec: '*',
+47 silly cache add   type: 'range' }
+48 silly addNamed autobind-decorator@*
+49 verbose addNamed "*" is a valid semver range for autobind-decorator
+50 silly addNameRange { name: 'autobind-decorator', range: '*', hasData: false }
+51 silly mapToRegistry name autobind-decorator
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/autobind-decorator
+55 verbose addNameRange registry:https://registry.npmjs.org/autobind-decorator not in flight; fetching
+56 verbose request uri https://registry.npmjs.org/autobind-decorator
+57 verbose request no auth needed
+58 info attempt registry request try #1 at 11:52:04
+59 verbose request using bearer token for auth
+60 verbose request id 15c2ff4b0080f430
+61 verbose etag "3ITOG6B1NNNQ5LNZXBYAI126D"
+62 http request GET https://registry.npmjs.org/autobind-decorator
+63 http 304 https://registry.npmjs.org/autobind-decorator
+64 silly get cb [ 304,
+64 silly get   { 'cache-control': 'max-age=300',
+64 silly get     'accept-ranges': 'bytes',
+64 silly get     date: 'Thu, 31 Dec 2015 14:52:06 GMT',
+64 silly get     via: '1.1 varnish',
+64 silly get     connection: 'keep-alive',
+64 silly get     'x-served-by': 'cache-atl6230-ATL',
+64 silly get     'x-cache': 'MISS',
+64 silly get     'x-cache-hits': '0',
+64 silly get     'x-timer': 'S1451573525.929566,VS0,VE93' } ]
+65 verbose etag https://registry.npmjs.org/autobind-decorator from cache
+66 verbose get saving autobind-decorator to /root/.npm/registry.npmjs.org/autobind-decorator/.cache.json
+67 silly addNameRange number 2 { name: 'autobind-decorator', range: '*', hasData: true }
+68 silly addNameRange versions [ 'autobind-decorator',
+68 silly addNameRange   [ '1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.3.1', '1.3.2' ] ]
+69 silly addNamed autobind-decorator@1.3.2
+70 verbose addNamed "1.3.2" is a plain semver version for autobind-decorator
+71 silly cache afterAdd autobind-decorator@1.3.2
+72 verbose afterAdd /root/.npm/autobind-decorator/1.3.2/package/package.json not in flight; writing
+73 verbose afterAdd /root/.npm/autobind-decorator/1.3.2/package/package.json written
+74 silly install resolved [ { name: 'autobind-decorator',
+74 silly install resolved     version: '1.3.2',
+74 silly install resolved     description: 'Decorator for binding method to an object',
+74 silly install resolved     main: 'lib/index.js',
+74 silly install resolved     scripts: { test: 'make test' },
+74 silly install resolved     author: { name: 'Andrey Popp', email: '8mayday@gmail.com' },
+74 silly install resolved     license: 'MIT',
+74 silly install resolved     devDependencies:
+74 silly install resolved      { babel: '^5.0.12',
+74 silly install resolved        'babel-eslint': '^3.1.0',
+74 silly install resolved        babelify: '^6.0.2',
+74 silly install resolved        'core-js': '^0.9.6',
+74 silly install resolved        eslint: '^0.20.0',
+74 silly install resolved        mocha: '^2.2.4',
+74 silly install resolved        mochify: '^2.7.1',
+74 silly install resolved        phantomjs: '^1.9.16' },
+74 silly install resolved     gitHead: 'd83c468168c64c87d11744e3abee5a233132bb05',
+74 silly install resolved     _id: 'autobind-decorator@1.3.2',
+74 silly install resolved     _shasum: '13efda597497151aaa9f5a033793b7df7079e845',
+74 silly install resolved     _from: 'autobind-decorator@*',
+74 silly install resolved     _npmVersion: '3.1.3',
+74 silly install resolved     _nodeVersion: '0.12.7',
+74 silly install resolved     _npmUser: { name: 'andreypopp', email: '8mayday@gmail.com' },
+74 silly install resolved     dist:
+74 silly install resolved      { shasum: '13efda597497151aaa9f5a033793b7df7079e845',
+74 silly install resolved        tarball: 'http://registry.npmjs.org/autobind-decorator/-/autobind-decorator-1.3.2.tgz' },
+74 silly install resolved     maintainers: [ [Object], [Object] ],
+74 silly install resolved     directories: {},
+74 silly install resolved     _resolved: 'https://registry.npmjs.org/autobind-decorator/-/autobind-decorator-1.3.2.tgz',
+74 silly install resolved     readme: 'ERROR: No README data found!' } ]
+75 info install autobind-decorator@1.3.2 into /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21
+76 info installOne autobind-decorator@1.3.2
+77 verbose installOne of autobind-decorator to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21 not in flight; installing
+78 verbose lock using /root/.npm/_locks/autobind-decorator-6db326d72849ad7c.lock for /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+79 silly install write writing autobind-decorator 1.3.2 to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+80 verbose unbuild node_modules/autobind-decorator
+81 info preuninstall autobind-decorator@1.3.2
+82 info uninstall autobind-decorator@1.3.2
+83 verbose unbuild rmStuff autobind-decorator@1.3.2 from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules
+84 info postuninstall autobind-decorator@1.3.2
+85 silly gentlyRm /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator is being purged from base /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21
+86 verbose gentlyRm don't care about contents; nuking /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+87 silly vacuum-fs purging /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+88 silly vacuum-fs quitting because other entries in /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules
+89 verbose tar unpack /root/.npm/autobind-decorator/1.3.2/package.tgz
+90 verbose tar unpacking to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+91 silly gentlyRm /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator is being purged
+92 verbose gentlyRm don't care about contents; nuking /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+93 silly gunzTarPerm modes [ '755', '644' ]
+94 silly gunzTarPerm extractEntry package.json
+95 silly gunzTarPerm extractEntry .npmignore
+96 silly gunzTarPerm extractEntry README.md
+97 silly gunzTarPerm extractEntry .eslintrc
+98 silly gunzTarPerm extractEntry Makefile
+99 silly gunzTarPerm extractEntry lib/index.js
+100 verbose write writing to /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator/package.json
+101 info preinstall autobind-decorator@1.3.2
+102 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator/package.json
+103 verbose readDependencies loading dependencies from /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator/package.json
+104 silly install resolved []
+105 verbose about to build /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+106 info build /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+107 info linkStuff autobind-decorator@1.3.2
+108 silly linkStuff autobind-decorator@1.3.2 has /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules as its parent node_modules
+109 verbose linkBins autobind-decorator@1.3.2
+110 verbose linkMans autobind-decorator@1.3.2
+111 verbose rebuildBundles autobind-decorator@1.3.2
+112 info install autobind-decorator@1.3.2
+113 info postinstall autobind-decorator@1.3.2
+114 verbose unlock done using /root/.npm/_locks/autobind-decorator-6db326d72849ad7c.lock for /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/node_modules/autobind-decorator
+115 verbose validateInstall loading /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21/package.json for validation
+116 verbose stack Error: The package history does not satisfy its siblings' peerDependencies requirements!
+116 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+116 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:267:7
+116 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+116 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+116 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+116 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+116 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+116 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+116 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+116 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+117 verbose cwd /home/brenopolanski/Desktop/GitHub/my/labs/javascript/react/catch-of-the-day/21
+118 error Linux 3.13.0-58-generic
+119 error argv "node" "/usr/local/bin/npm" "i" "--save-dev" "autobind-decorator"
+120 error node v0.10.25
+121 error npm  v2.11.0
+122 error code EPEERINVALID
+123 error peerinvalid The package history does not satisfy its siblings' peerDependencies requirements!
+123 error peerinvalid Peer react-router@1.0.3 wants history@^1.17.0
+124 verbose exit [ 1, true ]
