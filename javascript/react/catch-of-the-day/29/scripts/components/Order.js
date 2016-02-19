@@ -11,7 +11,7 @@ import autobind from 'autobind-decorator';
 @autobind
 class Order extends React.Component {
 	renderOrder(key) {
-		var fish = this.props.fishes[key];
+		var fish = this.props.f
 		var count = this.props.order[key];
 		var removeButton = <button onClick={this.props.removeFromOrder.bind(null, key)}>&times;</button>
 
