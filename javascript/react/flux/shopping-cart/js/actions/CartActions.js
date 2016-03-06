@@ -1,38 +1,41 @@
+'use strict';
+
 let AppDispatcher = require('../dispatcher/AppDispatcher');
-let CartConstants = require('../dispatcher/CartConstants');
+let CartConstants = require('../constants/CartConstants');
 
 let CartActionsActions = {
 
   // Load initial products
-  loadProducts: function(data) {
+  loadProducts: function (data) {
     AppDispatcher.handleViewAction({
       actionType: CartConstants.LOAD_PRODUCTS,
       data: data
-    });
+    })
   },
 
   // Add item to cart
-  addToCart: function(productId) {
+  addToCart: function (productId) {
     AppDispatcher.handleViewAction({
       actionType: CartConstants.CART_ADD,
       product: productId
-    });
-  }
+    })
+  },
 
   // Remove item from cart
-  removeFromCart: function(productId) {
+  removeFromCart: function (productId) {
     AppDispatcher.handleViewAction({
       actionType: CartConstants.CART_REMOVE,
       product: productId
-    });
-  }
+    })
+  },
 
-  toggleCaartVisible: function(isVisible) {
+  toggleCaartVisible: function (isVisible) {
     AppDispatcher.handleViewAction({
       actionType: CartConstants.CART_VISIBLE,
       isVisible: isVisible
-    });
+    })
   }
-};
+
+}
 
 module.exports = CartActionsActions;

@@ -7,37 +7,38 @@ let CartConstants = require('../constants/CartConstants');
 // Initial data points
 let _products = [];
 
-// will load products from some API
-function loadProducts(data) {
+// Will load products from some API
+function loadProducts (data) {
   _products = data;
 }
 
-class ProductStoreFactory extends EventEmitter {
+class ProductStoreFactory extends EventEmitter{
 
   // Return Product list
-  getProducts() {
+  getProducts () {
     return _products;
   }
 
   // Emit Change event
-  emitChange() {
+  emitChange () {
     this.emit('change');
   }
 
   // Add change listener
-  addChangeListener(callback) {
+  addChangeListener (callback) {
     this.on('change', callback);
   }
 
   // Remove change listener
-  removeChangeListener(callback) {
+  removeChangeListener (callback) {
     this.removeListener('change', callback);
   }
+
 }
 
 let ProductStore = new ProductStoreFactory();
 
-AppDispatcher.register(function(payload) {
+AppDispatcher.register(function (payload) {
   let action = payload.action;
 
   switch (action.actionType) {

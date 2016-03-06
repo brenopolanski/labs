@@ -2,16 +2,17 @@
   "name": "react-flux",
   "version": "1.0.0",
   "description": "Simple Shopping Cart using React and Flux",
-  "author": "Breno Polanski",
+  "author": "Rafaell Lycan",
   "main": "js/app.js",
   "dependencies": {
     "flux": "^2.1.1",
-    "react": "^0.14.7"
+    "react": "^0.14.2",
+    "react-dom": "^0.14.3"
   },
   "devDependencies": {
-    "browserify": "^13.0.0",
+    "browserify": "^12.0.1",
     "reactify": "^1.1.1",
-    "watchify": "^3.7.0"
+    "watchify": "^3.6.1"
   },
   "scripts": {
     "start": "watchify -o js/bundle.js -v -d .",
