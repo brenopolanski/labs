@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example JustGage</title>
+</head>
+<body>
+  <div id="gauge" class="200x160px"></div>
+  
+  <script src="raphael-2.1.4.min.js"></script>
+  <script src="justgage.js"></script>
+  <script>
+    var g = new JustGage({
+      id: 'gauge',
+      value: 67,
+      min: 0,
+      max: 100,
+      title: 'Visitors'
+    });
+  </script>
+</body>
+</html>
