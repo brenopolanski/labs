@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 5</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+  <script>
+    $(function() {
+      $('#container').jstree({
+        core: {
+          data: {
+            url: 'http://localhost:3000/data',
+            data: function(node) {
+              return { id: node.id }
+            }
+          }
+        },
+        plugins: ['checkbox', 'state']
+      });
+
+      // Solução 1
+      // Pegar todos os filhos e ver quem está desabilitado
+      $('#container').on('select_node.jstree', function(e, data) {
+        console.log(e);
+        console.log(data);
+        console.log(data.instance._model.data);
+
+        var model = data.instance._model.data;
+        var targetID = data.node.id;
+        var children = data.node.children_d;
+        var childrenID;
+
+        for (var i = 0; i < children.length; i++) {
+          if (model[children[i]].state.disabled) {
+            childrenID = model[children[i]].id;
+            $('#container').jstree(true).deselect_node(childrenID);
+            model[children[i]].state.selected = false;
+          }
+          // else {
+          //   childrenID = model[children[i]].id;
+          //   $('#container').jstree(true).select_node(childrenID);
+          //   model[children[i]].state.selected = true;
+          // }
+        }
+
+        // $('#container').find("#root-2_anchor").addClass('jstree-clicked');
+        // $('#container').find("#root-2_anchor").closest('.jstree-node').attr('aria-selected', true);
+        // data.node.state.selected = true;
+      });
+    });
+  </script>
+</body>
+</html>

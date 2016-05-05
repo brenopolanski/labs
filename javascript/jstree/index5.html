@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 5</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
+</head>
+<body>
+  <button>Select node</button>
+  <div id="container"></div>
+
+  <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+  <script>
+    $(function() {
+      $('#container').jstree({
+        core: {
+          data: {
+            // url: '//www.jstree.com/fiddle/?lazy',
+            url: 'http://localhost:3000/data',
+            data: function(node) {
+              return { id: node.id }
+            }
+          }
+        },
+        plugins: ['checkbox', 'state']
+      });
+
+      $('button').on('click', function() {
+        var instance = $('#container').jstree(true);
+
+        console.log(instance);
+
+        // instance.deselect_all();
+
+        // instance.select_node('1');
+        // instance.select_node('j1_4');   // => children
+
+        // instance.deselect_node(2);
+        // instance.deselect_node(3);
+
+
+        // ----------
+
+        // instance.select_node('1');
+        // instance.deselect_node('2');
+        // instance.deselect_node('j1_4');
+        // instance.deselect_node('j1_5');
+        // instance.deselect_node('3');
+      });
+
+      $('#container').on('select_node.jstree', function(e, data) {
+        // console.log(e);
+        // console.log(data);
+
+        var id = data.node.a_attr.id;
+
+        $('#container').jstree(true).select_node(data.node.id);
+        // $('#container').find('#' + id).addClass('jstree-clicked');
+        // $('#container').find('#1_anchor').addClass('jstree-clicked');
+
+        // Se o filho não tiver outros filhos, então ele vai ser
+        // selecionado
+        // if (data.node.children.length > 0) {
+        //   $('#container').jstree(true).deselect_node(data.node);
+        //   $('#container').jstree(true).toggle_node(data.node);
+        // }
+
+        if (data.node.children.length > 0) {
+          // var len = data.node.children_d.length;
+          var len = data.node.children.length;
+
+          for (var i = 0; i < len; i++) {
+            $('#container').jstree(true).deselect_node(data.node.children_d[i]);
+          }
+        }
+
+        $('#container').find('#1_anchor').addClass('jstree-clicked');
+        $('#container').find('#1_anchor').closest('.jstree-node').attr('aria-selected', true);
+        data.node.state.selected = true;
+
+        console.log(data);
+      });
+    });
+  </script>
+</body>
+</html>
