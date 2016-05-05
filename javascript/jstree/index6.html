@@ -32,7 +32,7 @@
         console.log(data.instance._model.data);
 
         var model = data.instance._model.data;
-        var targetID = data.node.id;
+        var targetID = '#' + data.node.a_attr.id;
         var children = data.node.children_d;
         var childrenID;
 
@@ -42,11 +42,15 @@
             $('#container').jstree(true).deselect_node(childrenID);
             model[children[i]].state.selected = false;
           }
-          // else {
-          //   childrenID = model[children[i]].id;
-          //   $('#container').jstree(true).select_node(childrenID);
-          //   model[children[i]].state.selected = true;
-          // }
+          else {
+            // childrenID = model[children[i]].id;
+            // $('#container').jstree(true).select_node(childrenID);
+            // model[children[i]].state.selected = true;
+
+            $('#container').find(targetID).addClass('jstree-clicked');
+            $('#container').find(targetID).closest('.jstree-node').attr('aria-selected', true);
+            data.node.state.selected = true;
+          }
         }
 
         // $('#container').find("#root-2_anchor").addClass('jstree-clicked');
