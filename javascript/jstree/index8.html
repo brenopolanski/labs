@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Example 6</title>
+  <title>Example 8</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
 </head>
 <body>
   <div id="container"></div>
 
   <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
   <script>
     $(function() {
@@ -24,14 +25,9 @@
         plugins: ['checkbox', 'state']
       });
 
-      $('#container').on('select_node.jstree', function(e, data) {
-        console.log(e);
-        console.log(data);
-        console.log(data.instance._model.data);
-
-        var model = data.instance._model.data;
-        var childrenData = data.node.children_d;
+      function setStatesElement(childrenData, model) {
         var childrenID;
+        var elemID;
 
         for (var i = 0; i < childrenData.length; i++) {
           if (model[childrenData[i]].state.disabled) {
@@ -39,7 +35,29 @@
             $('#container').jstree(true).deselect_node(childrenID);
             model[childrenData[i]].state.selected = false;
           }
+          else {
+            elemID = '#' + model[childrenData[i]].a_attr.id;
+            $('#container').find(elemID).addClass('jstree-clicked');
+            $('#container').find(elemID).closest('.jstree-node').attr('aria-selected', true);
+            model[childrenData[i]].state.selected = true;
+          }
         }
+      }
+
+      $('#container').on('select_node.jstree', function(e, data) {
+        console.log(e);
+        console.log(data);
+        console.log(data.instance._model.data);
+
+        var model = data.instance._model.data;
+        var targetID = '#' + data.node.a_attr.id;
+        var childrenData = data.node.children_d;
+
+        setStatesElement(childrenData, model);
+
+        $('#container').find(targetID).addClass('jstree-clicked');
+        $('#container').find(targetID).closest('.jstree-node').attr('aria-selected', true);
+        data.node.state.selected = true;
       });
     });
   </script>

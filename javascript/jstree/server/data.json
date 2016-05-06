@@ -1,0 +1,97 @@
+[
+    {
+        "id": "root-1",
+        "text": "testfiles.tgz"
+    },
+    {
+        "id": "root-2",
+        "text": "DA0000999/",
+        "children": [
+            {
+                "id": "root-2-children-1",
+                "text": "RNA-Seq/",
+                "children": [
+                    {
+                        "id": "root-2-subchildren-1",
+                        "text": "OtherData/",
+                        "state": {
+                            "disabled": true
+                        },
+                        "children": [
+                            {
+                                "id": "root-2-subchildren-1-thirdsubchildren-1",
+                                "text": "test1/",
+                                "state": {
+                                    "disabled": true
+                                }
+                            },
+                            {
+                                "id": "root-2-subchildren-1-thirdsubchildren-2",
+                                "text": "test3/",
+                                "state": {
+                                    "disabled": true
+                                },
+                                "children": [
+                                    {
+                                        "id": "root-2-subchildren-1-thirdsubchildren-21",
+                                        "text": "datafile1.seq",
+                                        "state": {
+                                            "disabled": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "root-2-subchildren-1-thirdsubchildren-3",
+                                "text": "test2/",
+                                "state": {
+                                    "disabled": true
+                                },
+                                "children": [
+                                    {
+                                        "id": "root-2-subchildren-1-thirdsubchildren-31",
+                                        "text": "datafile1.seq",
+                                        "state": {
+                                            "disabled": true
+                                        }
+                                    },
+                                    {
+                                        "id": "root-2-subchildren-1-thirdsubchildren-32",
+                                        "text": "datafile2.seq",
+                                        "state": {
+                                            "disabled": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "root-2-subchildren-2",
+                        "text": "RawData/",
+                        "children": [
+                            {
+                                "id": "root-2-subchildren-2-thirdsubchildren-1",
+                                "text": "test1/"
+                            },
+                            {
+                                "id": "root-2-subchildren-2-thirdsubchildren-2",
+                                "text": "test3/"
+                            },
+                            {
+                                "id": "root-2-subchildren-2-thirdsubchildren-3",
+                                "text": "test2/",
+                                "children": [
+                                    {
+                                        "id": "root-2-subchildren-2-thirdsubchildren-31",
+                                        "text": "datafile2.seq"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Example 6</title>
+  <title>Example 7</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
 </head>
 <body>
   <div id="container"></div>
 
   <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
   <script>
     $(function() {
@@ -30,6 +31,7 @@
         console.log(data.instance._model.data);
 
         var model = data.instance._model.data;
+        var targetID = '#' + data.node.a_attr.id;
         var childrenData = data.node.children_d;
         var childrenID;
 
@@ -38,6 +40,11 @@
             childrenID = model[childrenData[i]].id;
             $('#container').jstree(true).deselect_node(childrenID);
             model[childrenData[i]].state.selected = false;
+          }
+          else {
+            $('#container').find(targetID).addClass('jstree-clicked');
+            $('#container').find(targetID).closest('.jstree-node').attr('aria-selected', true);
+            data.node.state.selected = true;
           }
         }
       });
