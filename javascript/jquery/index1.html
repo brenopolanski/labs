@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test 1</title>
+</head>
+<body>
+  <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script>
+    $(function() {
+      var html = '<tr><th class="row_header"><div>Year</div></th><th class="row_header"><div>Year</div></th>';
+
+      $($(html).find('th.row_header')).each(function(key, value) {
+          // console.log(key);
+          // console.log(value);
+          console.log($(value).text());
+      });
+    });
+  </script>
+</body>
+</html>
