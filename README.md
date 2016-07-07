@@ -12,6 +12,7 @@
 * [Microsoft](microsoft/)
 * [PHP](php/)
 * [Python](python/)
+* [Rust](rust/)
 * [Shell](shell/)
 
 ## Credits
