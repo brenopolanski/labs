@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retângulos 2</title>
+</head>
+<body>
+  <canvas id="meu_canvas" width="200" height="200">
+    Seu navegador não suporta o Canvas do HTML5. <br>
+    Procure atualizá-lo.
+  </canvas>
+
+  <script>
+    // Canvas e contexto
+    var canvas = document.getElementById('meu_canvas');
+    var context = canvas.getContext('2d');
+
+    // Preenchimento vermelho
+    context.fillStyle = 'red';
+    context.fillRect(50, 50, 100, 100);
+
+    // Contorno azul, com espessura de 3px
+    context.lineWidth = 3;
+    context.strokeStyle = 'blue';
+    context.strokeRect(50, 50, 100, 100);
+  </script>
+</body>
+</html>

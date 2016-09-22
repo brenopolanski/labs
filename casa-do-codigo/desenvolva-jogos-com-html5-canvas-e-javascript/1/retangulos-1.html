@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retângulos 1</title>
+</head>
+<body>
+  <canvas id="meu_canvas" width="300" height="300">
+    Seu navegador não suporta o Canvas do HTML5. <br>
+    Procure atualizá-lo.
+  </canvas>
+
+  <script>
+    // Referenciando o Canvas
+    var canvas = document.getElementById('meu_canvas');
+
+    // Obtendo o contexto gráfico
+    var context = canvas.getContext('2d');
+
+    // Desenhar um retângulo
+    context.fillRect(50, 50, 100, 100);
+  </script>
+</body>
+</html>

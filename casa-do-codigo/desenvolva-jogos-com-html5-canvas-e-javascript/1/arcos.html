@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arcos</title>
+</head>
+<body>
+  <canvas id="meu_canvas" width="300" height="300">
+    Seu navegador não suporta o Canvas do HTML5. <br>
+    Procure atualizá-lo.
+  </canvas>
+
+  <script>
+    // Canvas e contexto
+    var canvas = document.getElementById('meu_canvas');
+    var context = canvas.getContext('2d');
+
+    // Cores e espessura da linha
+    context.fillStyle = 'gray';
+    context.strokeStyle = 'black';
+    context.lineWidth = 2;
+
+    // Primeiro arco:
+    // Novo path
+    context.beginPath();
+    // Desenha
+    context.arc(50, 50, 40, 90*Math.PI/180, 270*Math.PI/180, false);
+    // Preenchimento
+    context.fill();
+    // Contorno
+    context.stroke();
+
+    // Segundo arco:
+    context.beginPath();
+    context.arc(150, 50, 40, 90*Math.PI/180, 270*Math.PI/180, true);
+    context.fill();
+    context.stroke();
+
+    // Circunferência completa
+    context.beginPath();
+    context.arc(250, 50, 40, 0, 2*Math.PI);
+    context.fill();
+    context.stroke();
+  </script>
+</body>
+</html>
