@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web API Blob</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Example of: https://developer.mozilla.org/pt-BR/docs/Web/API/Blob
+
+    var aFileParts = ['<a id="a"><b id="b">hey!</b></a>'];
+    var oMyBlob = new Blob(aFileParts, { type: 'text/html' });
+
+    console.log(oMyBlob);
+  </script>
+</body>
+</html>
