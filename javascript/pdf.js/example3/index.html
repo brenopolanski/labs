@@ -7,11 +7,28 @@
   <h1>Saiku Reporting Viewer</h1>
 
   <div>
+    <button id="print">Print</button>
+    &nbsp; &nbsp;
     <button id="prev">&#60;</button>
     <button id="next">&#62;</button>
     &nbsp; &nbsp;
     <button id="zoomOut">-</button>
     <button id="zoomIn">+</button>
+    <select id="scaleSelect">
+      <option value="0.3">30%</option>
+      <option value="0.4">40%</option>
+      <option value="0.5">50%</option>
+      <option value="0.6">60%</option>
+      <option value="0.7">70%</option>
+      <option value="0.8">80%</option>
+      <option value="0.9">90%</option>
+      <option value="1" selected>100%</option>
+      <option value="1.25">125%</option>
+      <option value="1.50">150%</option>
+      <option value="2">200%</option>
+      <option value="3">300%</option>
+      <option value="4">400%</option>
+    </select>
     &nbsp; &nbsp;
     <span>Page: <span id="pageNum"></span> / <span id="pageCount"></span></span>
   </div>
@@ -26,7 +43,7 @@
 
     var DEFAULT_SCALE = 1;
     var MIN_SCALE = 0.30;
-    var MAX_SCALE = 10.00;
+    var MAX_SCALE = 4.00;
 
     // URL of PDF document
     var url = 'http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf';
@@ -123,9 +140,34 @@
       }
 
       scale += 0.10;
+
+      if (scale > 1.0 && scale < 1.25) {
+        scale = 1.25;
+      }
+      else if (scale > 1.25 && scale < 1.5) {
+        scale = 1.5;
+      }
+      else if (scale > 1.5 && scale < 2) {
+        scale = 2;
+      }
+      else if (scale > 2 && scale < 3) {
+        scale = 3;
+      }
+      else if (scale > 3 && scale < 4) {
+        scale = 4;
+      }
+
       queueRenderPage(pageNum);
     }
     document.getElementById('zoomIn').addEventListener('click', onZoomIn);
+
+    function onScaleSelect(event) {
+      var $target = event.target;
+
+      scale = Number($target.value);
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('scaleSelect').addEventListener('click', onScaleSelect);
 
     /**
      * Asynchronously downloads PDF.
