@@ -22,8 +22,6 @@
         // Get div#container and cache it for later user
         var container = document.getElementById('container');
 
-        console.log(pdf);
-
         // Loop from 1 to total_number_of_pages in PDF document
         for (var i = 1; i <= pdf.numPages; i++) {
 
@@ -58,7 +56,34 @@
             };
 
             // Render PDF page
-            page.render(renderContext);
+            page.render(renderContext)
+              .then(function() {
+                // Get text-fragments
+                return page.getTextContent();
+              })
+              .then(function(textContent) {
+                // Create div which will hold text-fragments
+                var textLayerDiv = document.createElement('div');
+
+                // Set it's class to textLayer which have required CSS styles
+                textLayerDiv.setAttribute('class', 'textLayer');
+
+                // Append newly created div in `div#page-#{pdf_page_number}`
+                div.appendChild(textLayerDiv);
+
+                // Create new instance of TextLayerBuilder class
+                var textLayer = new TextLayerBuilder({
+                  textLayerDiv: textLayerDiv,
+                  pageIndex: page.pageIndex,
+                  viewport: viewport
+                });
+
+                // Set text-fragments
+                textLayer.setTextContent(textContent);
+
+                // Render text-fragments
+                textLayer.render();
+              });
           });
         }
       });
