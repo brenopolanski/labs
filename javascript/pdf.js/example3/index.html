@@ -10,7 +10,10 @@
     <button id="prev">&#60;</button>
     <button id="next">&#62;</button>
     &nbsp; &nbsp;
-    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+    <button id="zoomOut">-</button>
+    <button id="zoomIn">+</button>
+    &nbsp; &nbsp;
+    <span>Page: <span id="pageNum"></span> / <span id="pageCount"></span></span>
   </div>
 
   <div>
@@ -21,13 +24,17 @@
   <script type="text/javascript">
     // PDFJS.workerSrc = '../pdf.worker.js';
 
+    var DEFAULT_SCALE = 1;
+    var MIN_SCALE = 0.30;
+    var MAX_SCALE = 10.00;
+
     // URL of PDF document
     var url = 'http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf';
     var pdfDoc = null;
     var pageNum = 1;
     var pageRendering = false;
     var pageNumPending = null;
-    var scale = 0.8;
+    var scale = DEFAULT_SCALE;
     var canvas = document.getElementById('the-canvas');
     var ctx = canvas.getContext('2d');
 
@@ -58,7 +65,7 @@
       });
 
       // Update page counters
-      document.getElementById('page_num').textContent = pageNum;
+      document.getElementById('pageNum').textContent = pageNum;
     }
 
     /**
@@ -100,12 +107,32 @@
     }
     document.getElementById('next').addEventListener('click', onNextPage);
 
+    function onZoomOut() {
+      if (scale <= MIN_SCALE) {
+        return;
+      }
+
+      scale -= 0.10;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('zoomOut').addEventListener('click', onZoomOut);
+
+    function onZoomIn() {
+      if (scale >= MAX_SCALE) {
+        return;
+      }
+
+      scale += 0.10;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('zoomIn').addEventListener('click', onZoomIn);
+
     /**
      * Asynchronously downloads PDF.
      */
     PDFJS.getDocument(url).then(function(pdf) {
       pdfDoc = pdf;
-      document.getElementById('page_count').textContent = pdfDoc.numPages;
+      document.getElementById('pageCount').textContent = pdfDoc.numPages;
 
       // Initial/first page rendering
       renderPage(pageNum);
