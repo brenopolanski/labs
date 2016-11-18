@@ -3,7 +3,7 @@ import os
 import zipfile
 import sys
 
-def main():
+def main(path):
   if not os.path.exists(path):
     print("Arquivo {} não existe".format(path))
     sys.exit(-1)
