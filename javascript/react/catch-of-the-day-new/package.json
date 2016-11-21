@@ -3,17 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "autoprefixer-stylus": "0.10.0",
-    "concurrently": "3.0.0",
-    "react-scripts": "0.6.1",
+    "autoprefixer-stylus": "0.11.0",
+    "concurrently": "3.1.0",
+    "react-scripts": "0.7.0",
     "stylus": "0.54.5"
   },
   "dependencies": {
-    "history": "4.2.0",
-    "re-base": "2.2.0",
-    "react": "15.3.2",
-    "react-addons-css-transition-group": "15.3.2",
-    "react-dom": "15.3.2",
+    "history": "4.4.0",
+    "re-base": "2.3.0",
+    "react": "15.4.0",
+    "react-addons-css-transition-group": "15.4.0",
+    "react-dom": "15.4.0",
     "react-router": "4.0.0-alpha.3"
   },
   "scripts": {
