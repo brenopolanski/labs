@@ -1,0 +1,41 @@
+/**
+ *   Copyright 2017 OSBI Ltd
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ */
+
+@import '../../styl/_variables'
+
+$title-size = 20px
+
+.Topbar
+  .Topbar_title
+    position relative
+    z-index 1
+    float left
+    width 240px
+
+  .Topbar_appTitle
+    font-size $title-size
+    font-weight 700
+    line-height 50px
+    color $white
+    letter-spacing 0.05em
+    text-transform uppercase
+
+  .Topbar_navbar
+    height 50px
+    margin-bottom 0
+    border none
+    border-radius 0
+    background $saiku
