@@ -89,6 +89,72 @@ var Game = {
 
         // A formula to calculate game speed based on the score.
         // The higher the score, the higher the game speed, with a maximum of 10;
+        speed = Math.min(10, Math.floor(score / 5));
+        // Update speed value on game screen.
+        speedTextValue.text = '' + speed;
+
+        // Since the update function of Phaser has an update rate of around 60 FPS,
+        // we need to slow that down make the game playable.
+
+        // Increase a counter on every update call.
+        updateDelay++;
+
+        // Do game stuff only if the counter is aliquot to (10 - the game speed).
+        // The higher the speed, the more frequently this is fulfilled,
+        // making the snake move faster.
+        if ((updateDelay % (10 - speed)) === 0) {
+            // Snake movement
+            var firstCell = snake[snake.length - 1];
+            var lastCell = snake.shift();
+            var oldLastCellx = lastCell.x;
+            var oldLastCelly = lastCell.y;
+
+            // If a new direction has been chosen from the keyboard, make it the direction of the snake now.
+            if (new_direction) {
+                direction = new_direction;
+                new_direction = null;
+            }
+
+            // Change the last cell's coordinates relative to the head of the snake, according to the direction.
+            if (direction === 'right') {
+                lastCell.x = firstCell.x + 15;
+                lastCell.y = firstCell.y;
+            }
+            else if (direction === 'left') {
+                lastCell.x = firstCell.x - 15;
+                lastCell.y = firstCell.y;
+            }
+            else if (direction === 'up') {
+                lastCell.x = firstCell.x;
+                lastCell.y = firstCell.y - 15;
+            }
+            else if (direction === 'down') {
+                lastCell.x = firstCell.x;
+                lastCell.y = firstCell.y + 15;
+            }
+
+            // Place the last cell in the front of the stack.
+            // Mark it the first cell.
+            snake.push(lastCell);
+            firstCell = lastCell; // Maybe is not necessary
+
+            // Increase length of snake if an apple had been eaten.
+            // Create a block in the back of the snake with the old position of the previous last block
+            // (it has moved now along with the rest of the snake).
+            if (addNew) {
+                snake.unshift(game.add.sprite(oldLastCellx, oldLastCelly, 'snake'));
+                addNew = false;
+            }
+
+            // Check for apple collision.
+            this.appleCollision();
+
+            // Check for collision with self. Parameter is the head of the snake.
+            this.selfCollision(firstCell);
+
+            // Check with collision with wall. Parameter is the head of the snake.
+            this.wallCollision(firstCell);
+        }
     },
 
     generateApple: function() {
@@ -101,5 +167,47 @@ var Game = {
 
         // Add a new apple.
         apple = game.add.sprite(randomX, randomY, 'apple');
+    },
+
+    appleCollision: function() {
+        // Check if any part of the snake is overlapping the apple.
+        // This is needed if the apple spawns inside of the snake.
+        for (var i = 0; i < snake.length; i++) {
+            if (snake[i].x === apple.x && snake[i].y === apple.y) {
+                // Next time the snake moves, a new block will be added to its length.
+                addNew = true;
+
+                // Destroy the old apple.
+                apple.destroy();
+
+                // Make a new one.
+                this.generateApple();
+
+                // Increase score.
+                score++;
+
+                // Refresh scoreboard
+                scoreTextValue.text = score.toString();
+            }
+        }
+    },
+
+    selfCollision: function(head) {
+        // Check if the head of the snake overlaps with any part of the snake.
+        for (var i = 0; i < snake.length - 1; i++) {
+            if (head.x === snake[i].x && head.y === snake[i].y) {
+                // if so, go to game over screen.
+                game.state.start('Game_Over');
+            }
+        }
+    },
+
+    wallCollision: function(head) {
+        // Check if the head of the snake is in the boundaries of the game field.
+
+        if (head.x >= 600 || head.x < 0 || head.y >= 450 || head.y < 0) {
+            // If it's not in, we've hit a wall. Go to game over screen.
+            game.state.start('Game_Over');
+        }
     }
 };
