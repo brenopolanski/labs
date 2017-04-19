@@ -1,0 +1,53 @@
+html,
+body {
+  overflow: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.page-container {
+  margin: 20px;
+}
+
+/* horizontal panel*/
+
+.panel-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  border: 1px solid silver;
+  /* avoid browser level touch actions */
+  xtouch-action: none;
+}
+
+.panel-left {
+  width: 300px;
+  min-width: 150px;
+  min-height: 200px;
+  /* only manually resize */
+  padding: 10px;
+  color: white;
+  background: #838383;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.splitter {
+  width: 18px;
+  min-height: 200px;
+  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+  cursor: col-resize;
+  flex: 0 0 auto;
+}
+
+.panel-right {
+  width: 100%;
+  min-width: 200px;
+  min-height: 200px;
+  /* resizable */
+  padding: 10px;
+  background: #eee;
+  flex: 1 1 auto;
+}

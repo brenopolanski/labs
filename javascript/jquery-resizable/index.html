@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Split Panels - jquery-resizable</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+    <h1>jquery-resizable - A simple splitter panel</h1>
+
+    <hr>
+
+    <p>
+    Simple example that demonstrates how to create slidable two-pane layouts <a href="http://caniuse.com/#search=flexbox">using FlexBox</a> and the resizable plug-in.
+    Note that Flexbox is not required, but used here to keep the layout simple.
+    </p>
+
+    <h3>Horizontal Splitter Panes:</h3>
+
+    <div class="panel-container">
+      <div class="panel-left">
+        <p>left panel</p>
+      </div>
+      <div class="splitter"></div>
+      <div class="panel-right">
+        <p>right panel</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="jquery-resizable.min.js"></script>
+  <script>
+    $('.panel-left').resizable({
+      handleSelector: '.splitter',
+      resizeHeight: false
+    });
+  </script>
+</body>
+</html>
