@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IWC | Inter-Window Communication</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      overflow: hidden;
+    }
+
+    #viewport {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    .svgHidden {
+      visibility: hidden;
+    }
+
+    .label {
+      font-size: 0.2em;
+    }
+  </style>
+</head>
+<body>
+  <svg id="viewport" version="1.1" baseProfile="full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="100%" height="100%" fill-opacity="0.250" />
+  </svg>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//aml-development.github.io/ozp-iwc/1.2.4/js/ozpIwc-client.js"></script>
+  <script>
+    var iwc = new ozpIwc.Client("//aml-development.github.io/ozp-iwc");
+    var balls = {};
+    var viewport = $("#viewport");
+
+    //===========================
+    // IWC Functionality
+    //===========================
+
+    // Create a reference to track ball additions with the collect option
+    var ballsRef = new iwc.data.Reference("/github/examples/balls", {collect: true});
+
+
+    // Watch for any changes to the collection
+    // add any new balls
+    var onChange = function(change) {
+      change.newCollection.forEach(ballGen);
+    };
+    ballsRef.watch(onChange);
+
+    // List all of the balls in the collection,
+    // generate all that exist
+    ballsRef.list().then(function(collection) {
+      collection.forEach(ballGen);
+    });
+
+    //===========================
+    // Ball Class & Drawing Functionality
+    //===========================
+    // Generates a new ball on the canvas
+    // by gathering a ball from the IWC
+    var ballGen = function(name) {
+      if (!balls[name]) {
+        balls[name] = new Ball(name);
+      }
+    };
+
+    var Ball = function(name) {
+
+      // IWC Shared values
+      this.reference = new iwc.data.Reference(name);
+
+      // SVG Ball generation
+      this.svg = viewport;
+      this.el = document.createElementNS("http://www.w3.org/2000/svg", 'g');
+      this.el.setAttribute("class", "ball");
+      this.circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+      this.el.appendChild(this.circle);
+      this.label = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+      this.label.setAttribute("class", "svgHidden label");
+      this.label.textContent=name;
+      this.el.appendChild(this.label);
+      this.svg.append(this.el);
+
+      var self = this;
+
+      // When the state of the ball changes, draw its updates
+      var onBallChange = function(change, done) {
+        self.draw(change.newValue);
+      };
+
+      this.reference.watch(onBallChange)
+        .then(function(value){
+          self.draw(value);
+        });
+
+      $(this.el).click(function() {
+        if(self.label.getAttribute("class").match("svgHidden")) {
+          self.label.setAttribute("class","label");
+        }else {
+          self.label.setAttribute("class","svgHidden label");
+        }
+      });
+    };
+
+    // Updates the ball state and draw on the canvas
+    Ball.prototype.draw = function(state) {
+      if (!state) {
+        this.el.setAttribute('display', 'none');
+      } else {
+        this.el.setAttribute('display', 'inline');
+      }
+      this.entity = {
+        x: state.x || 0,
+        y: state.y || 0,
+        radius: state.radius || 5,
+        color: state.color || "#111"
+      };
+      this.el.setAttribute("transform", "translate(" + state.x + "," + state.y + ")");
+      this.circle.setAttribute("r", state.radius);
+      this.circle.setAttribute("fill", state.color);
+      this.label.setAttribute("x", state.radius + 2);
+
+    };
+  </script>
+</body>
+</html>

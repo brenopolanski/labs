@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IWC | Inter-Window Communication</title>
+</head>
+<body>
+
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    // Creating a client...
+    var iwc = new ozpIwc.Client('http://localhost:13000');
+
+    // Testing conn
+    iwc.connect().then(function() {
+      console.log('IWC Client connected with address:', iwc.address);
+    }).catch(function(err) {
+      console.log('IWC Client failed to connect:', err);
+    });
+
+    var funcRef = new iwc.intents.Reference('/text/plain/print');
+
+    var metaData = {
+      type: '/application/json',
+      action: 'print',
+      icon: 'printIcon.png',
+      label: 'Console logs data received from the invoker'
+    };
+
+    var myFunc = function(value) {
+      console.log(value);
+    };
+
+    funcRef.register(metaData, myFunc);
+
+    funcRef.invoke('Hello World!');
+
+    funcRef.broadcast('Hello World!');
+  </script>
+</body>
+</html>

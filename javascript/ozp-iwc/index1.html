@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IWC | Inter-Window Communication</title>
+</head>
+<body>
+
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    // Creating a client...
+    var iwc = new ozpIwc.Client('http://localhost:13000');
+
+    // Testing conn
+    iwc.connect().then(function() {
+      console.log('IWC Client connected with address:', iwc.address);
+    }).catch(function(err) {
+      console.log('IWC Client failed to connect:', err);
+    });
+
+    // Creating a reference the a resource of data in IWC
+    var tshirtRef = new iwc.data.Reference('/t-shirt');
+
+    // Set data...
+    tshirtRef.set({
+      size: 'medium',
+      quantity: 1,
+      color: 'red'
+    });
+
+    // Get values
+    tshirtRef.get().then(function(value) {
+      console.log(value);
+    });
+
+    // Observing a value (calls the callback in the value change)
+    tshirtRef.watch(function(change) {
+      console.log('Old value:', change.oldValue);
+      console.log('New value:', change.newValue);
+    });
+  </script>
+</body>
+</html>
