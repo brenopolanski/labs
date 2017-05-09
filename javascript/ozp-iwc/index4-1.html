@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IWC | Inter-Window Communication</title>
+</head>
+<body>
+  <ul>
+    <li>
+      <a href="#" class="show-help">Show help workspace</a>
+    </li>
+    <li>
+      <a href="#" class="show-help">Show help admin console</a>
+    </li>
+    <li>
+      <a href="#" class="show-help">Show help charts mode</a>
+    </li>
+  </ul>
+
+  <iframe src="./index4-2.html" width="800" height="600">
+    <p>Your browser does not support iframes.</p>
+  </iframe>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    $(function() {
+      // Creating a client...
+      var iwc = new ozpIwc.Client('http://localhost:13000');
+
+      // Testing conn
+      iwc.connect().then(function() {
+        console.log('IWC Client connected with address:', iwc.address);
+      }).catch(function(err) {
+        console.log('IWC Client failed to connect:', err);
+      });
+
+      var funcRef = new iwc.intents.Reference('/text/plain/print');
+
+      $('.show-help').on('click', function() {
+        funcRef.broadcast($(this).text());
+      });
+    });
+  </script>
+</body>
+</html>

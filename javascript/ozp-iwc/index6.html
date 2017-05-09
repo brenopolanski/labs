@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IWC | Inter-Window Communication</title>
+</head>
+<body>
+  <h1>Orbis App</h1>
+  <ul>
+    <li>
+      <a href="#" class="show-help" data-show="Workspace">Show help workspace</a>
+    </li>
+    <li>
+      <a href="#" class="show-help">Show help admin console</a>
+    </li>
+    <li>
+      <a href="#" class="show-help">Show help charts mode</a>
+    </li>
+  </ul>
+
+  <!-- <iframe src="http://localhost:9999?splash=false&show_help=true" width="1024" height="768"> -->
+  <iframe src="http://localhost:9999?splash=false" width="1024" height="768">
+    <p>Your browser does not support iframes.</p>
+  </iframe>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    // $(function() {
+    //   // Creating a client...
+    //   var iwc = new ozpIwc.Client('http://localhost:13000');
+
+    //   // Testing conn
+    //   iwc.connect().then(function() {
+    //     console.log('IWC Client connected with address:', iwc.address);
+    //   }).catch(function(err) {
+    //     console.log('IWC Client failed to connect:', err);
+    //   });
+
+    //   var funcRef = new iwc.intents.Reference('/text/plain/print');
+
+    //   $('.show-help').on('click', function() {
+    //     funcRef.invoke($(this).text());
+    //     // funcRef.broadcast($(this).text());
+    //   });
+    // });
+
+    $(function() {
+      // Creating a client...
+      var iwc = new ozpIwc.Client('http://aml-development.github.io/ozp-iwc');
+
+      // Testing conn
+      iwc.connect().then(function() {
+        console.log('IWC Client connected with address:', iwc.address);
+      }).catch(function(err) {
+        console.log('IWC Client failed to connect:', err);
+      });
+
+      var funcRef = new iwc.intents.Reference('/application/display/help');
+
+      $('.show-help').on('click', function() {
+
+        funcRef.invoke({
+          fileName: 'Workspace',
+          specificElements: ['#new_query', '#admin_icon'],
+          options: { showProgress: false }
+        });
+
+        // funcRef.invoke($(this).data('show'));
+        // funcRef.broadcast($(this).text());
+      });
+    });
+  </script>
+</body>
+</html>
