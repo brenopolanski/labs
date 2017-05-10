@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>App (Example sending parameters)</h2>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label for="select-help">Show Help:</label>
+          <select class="form-control" id="select-help">
+            <option value="">-- Select --</option>
+            <option value="Workspace">Workspace</option>
+            <option value="OpenSaikuFile">Open Saiku File</option>
+            <option value="SaveSaikuFile">Save Saiku File</option>
+            <option value="ChartMode">Chart Mode</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="specific-elements">Specific Elements:</label>
+          <textarea class="form-control" id="specific-elements" rows="3">[]</textarea>
+          <span class="help-block"><i>e.g: ["#new_query","#admin_icon"]</i></span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="options">Intro.js Options:</label>
+          <textarea class="form-control" id="options" rows="3">{}</textarea>
+          <span class="help-block"><i>e.g: { "showProgress": false }</i></span>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div style="margin-top: 30px;">
+          <a class="btn btn-default" id="btn-send" href="javascript:void(0);" role="button">Send</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Saiku embed (iframe)</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:9999?splash=false"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    $(function() {
+      // Creating a client...
+      var iwc = new ozpIwc.Client('http://aml-development.github.io/ozp-iwc');
+
+      // Testing conn
+      iwc.connect().then(function() {
+        console.log('IWC Client connected with address: ', iwc.address);
+      }).catch(function(err) {
+        console.log('IWC Client failed to connect: ', err);
+      });
+
+      var funcRef = new iwc.intents.Reference('/application/display/help');
+
+      $('#btn-send').on('click', function() {
+        var fileName = $('#select-help').val();
+        var specificElements = $('#specific-elements').val() !== '' ? JSON.parse($('#specific-elements').val()) : [];
+        var options = $('#options').val() !== '' ? JSON.parse($('#options').val()) : {};
+
+        var data = {
+          fileName: fileName,                 // required
+          specificElements: specificElements, // optional
+          options: options                    // optional
+        };
+
+        if (data.fileName === '') {
+          alert('Select a show help');
+        }
+        else {
+          funcRef.invoke(data);
+
+          // funcRef.broadcast(data);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
