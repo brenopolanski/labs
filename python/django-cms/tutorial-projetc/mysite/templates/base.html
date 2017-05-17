@@ -37,5 +37,9 @@
             {% block content %}{% endblock content %}
         </div>
         {% render_block "js" %}
+
+        <footer class="container">
+            {% static_placeholder 'footer' %}
+        </footer>
     </body>
 </html>
