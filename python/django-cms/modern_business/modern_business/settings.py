@@ -138,16 +138,18 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
+    'mptt',
     'djangocms_column',
     'djangocms_link',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cmsplugin_filer_utils',
-    'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'aldryn_style',
+    'aldryn_bootstrap3',
     'modern_business'
 )
 
@@ -178,7 +180,8 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
+    ('home.html', 'Home')
 )
 
 CMS_PERMISSION = True
@@ -198,7 +201,7 @@ DATABASES = {
 }
 
 MIGRATION_MODULES = {
-    
+
 }
 
 THUMBNAIL_PROCESSORS = (
