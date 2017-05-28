@@ -1,0 +1,76 @@
+/**
+ * TABLE OF CONTENTS:
+ *
+ *  0. GLOBAL
+ *  1. HELPERS
+ *  2. COMPONENTS
+ *    - 2.1. CARD
+ */
+
+/* ==========================================================================
+   0. GLOBAL
+   ========================================================================== */
+
+body {
+  font: normal 1rem "Open Sans", arial, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+/* ==========================================================================
+   1. HELPERS
+   ========================================================================== */
+
+.text-italic {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   2. COMPONENTS
+   ========================================================================== */
+
+/* 2.1. CARD
+   ========================================================================== */
+
+.card {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.875rem;
+}
+
+.card-picture {
+  padding: 5px 0;
+}
+
+.card-content {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.813rem;
+  border: 1px solid #ccc;
+}
+
+.card-content .card-info {
+  margin: 0;
+}
+
+.card-details {
+  padding: 0;
+  list-style: none;
+}
+
+.card-details .item {
+  font-style: italic;
+}
+
+.card-details .label {
+  font-weight: bold;
+  font-style: normal;
+}

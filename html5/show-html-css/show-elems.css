@@ -1,0 +1,24 @@
+.elem {
+  position: relative;
+  border: solid #6ac5ac 3px;
+}
+
+.start-label,
+.end-label {
+  position: absolute;
+  line-height: 1em;
+  color: #414142;
+  background-color: #6ac5ac;
+}
+
+.start-label {
+  top: 0;
+  left: 0;
+  padding: 0 3px 3px 0;
+}
+
+.end-label {
+  right: 0;
+  bottom: 0;
+  padding: 3px 0 0 3px;
+}
