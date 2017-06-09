@@ -35,7 +35,7 @@ var GameState = {
 
     animalData.forEach(function(element) {
       animal = self.animals.create(-1000, self.game.world.centerY, element.key);
-      
+
       animal.customParams = { text: element.text };
       animal.anchor.setTo(0.5);
 
@@ -74,7 +74,21 @@ var GameState = {
   },
 
   switchAnimal: function(sprite, event) {
-    console.log('animal');
+    var newAnimal;
+    var endX;
+
+    if (sprite.customParams.direction > 0) {
+      newAnimal = this.animals.next();
+      endX = 640 + this.currentAnimal.width / 2;
+    }
+    else {
+      newAnimal = this.animals.previous();
+      endX = -this.currentAnimal.width / 2;
+    }
+
+    this.currentAnimal.x = endX;
+    newAnimal.x = this.game.world.centerX;
+    this.currentAnimal = newAnimal;
   },
 
   animateAnimal: function(sprite, event) {
