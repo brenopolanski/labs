@@ -3,11 +3,21 @@ var GameState = {
   //load the game assets before the game starts
   preload: function() {
     this.load.image('background', 'assets/images/background.png');
-    this.load.image('chicken', 'assets/images/chicken.png');
-    this.load.image('horse', 'assets/images/horse.png');
-    this.load.image('pig', 'assets/images/pig.png');
-    this.load.image('sheep', 'assets/images/sheep3.png');
     this.load.image('arrow', 'assets/images/arrow.png');
+    // this.load.image('chicken', 'assets/images/chicken.png');
+    // this.load.image('horse', 'assets/images/horse.png');
+    // this.load.image('pig', 'assets/images/pig.png');
+    // this.load.image('sheep', 'assets/images/sheep3.png');
+
+    this.load.spritesheet('chicken', 'assets/images/chicken_spritesheet.png', 131, 200, 3);
+    this.load.spritesheet('horse', 'assets/images/horse_spritesheet.png', 212, 200, 3);
+    this.load.spritesheet('pig', 'assets/images/pig_spritesheet.png', 297, 200, 3);
+    this.load.spritesheet('sheep', 'assets/images/sheep_spritesheet.png', 244, 200, 3);
+
+    this.load.audio('chickenSound', ['assets/audio/chicken.ogg', 'assets/audio/chicken.mp3'])
+    this.load.audio('horseSound', ['assets/audio/horse.ogg', 'assets/audio/horse.mp3'])
+    this.load.audio('pigSound', ['assets/audio/pig.ogg', 'assets/audio/pig.mp3'])
+    this.load.audio('sheepSound', ['assets/audio/sheep.ogg', 'assets/audio/sheep.mp3'])
   },
 
   //executed after everything is loaded
@@ -22,10 +32,10 @@ var GameState = {
 
     // group for animals
     var animalData = [
-      { key: 'chicken', text: 'CHICKEN' },
-      { key: 'horse', text: 'HORSE' },
-      { key: 'pig', text: 'PIG' },
-      { key: 'sheep', text: 'SHEEP' }
+      { key: 'chicken', text: 'CHICKEN', audio: 'chickenSound' },
+      { key: 'horse', text: 'HORSE', audio: 'horseSound' },
+      { key: 'pig', text: 'PIG', audio: 'pigSound' },
+      { key: 'sheep', text: 'SHEEP', audio: 'sheepSound' }
     ];
 
     this.animals = this.game.add.group();
@@ -34,10 +44,12 @@ var GameState = {
     var animal;
 
     animalData.forEach(function(element) {
-      animal = self.animals.create(-1000, self.game.world.centerY, element.key);
+      animal = self.animals.create(-1000, self.game.world.centerY, element.key, 0);
 
-      animal.customParams = { text: element.text };
+      animal.customParams = { text: element.text, sound: self.game.add.audio(element.audio) };
       animal.anchor.setTo(0.5);
+
+      animal.animations.add('animate', [0, 1, 2, 1, 0, 1], 3, false);
 
       animal.inputEnabled = true;
       animal.input.pixelPerfectClick = true;
@@ -45,7 +57,9 @@ var GameState = {
     });
 
     this.currentAnimal = this.animals.next();
-    this.currentAnimal.position.set(this.game.world.centerX, this.game.world.centerY)
+    this.currentAnimal.position.set(this.game.world.centerX, this.game.world.centerY);
+
+    this.showText(this.currentAnimal);
 
     // left arrow
     this.leftArrow = this.game.add.sprite(60, this.game.world.centerY, 'arrow');
@@ -81,6 +95,8 @@ var GameState = {
       return false
     }
 
+    this.animalText.visible = false;
+
     this.isMoving = true;
 
     if (sprite.customParams.direction > 0) {
@@ -98,6 +114,7 @@ var GameState = {
     newAnimalMovement.to({ x: this.game.world.centerX }, 1000);
     newAnimalMovement.onComplete.add(function() {
       this.isMoving = false;
+      this.showText(newAnimal);
     }, this);
     newAnimalMovement.start();
 
@@ -108,8 +125,25 @@ var GameState = {
     this.currentAnimal = newAnimal;
   },
 
+  showText: function(animal) {
+    if (!this.animalText) {
+      var style = {
+        font: 'bold 30pt Arial',
+        fill: '#d0171b',
+        align: 'center'
+      };
+
+      this.animalText = this.game.add.text(this.game.width / 2, this.game.height * 0.85, '', style);
+      this.animalText.anchor.setTo(0.5);
+    }
+
+    this.animalText.setText(animal.customParams.text);
+    this.animalText.visible = true;
+  },
+
   animateAnimal: function(sprite, event) {
-    console.log('animal');
+    sprite.play('animate');
+    sprite.customParams.sound.play();
   }
 };
 
