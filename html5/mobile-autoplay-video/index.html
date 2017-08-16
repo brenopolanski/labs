@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile autoplay video</title>
+</head>
+<body>
+  <h1>Video Isometrico</h1>
+  <video loop muted autoplay style="width:500px;" id="myVideo">
+    <source src="./isometrico_playlist.mp4" type="video/mp4">
+  </video>
+
+  <div id="statusText"></div>
+
+  <!-- <div id="player"></div> -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+  <script>
+    let myVideo = document.getElementById("myVideo");
+
+    myVideo.play().then(() => {
+      document.getElementById("statusText").innerHTML = "Yay! Video is playing!";
+    }).catch((error) => {
+     document.getElementById("statusText").innerHTML = "Error: " + error;
+    });
+
+    // var MyControl = Clappr.MediaControl.extend({});
+    // var player = new Clappr.Player({
+    //   source: './isometrico_playlist.mp4',
+    //   parentId: "#player",
+    //   mute: true,
+    //   autoPlay: !Clappr.Browser.isMobile,
+    //   mediacontrol: MyControl
+    // });
+  </script>
+</body>
+</html>
