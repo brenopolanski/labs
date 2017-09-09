@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked>Text</ion-label>
+    <ion-textarea rows="5" [(ngModel)]="text"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Translated text: {{translatedText}}</ion-label>
+  </ion-item>
+
+  <button ion-button (click)="translateText()">Translate the text</button>
+
+</ion-content>
