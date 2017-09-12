@@ -4,20 +4,19 @@
 
 * [BI](bi/)
 * [C and C++](c_cplusplus/)
+* [Casa do Código](casa-do-codigo/)
 * [Chrome Apps](chrome-apps/)
 * [CSS](css/)
+* [DevOps](devops/)
 * [HTML5](html5/)
 * [Java](java/)
 * [JavaScript](javascript/)
+* [Juju Charms](juju-charms/)
 * [Microsoft](microsoft/)
 * [PHP](php/)
 * [Python](python/)
 * [Rust](rust/)
 * [Shell](shell/)
-
-## Credits
-
-* Vitor Britto ([@vitorbritto](https://github.com/vitorbritto/labs))
 
 ## License
 
