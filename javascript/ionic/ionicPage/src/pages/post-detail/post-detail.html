@@ -1,0 +1,25 @@
+<!--
+  Generated template for the PostDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{(post | async)?.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{(post | async)?.id}} - {{(post | async)?.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{(post | async)?.body}}</p>
+      <p>{{(post | async)?.userId}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
