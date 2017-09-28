@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Append params in URL</title>
+</head>
+<body>
+  <script>
+    function queryString(params) {
+      var queryParts = [];
+      var param;
+      var value;
+
+      for (param in params) {
+        value = params[param];
+        param = window.encodeURIComponent(param);
+
+        if (Array.isArray(value)) {
+          for (var i = 0; i < value.length; i++) {
+            queryParts.push(param + '=' + window.encodeURIComponent(value[i]));
+          }
+        }
+        else if (value !== null) {
+          queryParts.push(param + '=' + window.encodeURIComponent(value));
+        }
+        else {
+          queryParts.push(param);
+        }
+      }
+
+      return queryParts.join('&');
+    }
+
+    function requestUrl(url, params) {
+      var queryStr = queryString(params);
+      var url = url || '';
+
+      if (queryStr) {
+        var bindingChar = url.indexOf('?') >= 0 ? '&' : '?';
+        return url + bindingChar + queryStr;
+      }
+
+      return url;
+    }
+
+    var myURL = 'https://www.googleapis.com/youtube/v3/search';
+    var someParams = {"part":"snippet", "q":"polymer", "key": "YOUTUBE_API_KEY", "type": "video"};
+    var newURL = requestUrl(myURL, someParams);
+
+    console.log(newURL);
+  </script>
+</body>
+</html>
