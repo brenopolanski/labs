@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/build/intermediates/res/merged/F0/debug/drawable-hdpi/icon.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/src/main/res/drawable-hdpi/icon.png"
+    },
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/build/intermediates/res/merged/F0/debug/drawable-hdpi/background.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/src/main/res/drawable-hdpi/background.png"
+    },
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/build/intermediates/res/merged/F0/debug/drawable-hdpi/logo.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld/platforms/android/src/main/res/drawable-hdpi/logo.png"
+    }
+]

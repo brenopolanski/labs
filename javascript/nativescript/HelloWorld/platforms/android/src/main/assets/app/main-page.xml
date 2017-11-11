@@ -1,0 +1,9 @@
+<Page loaded="pageLoaded">
+  <ActionBar title="My App" class="action-bar"></ActionBar>
+  <StackLayout orientation="vertical">
+    <Image id="foto" src="~/images/apple.jpg" />
+    <Button text="Tirar foto" tap="tirarFoto" />
+    <Button text="Compartilhar" tap="compartilhar" />
+    <Button text="Ir página" tap="pagina2" />
+  </StackLayout>
+</Page>

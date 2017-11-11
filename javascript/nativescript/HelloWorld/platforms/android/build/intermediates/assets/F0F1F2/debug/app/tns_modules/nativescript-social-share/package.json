@@ -1,0 +1,63 @@
+{
+  "_from": "nativescript-social-share",
+  "_id": "nativescript-social-share@1.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-l2vbHaCSyPpoxUr/z5oPUNnLVYYMsawIWTydzBSo+XVh9lbfajaEFkACR0HNquEHwx73IH7a7J5l3rF2fiQPOg==",
+  "_location": "/nativescript-social-share",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nativescript-social-share",
+    "name": "nativescript-social-share",
+    "escapedName": "nativescript-social-share",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-social-share/-/nativescript-social-share-1.5.0.tgz",
+  "_shasum": "b4ed85e37694916379073c092562abf897215633",
+  "_spec": "nativescript-social-share",
+  "_where": "/home/brenopolanski/github/my/labs/javascript/nativescript/HelloWorld",
+  "author": {
+    "name": "TJ VanToll",
+    "email": "tj.vantoll@gmail.com",
+    "url": "http://tjvantoll.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/tjvantoll/nativescript-social-share/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Eddy Verbruggen",
+      "email": "eddyverbruggen@gmail.com",
+      "url": "https://github.com/EddyVerbruggen"
+    }
+  ],
+  "deprecated": false,
+  "description": "A NativeScript module to use the native social sharing widget",
+  "homepage": "https://github.com/tjvantoll/nativescript-social-share",
+  "keywords": [
+    "NativeScript"
+  ],
+  "license": "MIT",
+  "main": "social-share",
+  "name": "nativescript-social-share",
+  "nativescript": {
+    "platforms": {
+      "ios": "1.4.0",
+      "android": "1.4.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjvantoll/nativescript-social-share.git"
+  },
+  "typings": "index.d.ts",
+  "version": "1.5.0"
+}

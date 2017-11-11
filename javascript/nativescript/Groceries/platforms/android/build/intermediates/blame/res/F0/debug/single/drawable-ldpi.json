@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi/ic_menu_delete.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/src/main/res/drawable-ldpi/ic_menu_delete.png"
+    },
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi/logo.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/src/main/res/drawable-ldpi/logo.png"
+    },
+    {
+        "merged": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi/icon.png",
+        "source": "/home/brenopolanski/github/my/labs/javascript/nativescript/Groceries/platforms/android/src/main/res/drawable-ldpi/icon.png"
+    }
+]
