@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 3</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+  <style>
+    .dygraph-legend {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <p>Roll period of 14 timesteps, custom range selector height and plot color.</p>
+  <div id="roll14" style="width:600px; height:300px;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    new Dygraph(
+        document.getElementById('roll14'),
+        data_temp,
+        {
+          rollPeriod: 14,
+          showRoller: true,
+          customBars: true,
+          title: 'Daily Temperatures in New York vs. San Francisco',
+          ylabel: 'Temperature (F)',
+          legend: 'always',
+          showRangeSelector: true,
+          rangeSelectorHeight: 30,
+          rangeSelectorPlotStrokeColor: 'yellow',
+          rangeSelectorPlotFillColor: 'lightyellow'
+        }
+      );
+  </script>
+</body>
+</html>

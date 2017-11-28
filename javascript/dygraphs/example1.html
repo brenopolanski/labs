@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 1</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+</head>
+<body>
+  <div id="graphdiv"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script>
+    var g = new Dygraph(
+      document.getElementById('graphdiv'),
+      'Date,Temperature\n' +
+      '2008-05-07,75\n' +
+      '2008-05-08,70\n' +
+      '2008-05-09,80\n'
+    );
+  </script>
+</body>
+</html>

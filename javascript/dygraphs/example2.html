@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 2</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+  <style>
+    .dygraph-legend {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <p>No roll period.</p>
+  <div id="noroll" style="width:600px; height:300px;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    new Dygraph(
+        document.getElementById('noroll'),
+        data_temp,
+        {
+          customBars: true,
+          title: 'Daily Temperatures in New York vs. San Francisco',
+          ylabel: 'Temperature (F)',
+          legend: 'always',
+          showRangeSelector: true
+        }
+    );
+  </script>
+</body>
+</html>
