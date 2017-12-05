@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 1</title>
+</head>
+<body>
+
+  <div>
+    <textarea name="input" id="input" cols="30" rows="10"></textarea>
+    <br>
+    <button id="submit">Parse</button>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./papaparse.min.js"></script>
+  <script>
+    $(function() {
+      $('#submit').on('click', function() {
+        var csvString = $('#input').val();
+
+        Papa.parse(csvString, {
+          complete: completeFn
+        });
+      });
+    });
+
+    function completeFn(results) {
+      console.log('Results:', results);
+    }
+  </script>
+</body>
+</html>

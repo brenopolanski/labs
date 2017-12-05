@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 2</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+</head>
+<body>
+
+  <div>
+    <textarea name="input" id="input" cols="100" rows="25">"Year","USA/Drink/Unit Sales","USA/Food/Unit Sales","USA/Non-Consumable/Unit Sales"
+"1997","24597.0","191940.0","50236.0"
+</textarea>
+    <br>
+    <button id="submit">Parse</button>
+  </div>
+
+  <br>
+
+  <div id="graphdiv"></div>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.js"></script>
+  <script src="./papaparse.min.js"></script>
+  <script>
+    $(function() {
+      $('#submit').on('click', function() {
+        var csvString = $('#input').val();
+
+        Papa.parse(csvString, {
+          complete: completeFn
+        });
+      });
+    });
+
+    function completeFn(results) {
+      console.log('Results:', results);
+
+      var len = results.data.length;
+      var data = [];
+
+      for (var i = 1; i < len; i++) {
+
+        var newData = [];
+
+        // for (var j = 0; j < results.data[i].length; j++) {
+        //   if (j === 0) {
+        //     newData.push(new Date(results.data[i][j]));
+        //   }
+        //   else {
+        //     if (results.data[i][j] === '') {
+        //       newData.push(null);
+        //     }
+        //     else {
+        //       newData.push(Number(results.data[i][j]));
+        //     }
+        //   }
+
+        //   console.log(newData);
+
+        //   results.data[i][j] = newData;
+        // }
+
+        data.push(results.data[i]);
+      }
+
+      console.log(data);
+
+      // var g = new Dygraph(
+      //   document.getElementById('graphdiv'),
+      //   data,
+      //   // [[new Date('2009-07-12'), 24597.0, 191940.0, 50236.0]],
+      //   {
+      //     labels: results.data[0]
+      //   }
+      // );
+    }
+  </script>
+
+
+<!--   <script>
+    $(function() {
+      $('#submit').on('click', function() {
+        var csvString = $('#input').val();
+
+        new Dygraph(
+            document.getElementById('graphdiv'),
+            csvString,
+            {
+                rollPeriod: 14,
+                showRoller: true,
+                customBars: true,
+                title: 'Nightly Temperatures in New York vs. San Francisco',
+                ylabel: 'Temperature (F)',
+                legend: 'always',
+                showRangeSelector: true,
+                rangeSelectorPlotFillColor: 'MediumSlateBlue',
+                rangeSelectorPlotFillGradientColor: 'rgba(123, 104, 238, 0)',
+                colorValue: 0.9,
+                fillAlpha: 0.4
+            }
+        );
+      });
+    });
+  </script> -->
+</body>
+</html>

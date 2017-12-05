@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 3</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+</head>
+<body>
+
+  <div>
+    <textarea name="input" id="input" cols="100" rows="25">"Year","USA/Drink/Unit Sales","USA/Food/Unit Sales","USA/Non-Consumable/Unit Sales"
+"1997","24597.0","191940.0","50236.0"
+</textarea>
+    <br>
+    <button id="submit">Parse</button>
+  </div>
+
+  <br>
+
+  <div id="graphdiv"></div>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.js"></script>
+  <script src="./papaparse.min.js"></script>
+  <script>
+    $(function() {
+      $('#submit').on('click', function() {
+        var csvString = $('#input').val();
+
+        Papa.parse(csvString, {
+          delimiter: "",  // auto-detect
+          newline: "",  // auto-detect
+          quoteChar: '"',
+          header: false,
+          dynamicTyping: true,
+          preview: 0,
+          encoding: "",
+          // worker: true,
+          comments: false,
+          step: undefined,
+          complete: undefined,
+          error: undefined,
+          download: false,
+          skipEmptyLines: true,
+          chunk: undefined,
+          fastMode: undefined,
+          beforeFirstChunk: undefined,
+          withCredentials: undefined,
+
+          complete: completeFn
+        });
+      });
+    });
+
+    function completeFn(results) {
+      console.log('Results:', results);
+
+      var data = results.data;
+      var newData = [];
+
+      for (var i = 1; i < data.length; i++) {
+        newData.push(data[i]);
+      }
+
+      console.log(newData);
+
+      new Dygraph(
+        document.getElementById('graphdiv'),
+        newData,
+        // [[new Date('2009-07-12'), 24597.0, 191940.0, 50236.0]],
+        {
+          labels: data[0]
+        }
+      );
+    }
+  </script>
+</body>
+</html>
