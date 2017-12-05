@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 5</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+</head>
+<body>
+  <div id="graphdiv"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script>
+    var g = new Dygraph(
+      document.getElementById('graphdiv'),
+      'Product Family,1997/Unit Sales,1997/Store Sales\n' +
+      'Drink,24597.0,48836.21\n' +
+      'Food,191940.0,409035.59\n' +
+      'Non-Consumable,50236.0,107366.33\n'
+    );
+  </script>
+</body>
+</html>
