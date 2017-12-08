@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 7</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+  <style>
+    #darkbg .dygraph-axis-label { color: white; }
+    .dygraph-legend { text-align: right; }
+    #darkbg .dygraph-legend { background-color: #101015; }
+  </style>
+</head>
+<body>
+  <div style="background-color: #101015; color: white">
+    <p>Demo of range selector without the chart.</p>
+    <div id="nochart" style="width:600px; height:30px;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    new Dygraph(
+      document.getElementById('nochart'),
+      data_temp,
+      {
+        xAxisHeight: 30,
+        axes : {
+          x : {
+            drawAxis : false
+          }
+        },
+
+        // rollPeriod: 14,
+        // showRoller: true,
+        // customBars: true,
+        // title: 'Nightly Temperatures in New York vs. San Francisco',
+        // ylabel: 'Temperature (F)',
+        // legend: 'always',
+        showRangeSelector: true,
+        rangeSelectorPlotFillColor: 'MediumSlateBlue',
+        rangeSelectorPlotFillGradientColor: 'rgba(123, 104, 238, 0)',
+        rangeSelectorHeight: 30,
+        colorValue: 0.9,
+        fillAlpha: 0.4
+      }
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Example 9</title>
+
+  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css">
+  <style>
+    #darkbg .dygraph-axis-label { color: white; }
+    .dygraph-legend { text-align: right; }
+    #darkbg .dygraph-legend { background-color: #101015; }
+  </style>
+</head>
+<body>
+  <div style="background-color: #101015; color: white">
+    <p>Dark background, custom range selector gradient color.</p>
+    <div id="darkbg" style="width:600px; height:30px;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    new Dygraph(
+        document.getElementById('darkbg'),
+        data_temp,
+        {
+            xAxisHeight: 30,
+            axes : {
+              x : {
+                drawAxis : false
+              }
+            },
+
+            // rollPeriod: 14,
+            // showRoller: true,
+            // customBars: true,
+            // title: 'Nightly Temperatures in New York vs. San Francisco',
+            // ylabel: 'Temperature (F)',
+            // legend: 'always',
+            showRangeSelector: true,
+            rangeSelectorPlotFillColor: 'MediumSlateBlue',
+            rangeSelectorPlotFillGradientColor: 'rgba(123, 104, 238, 0)',
+            colorValue: 0.9,
+            fillAlpha: 0.4,
+
+            // http://dygraphs.com/options.html#Callbacks
+
+            rangeSelectorCallback: function(e) {
+              console.log(e);
+            },
+
+            // drawCallback: function(g, i) {
+            //   console.log(g);
+            //   console.log(i);
+            // },
+
+            zoomCallback: function(minDate, maxDate, yRanges) {
+              console.log('minDate ---> ' + minDate);
+              console.log('maxDate ---> ' + maxDate);
+              console.log('====================================');
+              // console.log(yRanges);
+            }
+        }
+    );
+  </script>
+</body>
+</html>
