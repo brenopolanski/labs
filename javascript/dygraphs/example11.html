@@ -18,6 +18,7 @@
     <div id="darkbg" style="width:600px; height:30px;"></div>
   </div>
 
+  <script src="https://code.jquery.com/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
   <script src="data.js"></script>
   <script>
@@ -48,23 +49,42 @@
 
             // http://dygraphs.com/options.html#Callbacks
 
-            rangeSelectorCallback: function(e) {
-              console.log(e);
-            },
-
-            // drawCallback: function(g, i) {
-            //   console.log(g);
-            //   console.log(i);
+            // underlayCallback: function(e) {
+            //   console.log(e);
             // },
 
-            zoomCallback: function(minDate, maxDate, yRanges) {
-              console.log('minDate ---> ' + minDate);
-              console.log('maxDate ---> ' + maxDate);
-              console.log('====================================');
-              // console.log(yRanges);
-            }
+            // drawCallback: function(dygraph, is_initial) {
+            //   console.log(dygraph);
+            //   console.log(is_initial);
+            // },
+
+            // zoomCallback: function(minDate, maxDate, yRanges) {
+            //   console.log('minDate ---> ' + minDate);
+            //   console.log('maxDate ---> ' + maxDate);
+            //   console.log('====================================');
+            //   // console.log(yRanges);
+            // },
+
+            // interactionModel: {
+            //   'mousedown': function(e) {
+            //     console.log(e);
+            //   },
+            //   'mouseup': function(e) {
+            //     console.log(e);
+            //   }
+            // }
         }
     );
+
+    $(function() {
+      var $range = $('.dygraph-rangesel-zoomhandle');
+
+      console.log($range);
+
+      $('.dygraph-rangesel-zoomhandle').on('mouseup', function(e) {
+        console.log(e);
+      });
+    });
   </script>
 </body>
 </html>
