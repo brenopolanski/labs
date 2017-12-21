@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Time Series Filter (Example sending parameters)</h2>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Date From:</label>
+          <input type="date" id="start-date-time">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="select-help">Date To:</label>
+          <input type="date" id="end-date-time">
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <a class="btn btn-default" id="btn-send-dates" href="javascript:void(0);" role="button">Send Dates</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Saiku embed (iframe)</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:9999?splash=false"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="./ozpIwc-client.min.js"></script>
+  <script>
+    $(function() {
+      // Creating a client...
+      var iwc = new ozpIwc.Client('http://aml-development.github.io/ozp-iwc');
+
+      // Testing conn
+      iwc.connect().then(function() {
+        console.log('IWC Client connected with address: ', iwc.address);
+      }).catch(function(err) {
+        console.log('IWC Client failed to connect: ', err);
+      });
+
+      var funcRef = new iwc.intents.Reference('/application/commonComponent/timeline/setTimes');
+
+      $('#btn-send-dates').on('click', function() {
+        var startDateTime = $('#start-date-time').val();
+        var endDateTime = $('#end-date-time').val();
+
+        var data = {
+          startDateTime: startDateTime,
+          endDateTime: endDateTime
+        };
+
+        if (startDateTime === '' || endDateTime === '') {
+          alert('Select a date!')
+        }
+        else {
+          funcRef.invoke(data);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
