@@ -37,11 +37,17 @@
     document.getElementById('btn-apply').addEventListener('click', function(event) {
       let radio_buttons = document.querySelectorAll('input[type=radio]');
 
-      for (let i = 0; i < radio_buttons.length; i++) {
-        if (radio_buttons[i].value === 'passed') {
-          radio_buttons[i].checked = true;
-        }
-      }
+      // for (let i = 0; i < radio_buttons.length; i++) {
+      //   if (radio_buttons[i].value === 'passed') {
+      //     radio_buttons[i].checked = true;
+      //   }
+      // }
+
+      Array.prototype.filter.call(radio_buttons, (element) => {
+        console.log(element.value);
+
+        element.checked = true;
+      });
     });
   </script>
 </body>
