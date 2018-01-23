@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Radio Buttons</title>
+</head>
+<body>
+  <div>
+    <label class="ng-binding"> <input required="" type="radio" name="result-9147367" value="failed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Requer Mudanças </label>
+    <label class="ng-binding"><input required="" type="radio" name="result-9147367" value="passed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Atendeu à Especificação </label>
+  </div>
+
+  <br>
+
+  <div>
+    <label class="ng-binding"> <input required="" type="radio" name="result-9147368" value="failed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Requer Mudanças </label>
+    <label class="ng-binding"><input required="" type="radio" name="result-9147368" value="passed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Atendeu à Especificação </label>
+  </div>
+
+  <br>
+
+  <div>
+    <label class="ng-binding"> <input required="" type="radio" name="result-9147369" value="failed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Requer Mudanças </label>
+    <label class="ng-binding"><input required="" type="radio" name="result-9147369" value="passed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Atendeu à Especificação </label>
+  </div>
+
+  <br>
+
+  <div>
+    <label class="ng-binding"> <input required="" type="radio" name="result-9147370" value="failed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Requer Mudanças </label>
+    <label class="ng-binding"><input required="" type="radio" name="result-9147370" value="passed" ng-model="modifiedCritique.result" ng-click="toggleExceededRequirements(false)" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">&nbsp;&nbsp; Atendeu à Especificação </label>
+  </div>
+
+  <button type="button" id="btn-apply">Apply</button>
+
+  <script>
+    document.getElementById('btn-apply').addEventListener('click', function(event) {
+      let radio_buttons = document.querySelectorAll('input[type=radio]');
+
+      for (let i = 0; i < radio_buttons.length; i++) {
+        if (radio_buttons[i].value === 'passed') {
+          radio_buttons[i].checked = true;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
