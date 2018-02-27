@@ -1,3 +1,5 @@
+/* global WarningModal, DataSourcesModal, License, LicenseUsersCollection */
+
 Saiku.AdminConsole = {
   show_admin: function() {
     var tab = _.find(Saiku.tabs._tabs, function(tab) {
@@ -58,8 +60,8 @@ var AdminConsole = Backbone.View.extend({
     this.schemas = new Schemas({}, { dialog: this });
     this.datasources = new Connections({}, { dialog: this });
     this.propertieskeys = new PropertiesKeys({}, {dialog: this});
-    var that = this,
-      license = new License();
+    var that = this;
+    var license = new License();
 
     license.fetch_license('api/license/', function(opt) {
       if (opt.status === 'success') {
@@ -76,7 +78,7 @@ var AdminConsole = Backbone.View.extend({
     event.preventDefault();
     var html = this.licenseInfoTemplate;
 
-    yourEpoch = parseFloat(this.licenseInfo.expiration);
+    var yourEpoch = parseFloat(this.licenseInfo.expiration);
     var yourDate = new Date(yourEpoch);
 
     $(this.el).find('.user_info').html(html);
