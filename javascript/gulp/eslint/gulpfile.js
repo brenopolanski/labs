@@ -1,11 +1,16 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+var eslintIfFixed = require('gulp-eslint-if-fixed');
 
 gulp.task('lint', () => {
     // return gulp.src(['**/*.js','!node_modules/**'])
     return gulp.src(['**/*.js'])
+        // .pipe(eslint({
+        //     fix: true
+        // }))
         .pipe(eslint())
         .pipe(eslint.format())
+        // .pipe(eslintIfFixed('./'))
         .pipe(eslint.result(result => {
             // Called for each ESLint result.
             console.log(`ESLint result: ${result.filePath}`);

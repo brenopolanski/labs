@@ -1,2 +1,3 @@
 var x = 0;
-console.log(x + "Test");
+
+console.log(x + 'Test');
