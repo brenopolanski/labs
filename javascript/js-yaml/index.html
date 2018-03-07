@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js-yaml</title>
+</head>
+<body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./js-yaml.min.js"></script>
+  <script>
+    $.ajax({
+      type: 'GET',
+      url: './Settings.yaml',
+      success: function(props) {
+        // JavaScript YAML parser
+        // link: https://github.com/nodeca/js-yaml
+        var Settings = jsyaml.load(props);
+
+        console.log(Settings);
+      }
+    });
+  </script>
+</body>
+</html>
