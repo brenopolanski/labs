@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example 1</title>
+	<link rel="stylesheet" type="text/css" href="./jsmind.css">
+</head>
+<body>
+	<div id="jsmind_container" style="height: 800px"></div>
+
+	<script type="text/javascript" src="./jsmind.js"></script>
+	<script type="text/javascript">
+		var mind = {
+		    "meta":{
+		        "name":"jsMind remote",
+		        "author":"hizzgdev@163.com",
+		        "version":"0.2"
+		    },
+		    "format":"node_tree",
+		    "data":{"id":"root","topic":"Spicule","children":[
+		        {"id":"easy","topic":"Easy","direction":"right","children":[
+		            {"id":"easy1","topic":"Easy to show"},
+		            {"id":"easy2","topic":"Easy to edit"},
+		            {"id":"easy3","topic":"Easy to store"},
+		            {"id":"easy4","topic":"Easy to embed"}
+		        ]},
+		        {"id":"open","topic":"Open Source","direction":"right","children":[
+		            {"id":"open1","topic":"on GitHub"},
+		            {"id":"open2","topic":"BSD License"}
+		        ]},
+		        {"id":"powerful","topic":"Powerful","direction":"right","children":[
+		            {"id":"powerful1","topic":"Base on Javascript"},
+		            {"id":"powerful2","topic":"Base on HTML5"},
+		            {"id":"powerful3","topic":"Depends on you"}
+		        ]},
+		        {"id":"other","topic":"test node","direction":"right","children":[
+		            {"id":"other1","topic":"I'm from local variable"},
+		            {"id":"other2","topic":"I can do everything"}
+		        ]}
+		    ]}
+		};
+
+	    var options = {                     // for more detail at next chapter
+	        container:'jsmind_container',   // [required] id of container
+	        // editable:true,                  // [required] whether allow edit or not
+	        theme:'clouds'                  // [required] theme
+	    };
+	    var jm = new jsMind(options);
+	    jm.show(mind);
+	</script>
+</body>
+</html>
