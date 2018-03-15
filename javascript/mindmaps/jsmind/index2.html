@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mindmap</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./jsmind.css">
+  <style>
+    #mindmap {
+      width: 2000px !important;
+      height: 2500px !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button id="zoom-in-button">Zoom in</button>
+    <button id="zoom-out-button">Zoom out</button>
+  </div>
+
+  <div id="mindmap"></div>
+
+  <!-- JS -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./jsmind.js"></script>
+  <script src="./jsmind.draggable.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script>
+    $(function() {
+      $.ajax({
+        url: './data.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(dataJson) {
+          console.log(dataJson);
+
+          var data = dataJson;
+          var options = {
+            container: 'mindmap',
+            // editable: true,
+            theme: 'clouds',
+            mode: 'side',
+            support_html: true
+          };
+          var mindMap = new jsMind(options);
+          var jm = null;
+
+          mindMap.show(data);
+
+          // action zoom
+
+          var zoomInButton = document.getElementById('zoom-in-button');
+          var zoomOutButton = document.getElementById('zoom-out-button');
+
+          $('#zoom-in-button').on('click', function() {
+            if (mindMap.view.zoomIn()) {
+                zoomOutButton.disabled = false;
+            } else {
+                zoomInButton.disabled = true;
+            }
+          });
+
+          $('#zoom-out-button').on('click', function() {
+            if (mindMap.view.zoomOut()) {
+                zoomInButton.disabled = false;
+            } else {
+                zoomOutButton.disabled = true;
+            }
+          });
+
+          // Screenshot --v
+
+          // setTimeout(function(argument) {
+          //   html2canvas(document.querySelector("#mindmap")).then(canvas => {
+          //     document.body.appendChild(canvas)
+          //   });
+          // }, 3000);
+        },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error(jqXHR);
+        console.error(textStatus);
+        console.error(errorThrown);
+      }
+      });
+    });
+  </script>
+</body>
+</html>
