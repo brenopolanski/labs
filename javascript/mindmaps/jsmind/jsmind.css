@@ -1,7 +1,7 @@
 /*
  * Released under BSD License
  * Copyright (c) 2014-2015 hizzgdev@163.com
- * 
+ *
  * Project Home:
  *   https://github.com/hizzgdev/jsmind/
  */
@@ -157,3 +157,11 @@ jmnodes.theme-asbestos jmnode.selected{background-color:#11f;color:#fff;}
 jmnodes.theme-asbestos jmnode.root{}
 jmnodes.theme-asbestos jmexpander{}
 jmnodes.theme-asbestos jmexpander:hover{}
+
+/* spicule theme */
+jmnodes.theme-spicule jmnode{background-color:#fff;color:#435a66; border-radius: 10px;}
+jmnodes.theme-spicule jmnode:hover{background-color:#f0f0f0;}
+/*jmnodes.theme-spicule jmnode.selected{background-color:#11f;color:#fff;}*/
+jmnodes.theme-spicule jmnode.root{}
+jmnodes.theme-spicule jmexpander{z-index: 9999; margin-left: 10px; background-color: #fff;}
+jmnodes.theme-spicule jmexpander:hover{}

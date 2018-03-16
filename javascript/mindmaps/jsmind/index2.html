@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="./jsmind.css">
   <style>
     #mindmap {
-      width: 2000px !important;
+      width: 3000px !important;
+      /*width: 2000px !important;*/
       height: 2500px !important;
     }
   </style>
@@ -22,7 +23,7 @@
   <div id="mindmap"></div>
 
   <!-- JS -->
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="./jsmind.js"></script>
   <script src="./jsmind.draggable.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -39,9 +40,18 @@
           var options = {
             container: 'mindmap',
             // editable: true,
-            theme: 'clouds',
+            theme: 'spicule',
             mode: 'side',
-            support_html: true
+            support_html: true,
+            view: {
+              line_width: 5,
+              line_color: '#43005a'
+            },
+            layout:{
+              hspace: 300,
+              vspace: 20,
+              pspace: 13
+            }
           };
           var mindMap = new jsMind(options);
           var jm = null;
@@ -71,11 +81,11 @@
 
           // Screenshot --v
 
-          // setTimeout(function(argument) {
-          //   html2canvas(document.querySelector("#mindmap")).then(canvas => {
-          //     document.body.appendChild(canvas)
-          //   });
-          // }, 3000);
+          setTimeout(function(argument) {
+            html2canvas(document.querySelector("#mindmap")).then(canvas => {
+              document.body.appendChild(canvas)
+            });
+          }, 3000);
         },
       error: function(jqXHR, textStatus, errorThrown) {
         console.error(jqXHR);
