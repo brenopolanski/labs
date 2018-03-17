@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mindmap</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@0.4.0/modern-normalize.css">
+  <link rel="stylesheet" href="./jsmind.css">
+  <link rel="stylesheet" href="./mindmap.css">
+</head>
+<body>
+  <div id="loading-page">
+    <script type="text/javascript">
+      document.write('<div id="loading-container"><p id="loading-content">' +
+                       '<img src="./loading.gif" alt=""></p></div>');
+    </script>
+  </div>
+
+  <div class="toolbar">
+    <button id="zoom-in-button" title="Zoom in"> + </button>
+    <button id="zoom-out-button" title="Zoom out"> - </button>
+  </div>
+
+  <div id="container">
+    <div id="mindmap"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./jsmind.js"></script>
+  <script src="./jsmind.draggable.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <!-- <script src="./dragscroll.js"></script> -->
+  <script type="text/javascript">
+
+    $(function() {
+
+      // loading...
+      setTimeout(function() {
+        $('div#loading-page').fadeOut(function() {
+          $(this).remove();
+          $('body').removeAttr('style');
+        });
+      }, 2000);
+
+      $.ajax({
+        url: './data.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(dataJson) {
+          console.log(dataJson);
+
+          var data = dataJson;
+          var options = {
+            container: 'mindmap',
+            // editable: true,
+            theme: 'spicule',
+            mode: 'side',
+            support_html: true,
+            view: {
+              line_width: 5,
+              line_color: '#43005a'
+            },
+            layout:{
+              hspace: 500,
+              vspace: 20,
+              pspace: 13
+            }
+          };
+          var mindMap = new jsMind(options);
+          var jm = null;
+
+          mindMap.show(data);
+
+          // action zoom
+
+          var zoomInButton = document.getElementById('zoom-in-button');
+          var zoomOutButton = document.getElementById('zoom-out-button');
+
+          $('#zoom-in-button').on('click', function() {
+            if (mindMap.view.zoomIn()) {
+                zoomOutButton.disabled = false;
+            } else {
+                zoomInButton.disabled = true;
+            }
+          });
+
+          $('#zoom-out-button').on('click', function() {
+            if (mindMap.view.zoomOut()) {
+                zoomInButton.disabled = false;
+            } else {
+                zoomOutButton.disabled = true;
+            }
+          });
+
+          for (var i = 0; i < 10; i++) {
+            if ((i + 1) === 10) {
+              zoomOutButton.disabled = true;
+            }
+            else {
+              mindMap.view.zoomOut();
+            }
+          }
+
+          // window.onload = window.onresize = function() {
+          // window.onload =
+          // $(window).load(function(){
+          // window.onresize = (function() {
+            var canvas = document.getElementById('mindmap');
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            var canvasWidth = viewportWidth * 0.8;
+            var canvasHeight = canvasWidth / 2;
+
+            canvas.style.position = "absolute";
+
+            canvas.style.width = canvasWidth + "px";
+            canvas.style.height = canvasHeight + "px";
+
+            canvas.style.top = (viewportHeight - canvasHeight) / 2 + "px";
+            canvas.style.left = (viewportWidth - canvasWidth) / 2 + "px";
+
+            // console.log(canvasHeight / 2);
+
+            // var containerEl = $('.jsmind-inner')[0];
+
+            // console.log(containerEl.offsetHeight - containerEl.clientHeight);
+
+            // console.log($('.jsmind-inner').get(0).scrollHeight - $('.jsmind-inner').height());
+            // console.log($('.jsmind-inner').get(0).scrollHeight);
+            // console.log(canvas.scrollHeight);
+
+            // $('.jsmind-inner').scrollTop(canvasHeight / 2);
+            // $('.jsmind-inner').scrollLeft(canvasWidth / 2);
+
+            $('.jsmind-inner').addClass('dragscroll');
+
+
+
+            setTimeout(function(argument) {
+
+            var scrollableDivJ=$('.jsmind-inner');
+            scrollableDivJ.scrollTop("1000000");//scroll to max
+            var scrollHeight=scrollableDivJ.prop("scrollHeight");
+            var diff=(scrollHeight-scrollableDivJ.scrollTop())/2;
+            var middle=scrollHeight/2-diff;
+            scrollableDivJ.scrollTop(middle);
+
+            $('.jsmind-inner').scrollLeft(canvasWidth / 2);
+
+              (function (root, factory) {
+                  if (typeof define === 'function' && define.amd) {
+                      define(['exports'], factory);
+                  } else if (typeof exports !== 'undefined') {
+                      factory(exports);
+                  } else {
+                      factory((root.dragscroll = {}));
+                  }
+              }(this, function (exports) {
+                  var _window = window;
+                  var _document = document;
+                  var mousemove = 'mousemove';
+                  var mouseup = 'mouseup';
+                  var mousedown = 'mousedown';
+                  var EventListener = 'EventListener';
+                  var addEventListener = 'add'+EventListener;
+                  var removeEventListener = 'remove'+EventListener;
+                  var newScrollX, newScrollY;
+
+                  var dragged = [];
+                  var reset = function(i, el) {
+                      for (i = 0; i < dragged.length;) {
+                          el = dragged[i++];
+                          el = el.container || el;
+                          el[removeEventListener](mousedown, el.md, 0);
+                          _window[removeEventListener](mouseup, el.mu, 0);
+                          _window[removeEventListener](mousemove, el.mm, 0);
+                      }
+
+                      // cloning into array since HTMLCollection is updated dynamically
+                      dragged = [].slice.call(_document.getElementsByClassName('dragscroll'));
+                      for (i = 0; i < dragged.length;) {
+                          (function(el, lastClientX, lastClientY, pushed, scroller, cont){
+                              (cont = el.container || el)[addEventListener](
+                                  mousedown,
+                                  cont.md = function(e) {
+                                      if (!el.hasAttribute('nochilddrag') ||
+                                          _document.elementFromPoint(
+                                              e.pageX, e.pageY
+                                          ) == cont
+                                      ) {
+                                          pushed = 1;
+                                          lastClientX = e.clientX;
+                                          lastClientY = e.clientY;
+
+                                          e.preventDefault();
+                                      }
+                                  }, 0
+                              );
+
+                              _window[addEventListener](
+                                  mouseup, cont.mu = function() {pushed = 0;}, 0
+                              );
+
+                              _window[addEventListener](
+                                  mousemove,
+                                  cont.mm = function(e) {
+                                      if (pushed) {
+                                          (scroller = el.scroller||el).scrollLeft -=
+                                              newScrollX = (- lastClientX + (lastClientX=e.clientX));
+                                          scroller.scrollTop -=
+                                              newScrollY = (- lastClientY + (lastClientY=e.clientY));
+                                          if (el == _document.body) {
+                                              (scroller = _document.documentElement).scrollLeft -= newScrollX;
+                                              scroller.scrollTop -= newScrollY;
+                                          }
+                                      }
+                                  }, 0
+                              );
+                           })(dragged[i++]);
+                      }
+                  }
+
+
+                  if (_document.readyState == 'complete') {
+                      reset();
+                  } else {
+                      _window[addEventListener]('load', reset, 0);
+                  }
+
+                  exports.reset = reset;
+              }));
+
+            }, 1000);
+
+          // })();
+        // });
+
+  // var curDown = false,
+  //     curYPos = 0,
+  //     curXPos = 0;
+  // $('.jsmind-inner').mousemove(function(m){
+  //   if(curDown === true){
+  //    $('.jsmind-inner').scrollTop($('.jsmind-inner').scrollTop() + (curYPos - m.pageY));
+  //    $('.jsmind-inner').scrollLeft($('.jsmind-inner').scrollLeft() + (curXPos - m.pageX));
+  //   }
+  // });
+
+  // $('.jsmind-inner').mousedown(function(m){
+  //   curDown = true;
+  //   curYPos = m.pageY;
+  //   curXPos = m.pageX;
+  // });
+
+  // $('.jsmind-inner').mouseup(function(){
+  //   curDown = false;
+  // });
+
+          // Screenshot --v
+
+          // setTimeout(function(argument) {
+          //   html2canvas(document.querySelector("#mindmap")).then(canvas => {
+          //     document.body.appendChild(canvas)
+          //   });
+          // }, 3000);
+        },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error(jqXHR);
+        console.error(textStatus);
+        console.error(errorThrown);
+      }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "name": "Breno Polanski",
+    "author": "breno.polanski@gmail.com",
+    "version": "0.1"
+  },
+  "format": "node_tree",
+  "data": {
+    "id": "root",
+    "topic": "Pains",
+    "isroot": true,
+    "border-color": "5px solid #dc2228",
+    "children": [{
+        "id": "worry",
+        "topic": "1. Worry",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "worry1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Due to being illegal</li><li>Due to being fined</li><li>Reputational damage</li><li>Blamed for negligence</li></ol>"
+        }]
+      },
+      {
+        "id": "confusion",
+        "topic": "2. Confusion",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "confusion1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Understanding the laws</li><li>What needs to be done to solve their problems</li><li>Where their data is</li><li>What data falls under new laws</li></ol>"
+        }]
+      },
+      {
+        "id": "legal_implications",
+        "topic": "3. Legal implications",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "legal_implications1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Due to being illegal</li><li>Due to being fined</li><li>Reputational damage</li><li>Blamed for negligence</li><li>Costs</li><li>Unable to function as a business without data <br> collection</li></ol>"
+        }]
+      },
+      {
+        "id": "pain_relievers",
+        "topic": "Pain Relievers",
+        "direction": "center",
+        "border-color": "5px solid #fdb60d",
+        "children": [{
+            "id": "knowledge_transfer",
+            "topic": "1. Knowledge Transfer",
+            "border-color": "5px solid #fdb60d",
+            "children": [{
+              "id": "knowledge_transfer1",
+              "border-color": "5px solid #fdb60d",
+              "topic": "<ol><li>Education around laws</li><li>Education around requirements</li><li>Clear non data or legal speak</li><li>Clear steps to solve problems</li></ol>"
+            }]
+          },
+          {
+            "id": "audit_and_report",
+            "topic": "2. Audit and Report",
+            "border-color": "5px solid #fdb60d",
+            "children": [{
+              "id": "audit_and_report1",
+              "border-color": "5px solid #fdb60d",
+              "topic": "<ol><li>Demonstrating clarity of audit and report</li><li>Clear next steps and recommendations</li><li>Example Audit and report</li><li>Example Case studies</li></ol>"
+            }]
+          },
+          {
+            "id": "customer_gains",
+            "topic": "Customer Gains",
+            "direction": "center",
+            "border-color": "5px solid #389337",
+            "children": [{
+                "id": "confidence",
+                "topic": "1. Confidence",
+                "border-color": "5px solid #389337",
+                "children": [{
+                  "id": "confidence1",
+                  "border-color": "5px solid #389337",
+                  "topic": "<ol><li>In data security</li><li>To move business forward</li><li>In their product/offering</li></ol>"
+                }]
+              },
+              {
+                "id": "reduce_stress",
+                "topic": "2. Reduce Stress",
+                "border-color": "5px solid #389337",
+                "children": [{
+                  "id": "reduce_stress1",
+                  "border-color": "5px solid #389337",
+                  "topic": "<ol><li>Know where your data is</li><li>Know you are compliant</li><li>Headspace</li><li>Easier life</li></ol>"
+                }]
+              },
+              {
+                "id": "clarity",
+                "topic": "2. Clarity",
+                "border-color": "5px solid #389337",
+                "children": [{
+                  "id": "clarity1",
+                  "border-color": "5px solid #389337",
+                  "topic": "<ol><li>Understand Law</li><li>Know where your data is</li><li>Confidence in business</li></ol>"
+                }]
+              },
+              {
+                "id": "save_time",
+                "topic": "2. Save time",
+                "border-color": "5px solid #389337",
+                "children": [{
+                  "id": "save_time1",
+                  "border-color": "5px solid #389337",
+                  "topic": "<ol><li>No \"by hand\" processes</li><li>Headspace</li><li>Save money</li></ol>"
+                }]
+              },
+              {
+                "id": "make_informed_decisions",
+                "topic": "5. Make informed decisions",
+                "border-color": "5px solid #389337",
+                "children": [{
+                  "id": "make_informed_decisions1",
+                  "border-color": "5px solid #389337",
+                  "topic": "<ol><li>Have all available data/information to hand</li><li>Easily to communicate around business</li><li>Clear next steps and actionable tasks</li></ol>"
+                }]
+              }
+            ]
+          },
+          {
+            "id": "demo",
+            "topic": "2. Demo",
+            "border-color": "5px solid #fdb60d",
+            "children": [{
+              "id": "demo1",
+              "border-color": "5px solid #fdb60d",
+              "topic": "<ol><li>Easy to understand results</li><li>Actionable outcomes</li></ol>"
+            }]
+          },
+          {
+            "id": "testimonials",
+            "topic": "4. Testimonials",
+            "border-color": "5px solid #fdb60d",
+            "children": [{
+              "id": "testimonials1",
+              "border-color": "5px solid #fdb60d",
+              "topic": "<ol><li>High profile people and brands</li><li>Content focusing on customer pains, relievers <br> and gains</li></ol>"
+            }]
+          }
+        ]
+      },
+      {
+        "id": "waste_money",
+        "topic": "4. Waste Money",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "waste_money1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Not solve their problem</li><li>Job will not be \"Complete solution\"</li></ol>"
+        }]
+      },
+      {
+        "id": "reputational_damage",
+        "topic": "4. Reputational damage",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "reputational_damage1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Damage to brand</li><li>Lose trust of customers</li><li>lose confidence of investors <br> (current of future)</li></ol>"
+        }]
+      },
+      {
+        "id": "due_diligence",
+        "topic": "4. Due Diligence",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "due_diligence1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Will Persona Protection find all our data?</li><li>Will Persona Protection make/help us to be <br> compliant?</li></ol>"
+        }]
+      },
+      {
+        "id": "fines/penalties",
+        "topic": "4. Fines/penalties",
+        "direction": "right",
+        "border-color": "5px solid #dc2228",
+        "children": [{
+          "id": "fines/penalties1",
+          "border-color": "5px solid #dc2228",
+          "topic": "<ol><li>Costs</li><li>Inhibit business growth</li><li>Bankrupt business</li></ol>"
+        }]
+      }
+    ]
+  }
+}
