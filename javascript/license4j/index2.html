@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Form to Generate a License</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      body {padding:50px;}
+      body, label, input {font-family:Verdana;font-size:8pt;}
+      label {width:200px;float:left;margin:0px 10px 10px 0px;color:white;font-weight:bold;text-align:right;}
+      br {clear:both;}
+      .formDiv{width:375px;float:left;background-color:lightskyblue;border:1px solid black;padding:20px;margin:10px 20px 250px 0px;}
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('form').on('submit', (function (e) {
+          $.ajax({
+            url: this.action,
+            type: this.method,
+            data: $(this).serialize(),
+          }).always(function () {
+            $('#licensePre').empty();
+            $('#errorSpan').empty();
+          }).done(function (data, textStatus, jqXHR) {
+            $('#licensePre').append(data);
+          }).fail(function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status === 403) {
+              $('#errorSpan').append(jqXHR.responseText);
+            } else {
+              $('#errorSpan').append("Server returned error code " + jqXHR.status);
+            }
+          });
+
+          e.preventDefault();
+        })
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <!--
+      This is a simple HTML form to generate license. It is prepared from
+      auto license generation settings you defined.
+
+      Use this form as an example or starting point to develop your own forms.
+    -->
+    <div class="formDiv">
+      <!-- REPLACE YourServerName:Port with your server address and port number -->
+      <form action="http://localhost:8090/algas/generate/1522376952745789775771522376812819" method="post">
+        <label for="regname">Registration Name</label>
+        <input type="text" name="regname" id="regname" /><br />
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname" /><br />
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname" /><br />
+        <label for="email">E-Mail Address</label>
+        <input type="text" name="email" id="email" /><br />
+        <label for="company">Company Name</label>
+        <input type="text" name="company" id="company" /><br />
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country" /><br />
+
+        <!-- This is the license quantity, you should define it (most of the time as hidden) -->
+        <input type="hidden" name="q" id="q" value="1" /><br />
+
+
+        <br /><label></label>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <pre id="licensePre"></pre>
+    <span id="errorSpan" style="color:red;"></span><br />
+  </body>
+</html>
