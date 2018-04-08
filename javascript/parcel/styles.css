@@ -1,0 +1,14 @@
+@import './button.css';
+
+body {
+  background: var(--bg, paleturquoise);
+  height: 100vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}

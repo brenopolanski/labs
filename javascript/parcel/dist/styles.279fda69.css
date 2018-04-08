@@ -1,0 +1,25 @@
+button {
+  background: peachpuff;
+  font-size: 1.3em;
+  border: none;
+  padding: .4em;
+  margin: .3em;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.13);
+}
+
+button:active {
+  background: peru;
+}
+body {
+  background: var(--bg, paleturquoise);
+  height: 100vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
