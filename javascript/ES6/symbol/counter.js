@@ -1,13 +1,11 @@
-// busca elementos
 const $ = document.querySelector.bind(document);
-const botao = $('.botao');
-const painel = $('.painel');
+const btn = $('.btn-increase');
+const panel = $('.panel');
 
-const identificadorUnico = Symbol();
-painel[identificadorUnico] = 0;
+const uniqueIdentifier = Symbol();
+panel[uniqueIdentifier] = 0;
 
-botao.addEventListener('click', () => {
-  // a cada clique incrementa painel.contador exibindo seu estado mais atual
-  painel[identificadorUnico] += 1;
-  painel.textContent = painel[identificadorUnico];
+btn.addEventListener('click', () => {
+  panel[uniqueIdentifier] += 1;
+  panel.textContent = panel[uniqueIdentifier];
 });
