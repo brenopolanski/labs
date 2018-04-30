@@ -4,6 +4,9 @@ import requests
 from bs4 import BeautifulSoup
 from elasticsearch import Elasticsearch
 
+# About `AuthenticationException`: https://github.com/elastic/elasticsearch-py/issues/470
+# curl http://elastic:elastic@localhost:9200/_cat/indices/blog-sysadmins?v
+# curl http://elastic:elastic@localhost:9200/blog-sysadmins/_search
 es_client = Elasticsearch(['http://localhost:9200'], http_auth='elastic:elastic')
 
 # drop_index = es_client.indices.create(index='blog-sysadmins', ignore=400)
