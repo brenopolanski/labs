@@ -8,9 +8,11 @@ class ContactList extends Component {
         <h1>Contacts</h1>
         <table className="table table-striped table-responsive">
           <thead>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+            </tr>
           </thead>
           <tbody>
             {
