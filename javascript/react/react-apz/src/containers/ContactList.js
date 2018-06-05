@@ -19,16 +19,20 @@ class ContactList extends Component {
               <th>Name</th>
               <th>Phone</th>
               <th>Email</th>
+              <th colSpan={2}>&nbsp;</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             {
-              this.props.contactList.map(({ name, phone, email }, index) => (
+              this.props.contactList.map(({ id, name, phone, email }, index) => (
                 <tr key={index}>
                   <td>{name}</td>
                   <td>{phone}</td>
                   <td>{email}</td>
+                  <td>
+                    <Link to={`/edit/${id}`} className="btn btn-primary">Edit</Link>
+                  </td>
                   <td>
                     <Button
                       buttonType="btn-danger"

@@ -33,6 +33,8 @@ class ContactForm extends Component {
           <button type="button" className="btn btn-default" onClick={reset} disabled={pristine || submitting}>Reset</button>
           <Link to="/"><i className="glyphicon glyphicon-chevron-left"></i> Back to Home Page</Link>
         </fieldset>
+
+        <Field type="hidden" component="input" name="id" />
       </form>
     );
   }

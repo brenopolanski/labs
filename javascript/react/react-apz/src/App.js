@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ContactList from './containers/ContactList';
 import ContactCreate from './containers/ContactCreate';
+import ContactEdit from './containers/ContactEdit';
 import './App.css';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/" component={ContactList} />
               <Route path="/new" component={ContactCreate} />
+              <Route path="/edit/:contactId" component={ContactEdit} />
             </div>
           </section>
         </div>
