@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 class ContactForm extends Component {
   render() {
@@ -30,6 +31,7 @@ class ContactForm extends Component {
         <fieldset>
           <button type="submit" className="btn btn-primary" disabled={pristine || submitting}>Submit</button>
           <button type="button" className="btn btn-default" onClick={reset} disabled={pristine || submitting}>Reset</button>
+          <Link to="/"><i className="glyphicon glyphicon-chevron-left"></i> Back to Home Page</Link>
         </fieldset>
       </form>
     );

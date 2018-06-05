@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 
 class ContactList extends Component {
   render() {
     return (
       <div>
         <h1>Contacts</h1>
+        <Link to="/new" className="btn btn-primary">
+          Create Contact
+        </Link>
         <table className="table table-striped table-responsive">
           <thead>
             <tr>
@@ -37,4 +41,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ContactList));
