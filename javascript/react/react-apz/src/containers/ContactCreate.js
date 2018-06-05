@@ -21,6 +21,17 @@ class ContactCreate extends Component {
   }
 }
 
+
+// ES5
+
+// var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+//   return {
+//     onSubmit: function onSubmit(contact) {
+//       return dispatch(contactAdd(contact));
+//     }
+//   };
+// };
+
 const mapDispatchToProps = dispatch => ({
   onSubmit: contact => dispatch(contactAdd(contact))
 });
