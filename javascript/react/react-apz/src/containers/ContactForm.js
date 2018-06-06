@@ -41,5 +41,6 @@ class ContactForm extends Component {
 }
 
 export default reduxForm({
-  form: 'contact' // This is the form's name and must be unique across the app
+  form: 'contact', // This is the form's name and must be unique across the app
+  enableReinitialize: true // This makes the form initialize again when ContactEdit re-renders
 })(ContactForm);

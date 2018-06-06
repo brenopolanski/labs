@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { contactDelete } from '../actions';
+import { contactDelete, contactFetch } from '../actions';
 
 import Button from '../components/Button';
 
 class ContactList extends Component {
+  componentWillMount() {
+    this.props.onLoad();
+  }
+
   render() {
     return (
       <div>
@@ -36,7 +40,7 @@ class ContactList extends Component {
                   <td>
                     <Button
                       buttonType="btn-danger"
-                      onClick={() => this.props.onClickDelete(index)}
+                      onClick={() => this.props.onClickDelete(id)}
                     >
                       Delete
                     </Button>
@@ -56,7 +60,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClickDelete: index => dispatch(contactDelete(index))
+  onClickDelete: id => dispatch(contactDelete(id)),
+  onLoad: () => dispatch(contactFetch())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ContactList));

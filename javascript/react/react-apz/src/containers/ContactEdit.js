@@ -11,12 +11,20 @@ class ContactEdit extends Component {
     contact: {}
   }
 
+  // componentWillMount() {
+  //   const { contactId } = this.props.match.params;
+
+  //   const contact = this.props.contactList.find(c => c.id === contactId);
+
+  //   this.setState({ contact });
+  // }
+
   componentWillMount() {
     const { contactId } = this.props.match.params;
 
-    const contact = this.props.contactList.find(c => c.id === contactId);
-
-    this.setState({ contact });
+    fetch(`/contacts/${contactId}`)
+      .then(response => response.json())
+      .then(contact => this.setState({ contact }));
   }
 
   handleSubmit(values) {
@@ -34,13 +42,13 @@ class ContactEdit extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state.contacts
-});
+// const mapStateToProps = state => ({
+//   ...state.contacts
+// });
 
 const mapDispatchToProps = dispatch => ({
   // onChange: ({ prop, value }) => dispatch(contactFormUpdate({ prop, value })),
   onSubmit: contact => dispatch(contactEdit(contact))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ContactEdit));
+export default connect(null, mapDispatchToProps)(withRouter(ContactEdit));
