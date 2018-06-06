@@ -27,6 +27,8 @@ MongoClient.connect(process.env.MONGODB_URI, (error, database) => {
 
   console.log('Successfully connected to MongoDB.');
 
+  db = database;
+
   const server = app.listen(process.env.PORT || 8080, () => {
     const { port } = server.address();
     console.log('App now running on port %d in %s mode', port, app.settings.env);
