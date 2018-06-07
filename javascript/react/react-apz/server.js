@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // https://docs.mongodb.com/manual/reference/method/ObjectId/
 const { MongoClient, ObjectID } = require('mongodb');
+const atob = require('atob');
 
 try {
   const env = require('dotenv');
@@ -47,8 +48,48 @@ app.get('/', (req, res) => {
 // PUT /contacts/:id - update contact
 // DELETE /contacts/:id - delete contact
 
+// app.get('/contacts', (req, res) => {
+//   db.collection(COLLECTION).find({}).toArray((error, docs) => {
+//     if (error) {
+//       // If this fails, return an Error 500 - Internal Server Error
+//       handleError(res, error.message, 'Failed to fetch contacts');
+//     }
+//     else {
+//       let contacts = [];
+
+//       docs.forEach(doc => {
+//         contacts.push({
+//           id: doc._id,
+//           name: doc.name,
+//           phone: doc.phone,
+//           email: doc.email
+//         });
+//       });
+
+//       res.status(200).json(contacts);
+//     }
+//   });
+// });
+
 app.get('/contacts', (req, res) => {
-  db.collection(COLLECTION).find({}).toArray((error, docs) => {
+  const { query } = req;
+  let filters = {};
+
+  if (Object.keys(query).length > 0) {
+    filters = {
+      phone: atob(query.phone)
+    };
+
+    if (query.id !== 'undefined' && query.id.length > 0) {
+      Object.assign(filters, {
+        _id: {
+          '$ne': new ObjectID(query.id)
+        }
+      });
+    }
+  }
+
+  db.collection(COLLECTION).find(filters).toArray((error, docs) => {
     if (error) {
       // If this fails, return an Error 500 - Internal Server Error
       handleError(res, error.message, 'Failed to fetch contacts');
