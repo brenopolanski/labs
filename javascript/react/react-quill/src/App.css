@@ -1,0 +1,66 @@
+body {
+  background: #f3f1f2;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-header {
+  height: 150px;
+  padding: 20px;
+  color: white;
+  background-color: #222;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container-notepad {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  flex-wrap: wrap;
+}
+
+.notepad {
+  width: 900px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0 0.75pt #d1d1d1, 0 0 3pt 0.75pt #ccc;
+}
+
+.App .ql-container {
+  background: #fefcfc;
+}
+
+/* Snow Theme */
+.App .ql-snow.ql-toolbar {
+  display: block;
+  background: #eaecec;
+}
+
+.App .ql-editor {
+  height: 100vh;
+  padding: 20px;
+}
