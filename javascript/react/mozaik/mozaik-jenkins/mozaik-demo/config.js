@@ -23,9 +23,9 @@ var config = {
             region: 'eu-west-1'
         },
         jenkins: {
-            baseUrl: 'http://165.227.60.240:8080/',
-            basicAuthUser: 'admin',
-            basicAuthPassword: '5043658a11ceb720aead7ae44317f387'
+            baseUrl: '',
+            basicAuthUser: '',
+            basicAuthPassword: ''
         }
     },
 
@@ -40,12 +40,31 @@ var config = {
         // first dashboard
         {
             // 2 x 2 dashboard
-            columns: 2,
-            rows:    2,
+            columns: 3,
+            rows:    3,
             widgets: [
+                // {
+                //     type: 'jenkins.job_builds',
+                //     job: 'testing',
+                //     columns: 1, rows: 1,
+                //     x: 0, y: 0
+                // },
+                // {
+                //     type: 'jenkins.job_status',
+                //     job: 'testing',
+                //     layout: 'bold',
+                //     columns: 1, rows: 1,
+                //     x: 1, y: 0
+                // },
+                // {
+                //     type: 'jenkins.job_builds_histogram',
+                //     job: 'testing',
+                //     columns: 2, rows: 1,
+                //     x: 0, y: 1
+                // }
                 {
-                    type: 'jenkins.job_builds',
-                    job: 'testing',
+                    type: 'jenkins.view',
+                    view: 'Cedar',
                     columns: 1, rows: 1,
                     x: 0, y: 0
                 },
@@ -57,11 +76,37 @@ var config = {
                     x: 1, y: 0
                 },
                 {
-                    type: 'jenkins.job_builds_histogram',
-                    job: 'testing',
-                    columns: 2, rows: 1,
-                    x: 0, y: 1
-                }
+                    type: 'jenkins.view',
+                    view: 'Cedar',
+                    columns: 1, rows: 1,
+                    x: 2, y: 0
+                },
+
+                {
+                    type: 'jenkins.view',
+                    view: 'Cedar',
+                    columns: 2, rows: 2,
+                    x: 0, y: 0
+                },
+                {
+                    type: 'jenkins.view',
+                    view: 'Cedar',
+                    columns: 2, rows: 2,
+                    x: 1, y: 0
+                },
+                {
+                    type: 'jenkins.view',
+                    view: 'Cedar',
+                    columns: 2, rows: 2,
+                    x: 2, y: 0
+                },
+
+                // {
+                //     type: 'jenkins.view',
+                //     view: 'all',
+                //     columns: 1, rows: 1,
+                //     x: 1, y: 0
+                // }
             ]
         }
     ]
