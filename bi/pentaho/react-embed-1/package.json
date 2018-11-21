@@ -1,0 +1,18 @@
+{
+  "name": "react-embed-1",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-pentaho-renderer": "^0.1.2"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  }
+}

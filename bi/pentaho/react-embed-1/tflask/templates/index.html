@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <title>Demo of embedded CDE content</title>
+    <!-- CHANGE HERE IF REQUIRED -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+    <!-- CHANGE HERE IF REQUIRED -->
+    <script type="text/javascript" src="http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/renderer/cde-embed.js"></script>
+    
+    <script type="text/javascript">
+      require(
+        // define the location of the dashboard
+        //  CHANGE HERE IF REQUIRED
+        ['dash!/public/Steel Wheels/Dashboards/CTools_dashboard.wcdf']
+        // Demo is just a sample argument name, can be anything
+        , function(Demo){
+            // define div id where the dashboard should be rendered
+            var demoDash = new Demo("myExternalDiv");
+            demoDash.render();
+          }
+      )
+    </script>
+    
+  </head>
+  <body>
+    <h1>Demo of embedded CDE content</h1>
+    <!-- 
+    Below is our placeholder - this is where we want to embed the CDE dashboard 
+    Note that this div id gets referenced above in the 
+    JavaScript `new Demo("myExternalDiv")`
+    -->
+    <div id="myExternalDiv"></div>
+  </body>
+</html>
+
