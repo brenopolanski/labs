@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Parent Window</title>
+</head>
+<body>
+
+    <h1>web-app</h1>
+    <p>Got Message:</p>
+    <div id="results"></div>
+    <br/>
+
+    <script>
+        // addEventListener support for IE8
+        function bindEvent(element, eventName, eventHandler) {
+            if (element.addEventListener){
+                element.addEventListener(eventName, eventHandler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + eventName, eventHandler);
+            }
+        }
+
+        var iframeSource = 'iframe.html';
+
+        // Create the iframe
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', iframeSource);
+        iframe.setAttribute('id', 'the_iframe');
+        iframe.style.width = 450 + 'px';
+        iframe.style.height = 200 + 'px';
+        document.body.appendChild(iframe);
+
+        // Send a message to the child iframe
+        var iframeEl = document.getElementById('the_iframe');
+        var results = document.getElementById('results');
+
+        // Listen to message from child window
+        bindEvent(window, 'message', function (e) {
+          results.innerHTML = e.data;
+        });
+    </script>
+</body>
+</html>
