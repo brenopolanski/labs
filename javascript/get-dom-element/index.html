@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get DOM element</title>
+</head>
+<body>
+  <div class="container">
+    <div id="content">
+      <h1>Get DOM element</h1>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    $(function() {
+      setTimeout(function() {
+        $('#content').append('<h2 id="test">Test</h2>');
+      }, 5000);
+
+      function elementReady(selector, interval) {
+        let $el = null;
+        let timeout;
+
+        try {
+          $el = $(selector).length;
+
+          if ($el) {
+            clearTimeout(timeout);
+          }
+        } catch (error) {
+          console.log('¯\_(ツ)_/¯');
+        } finally {
+          if (!$el) {
+            timeout = setTimeout(function() { elementReady(selector, interval); }, interval);
+          }
+        }
+      }
+
+      elementReady('#test', 500);
+    });
+  </script>
+</body>
+</html>
