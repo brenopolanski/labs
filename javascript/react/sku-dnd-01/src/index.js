@@ -18,6 +18,65 @@ const Container = styled.div`
   display: flex;
 `;
 
+
+const itemDisabled = (dataState, droppableSource) => {
+  const dataClone = Array.from(dataState);
+
+  dataClone[droppableSource.index]['isDragDisabled'] = true;
+
+  return dataClone;
+};
+
+const copy = (data, axisState, droppableSource, droppableDestination) => {
+  const dataClone = Array.from(data);
+  const destinationClone = Array.from(axisState[droppableDestination.droppableId].items);
+  const item = dataClone[droppableSource.index];
+
+  destinationClone.splice(droppableDestination.index, 0, { ...item });
+
+  const axis = {
+    ...axisState[droppableDestination.droppableId],
+    items: destinationClone
+  };
+
+  const newState = {
+    ...axisState,
+    [droppableDestination.droppableId]: {
+      ...axis
+    }
+  };
+
+  console.log(axis);
+  console.log(newState);
+
+  return newState;
+};
+
+const reorder = (items, axisState, droppableSource, droppableDestination) => {
+  const startIndex = droppableSource.index;
+  const endIndex = droppableDestination.index;
+  const itemsClone = Array.from(items);
+  const [removed] = itemsClone.splice(startIndex, 1);
+
+  itemsClone.splice(endIndex, 0, removed);
+
+  const axis = {
+    ...axisState[droppableDestination.droppableId],
+    items: itemsClone
+  };
+
+  const newState = {
+    ...axisState,
+    [droppableDestination.droppableId]: {
+      ...axis
+    }
+  };
+
+  console.log(itemsClone);
+
+  return newState;
+};
+
 class App extends Component {
   state = initialData;
 
@@ -29,8 +88,8 @@ class App extends Component {
     }
 
     if (
-      destination.droppableId === source.droppableId &&
-      destination.index === source.index
+      source.droppableId === destination.droppableId &&
+      source.index === destination.index
     ) {
       return;
     }
@@ -40,11 +99,29 @@ class App extends Component {
     console.log(draggableId);
 
     if (destination.droppableId === 'measures') {
-      const measureDrop = this.state.measuresData[source.index];
-
-      console.log(measureDrop);
-
-      return;
+      if (source.droppableId === destination.droppableId) {
+        this.setState({
+          axes: reorder(
+            this.state.axes[source.droppableId].items,
+            this.state.axes,
+            source,
+            destination
+          )
+        });
+      } else {
+        this.setState({
+          measuresData: itemDisabled(
+            this.state.measuresData,
+            source
+          ),
+          axes: copy(
+            this.state.measuresData,
+            this.state.axes,
+            source,
+            destination
+          )
+        });
+      }
     }
   };
 

@@ -105,21 +105,21 @@ const initialData = {
       title: 'Measures',
       items: []
     },
-    // 'filters': {
-    //   id: 'filters',
-    //   title: 'Filters',
-    //   itemIds: []
-    // },
-    // 'rows': {
-    //   id: 'rows',
-    //   title: 'Rows',
-    //   itemIds: []
-    // },
-    // 'columns': {
-    //   id: 'columns',
-    //   title: 'Columns',
-    //   itemIds: []
-    // }
+    'filters': {
+      id: 'filters',
+      title: 'Filters',
+      items: []
+    },
+    'rows': {
+      id: 'rows',
+      title: 'Rows',
+      items: []
+    },
+    'columns': {
+      id: 'columns',
+      title: 'Columns',
+      items: []
+    }
   },
   // axesOrder: ['measures', 'filters', 'rows', 'columns'],
   axesOrder: ['measures'],

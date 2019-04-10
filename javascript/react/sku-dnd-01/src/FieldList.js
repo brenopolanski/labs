@@ -1,10 +1,7 @@
 // Packages
-import React, { Component } from 'react';
-import { Droppable } from 'react-beautiful-dnd';
+import React, { Component, Fragment } from 'react';
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
-
-// Components
-import Item from './Item';
 
 // Styles
 const Container = styled.div`
@@ -28,6 +25,25 @@ const ItemList = styled.div`
   min-height: 100px;
 `;
 
+const Item = styled.div`
+  display: flex;
+  user-select: none;
+  padding: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  align-items: flex-start;
+  align-content: flex-start;
+  line-height: 1.5;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px ${props => (props.isDragging ? 'dashed #000' : 'solid #ddd')};
+`;
+
+const Clone = styled(Item)`
+  ~ div {
+    transform: none !important;
+  }
+`;
+
 class FieldList extends Component {
   render() {
     return (
@@ -36,12 +52,26 @@ class FieldList extends Component {
         <Droppable droppableId={this.props.id} isDropDisabled={true}>
           {(provided, snapshot) => (
             <ItemList
-              {...provided.droppableProps}
               ref={provided.innerRef}
               isDraggingOver={snapshot.isDraggingOver}
             >
               {this.props.measures.map((item, index) => (
-                <Item key={item.id} id={item.id} item={item} index={index} />
+                <Draggable key={item.id} draggableId={item.id} index={index} isDragDisabled={item.isDragDisabled || false}>
+                  {(provided, snapshot) => (
+                    <Fragment>
+                      <Item
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        isDragging={snapshot.isDragging}
+                        style={provided.draggableProps.style}
+                      >
+                        {item.name}
+                      </Item>
+                      {snapshot.isDragging && <Clone>{item.name}</Clone>}
+                    </Fragment>
+                  )}
+                </Draggable>
               ))}
               {provided.placeholder}
             </ItemList>
