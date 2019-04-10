@@ -1,8 +1,12 @@
+// Packages
 import React, { Component } from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
+
+// Components
 import Item from './Item';
 
+// Styles
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,12 +28,12 @@ const ItemList = styled.div`
   min-height: 100px;
 `;
 
-class Fields extends Component {
+class FieldList extends Component {
   render() {
     return (
       <Container>
         <Title>{this.props.title}</Title>
-        <Droppable droppableId={this.props.id}>
+        <Droppable droppableId={this.props.id} isDropDisabled={true}>
           {(provided, snapshot) => (
             <ItemList
               {...provided.droppableProps}
@@ -48,4 +52,4 @@ class Fields extends Component {
   }
 }
 
-export default Fields;
+export default FieldList;

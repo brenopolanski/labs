@@ -103,25 +103,26 @@ const initialData = {
     'measures': {
       id: 'measures',
       title: 'Measures',
-      itemIds: []
+      items: []
     },
-    'filters': {
-      id: 'filters',
-      title: 'Filters',
-      itemIds: []
-    },
-    'rows': {
-      id: 'rows',
-      title: 'Rows',
-      itemIds: []
-    },
-    'columns': {
-      id: 'columns',
-      title: 'Columns',
-      itemIds: []
-    }
+    // 'filters': {
+    //   id: 'filters',
+    //   title: 'Filters',
+    //   itemIds: []
+    // },
+    // 'rows': {
+    //   id: 'rows',
+    //   title: 'Rows',
+    //   itemIds: []
+    // },
+    // 'columns': {
+    //   id: 'columns',
+    //   title: 'Columns',
+    //   itemIds: []
+    // }
   },
-  axesOrder: ['measures', 'filters', 'rows', 'columns'],
+  // axesOrder: ['measures', 'filters', 'rows', 'columns'],
+  axesOrder: ['measures'],
 };
 
 export default initialData;

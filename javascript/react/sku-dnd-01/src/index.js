@@ -1,13 +1,18 @@
+// Packages
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './css-reset.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
-import initialData from './initialData';
-import Fields from './Fields';
+
+// Components
+import FieldList from './FieldList';
 import Axes from './Axes';
 
-// @import '/path/to/reset-css/reset.css';
+// Data
+import initialData from './initialData';
+
+// Styles
+import './css-reset.css';
 
 const Container = styled.div`
   display: flex;
@@ -16,18 +21,43 @@ const Container = styled.div`
 class App extends Component {
   state = initialData;
 
-  onDragEnd = () => {};
+  onDragEnd = result => {
+    const { source, destination, draggableId } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    console.log('source:', source);
+    console.log('destination:', destination);
+    console.log(draggableId);
+
+    if (destination.droppableId === 'measures') {
+      const measureDrop = this.state.measuresData[source.index];
+
+      console.log(measureDrop);
+
+      return;
+    }
+  };
 
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Container>
-          <Fields id="measureTree" title="Measure List" measures={this.state.measuresData} />
+          <FieldList id="measureList" title="Measure List" measures={this.state.measuresData} />
 
           {this.state.axesOrder.map(axisId => {
             const axis = this.state.axes[axisId];
-            const items = axis.itemIds.map(
-              itemId => this.state.measuresData[itemId]
+            const items = axis.items.map(
+              item => this.state.measuresData.find(measure => measure.id === item.id)
             );
 
             return <Axes key={axis.id} axis={axis} items={items} />

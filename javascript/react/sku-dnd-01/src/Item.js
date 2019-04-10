@@ -1,7 +1,9 @@
+// Packages
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 
+// Styles
 const Container = styled.div`
   display: flex;
   border: 1px solid lightgrey;
