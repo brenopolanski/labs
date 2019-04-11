@@ -18,7 +18,6 @@ const Container = styled.div`
   display: flex;
 `;
 
-
 const itemDisabled = (dataState, droppableSource) => {
   const dataClone = Array.from(dataState);
 
