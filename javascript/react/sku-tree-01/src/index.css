@@ -7,10 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bp3-tree > * {
+  cursor: inherit !important;
+}
+
 .bp3-tree-node-expanded {
   display: block;
 }
 
 .bp3-tree-node-hidden {
   display: none;
+}
+
+.mgroup {
+  cursor: pointer;
 }
