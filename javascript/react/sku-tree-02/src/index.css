@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bp3-tree > * {
+  cursor: inherit !important;
+}
+
+.bp3-tree-node-expanded {
+  display: block;
+}
+
+.bp3-tree-node-hidden {
+  display: none;
+}
+
+.mgroup {
+  cursor: pointer;
+}
