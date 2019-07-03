@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    img {
+      max-width: 100%;
+      border: 0;
+    }
+
+    .devices {
+      display: flex;
+      position: relative;
+    }
+
+    .device {
+      position: relative;
+    }
+
+    .device__laptop video {
+      position: absolute;
+      top: 0;
+      left: 16.9%;
+      width: 65.6%;
+      top: 7.1%;
+    }
+
+    .device__phone video {
+      position: absolute;
+      top: 0;
+      left: 5.2%;
+      width: 88.2%;
+      top: 10.4%;
+    }
+  </style>
+</head>
+<body>
+  <div class="devices">
+    <div class="device device__laptop"><img src="https://advancedreact.com/images/NODE/laptop.png" alt="Laptop Showing example Application we build in the course">
+      <video playsinline poster="https://res.cloudinary.com/wesbos/image/upload/f_auto,q_auto/v1539136514/ARG/poster-desktop.png" src="https://player.vimeo.com/external/293411180.sd.mp4?s=80085aa3bbdb99ce97c951f886269255746eeb00&amp;profile_id=165" muted autoplay loop></video>
+    </div>
+    <div class="device device__phone"><img src="https://advancedreact.com/images/NODE/phone.png" alt="iPhone Showing example Application we build in the course">
+      <video playsinline poster="https://res.cloudinary.com/wesbos/image/upload/f_auto,q_auto/v1539136512/ARG/poster-mobile.png" src="https://player.vimeo.com/external/294362989.sd.mp4?s=ec0c0d2ef616dcefaeb1628db7022db7bbedf3de&amp;profile_id=165" muted autoplay loop></video>
+    </div>
+  </div>
+
+  <div class="playback">
+    <label for="video-speed">🐢
+      <input type="range" min="0.05" max="1" step="0.05" value="1" name="video-speed" oninput="document.querySelectorAll('.devices video').forEach((vid)=>{ vid.playbackRate = parseFloat(this.value) })" class="playback__slider">🐇
+    </label>
+  </div>
+</body>
+</html>
