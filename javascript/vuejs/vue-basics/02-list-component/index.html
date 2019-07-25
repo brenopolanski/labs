@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create a List Component in Vue.js</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="card">
+    <header>{{ title }}</header>
+    <div>
+      <input type="text" v-on:keypress.enter="addItem" id="itemForm">
+      <button v-on:click="addItem">Add Dinosaur</button>
+    </div>
+    <ul>
+      <li v-for="(item, index) in items">
+        <button v-on:click="deleteItem(index)"> X </button>
+        {{ item.text }}
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="script.js"></script>
+</body>
+</html>
