@@ -19,7 +19,3 @@
 * [Python](python/)
 * [Rust](rust/)
 * [Shell](shell/)
-
-## License
-
-[MIT License](http://brenopolanski.mit-license.org/) © Breno Polanski
