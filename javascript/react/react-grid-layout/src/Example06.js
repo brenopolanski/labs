@@ -22,6 +22,22 @@ class Example06 extends Component {
         <br />
 
         <Card
+          size="small"
+          title={<span><Icon type="edit" key="edit" style={{ color: 'yellow' }} /> <span style={{ color: 'yellow', fontWeight: 'bold' }}>Sales</span></span>}
+          extra={<a href="#">More</a>}
+          style={{ width: 300, border: '2px solid blue' }}
+          headStyle={{ backgroundColor: '#fff', borderBottom: 'none' }}
+          bodyStyle={{ backgroundColor: '#fff' }}
+          bordered={true}
+        >
+          <p>Card content</p>
+          <p>Card content</p>
+          <p>Card content</p>
+        </Card>
+
+        <br />
+
+        <Card
           style={{ width: 300, border: '2px solid blue' }}
           cover={
             <img
