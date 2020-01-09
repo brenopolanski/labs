@@ -23,17 +23,17 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "Users",
+  name: 'Users',
   data() {
     return {
       users: null
     };
   },
   created: function() {
-    axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
+    axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
       this.users = res.data;
     });
   }
