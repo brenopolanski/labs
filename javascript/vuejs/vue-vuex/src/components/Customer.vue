@@ -29,11 +29,13 @@ export default {
     ...mapActions(["removeTv"]),
     buyTv() {
       // Dispatch the action to buy a TV
-      this.$store.dispatch("removeTv", 1);
+      //this.$store.dispatch("removeTv", 1);
+      this.removeTv(1);
     },
     buyTwoTvs() {
       // Dispatch the action to buy two TVs
-      this.$store.dispatch("removeTv", 2);
+      //this.$store.dispatch("removeTv", 2);
+      this.removeTv(2);
     }
   }
 };
