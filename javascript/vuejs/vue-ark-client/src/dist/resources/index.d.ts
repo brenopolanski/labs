@@ -1,0 +1,24 @@
+import { Blocks } from "./blocks";
+import { Bridgechains } from "./bridgechains";
+import { Businesses } from "./businesses";
+import { Delegates } from "./delegates";
+import { Locks } from "./locks";
+import { Node } from "./node";
+import { Peers } from "./peers";
+import { Rounds } from "./rounds";
+import { Transactions } from "./transactions";
+import { Votes } from "./votes";
+import { Wallets } from "./wallets";
+export declare const Resources: {
+    Blocks: typeof Blocks;
+    Bridgechains: typeof Bridgechains;
+    Businesses: typeof Businesses;
+    Delegates: typeof Delegates;
+    Locks: typeof Locks;
+    Node: typeof Node;
+    Peers: typeof Peers;
+    Rounds: typeof Rounds;
+    Transactions: typeof Transactions;
+    Votes: typeof Votes;
+    Wallets: typeof Wallets;
+};
