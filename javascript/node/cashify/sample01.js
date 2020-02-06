@@ -12,4 +12,4 @@ const cashify = new Cashify({base: 'USD', rates});
 
 const result = cashify.convert(1, {from: 'BTC', to: 'ARK'});
 
-console.log(result);
+console.log(result); // => 0.000021403501932014247
