@@ -1,0 +1,2 @@
+- How to Build a Chrome Extension with React: https://levelup.gitconnected.com/how-to-make-a-chrome-extension-with-react-129cdcbf1414
+- MobX: https://mobx.js.org/README.html
