@@ -1,10 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react';
+import { ListGroup } from 'react-bootstrap';
 import { searchWeather } from './request';
-import ListGroup from 'react-bootstrap/ListGroup';
 
-function CurrentWeather(argument) {
+function CurrentWeather({ keywordStore }) {
   const [weather, setWeather] = React.useState({});
+
   const getWeatherForecast = async keyword => {
     const response = await searchWeather(keyword);
     setWeather(response.data);

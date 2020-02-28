@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar } from 'react-bootstrap';
 import { KeywordStore } from './store';
 import HomePage from './HomePage';
 import './App.css';
