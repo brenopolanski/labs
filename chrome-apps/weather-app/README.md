@@ -1,2 +1,3 @@
 - How to Build a Chrome Extension with React: https://levelup.gitconnected.com/how-to-make-a-chrome-extension-with-react-129cdcbf1414
 - MobX: https://mobx.js.org/README.html
+- Web Extension starter to build "Write Once Run on Any Browser" extension: https://github.com/abhijithvijayan/web-extension-starter/tree/master
