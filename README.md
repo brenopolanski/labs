@@ -19,3 +19,4 @@
 * [Python](python/)
 * [Rust](rust/)
 * [Shell](shell/)
+* [Typescript](typescript/)
