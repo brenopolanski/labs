@@ -2,18 +2,6 @@
 # yarn lockfile v1
 
 
-"@atlaskit/css-reset@^2.0.0":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@atlaskit/css-reset/-/css-reset-2.0.8.tgz#0b3126c75150ab418c19f6a614934dc90a0a7064"
-  dependencies:
-    "@atlaskit/util-shared-styles" "^2.10.3"
-
-"@atlaskit/util-shared-styles@^2.10.3":
-  version "2.10.8"
-  resolved "https://registry.yarnpkg.com/@atlaskit/util-shared-styles/-/util-shared-styles-2.10.8.tgz#07fb6903cb749575c36a1d7e25f4638bbcf866f7"
-  dependencies:
-    babel-runtime "^6.11.6"
-
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -1609,7 +1597,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.11.6, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -3457,8 +3445,8 @@ fb-watchman@^2.0.0:
     bser "^2.0.0"
 
 figgy-pudding@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
 
 figures@^1.7.0:
   version "1.7.0"
@@ -8121,8 +8109,8 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
   dependencies:
     figgy-pudding "^3.5.1"
 
