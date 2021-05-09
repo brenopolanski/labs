@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^3.7.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "react": "^16.8.6",
     "react-beautiful-dnd": "10.1.0",
     "react-dom": "^16.8.6",
