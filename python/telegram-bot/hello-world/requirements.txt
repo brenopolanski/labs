@@ -22,7 +22,7 @@ python-dateutil==2.5.3
 python-telegram-bot==5.2.0
 pytz==2016.7
 pyxattr==0.5.3
-reportlab==3.3.0
+reportlab==3.5.55
 requests==2.9.1
 rpm-python==4.13.0rc1
 six==1.10.0
