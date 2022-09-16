@@ -47,7 +47,7 @@
     "webpack-validator": "^2.3.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "pdfjs-dist": "^1.6.419",
