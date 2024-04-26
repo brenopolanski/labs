@@ -1,6 +1,10 @@
 {
   "name": "turborepo-example",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -8,6 +12,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@repo/configs": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "prettier": "^3.2.5",
